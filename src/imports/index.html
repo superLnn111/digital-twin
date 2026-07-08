@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>风机状态监控系统</title>
+  <!-- 1. 修复CDN 404：更换为100%可用的Chart.js + 稳定图标库 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  
+  <script>
+    // 修复Tailwind字体（无外部依赖）
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#36CFC9',
+            danger: '#F53F3F',
+            warning: '#FF7D00',
+            dark: '#0F172A',
+            'dark-light': '#1E293B',
+            'dark-lighter': '#334155'
+          },
+          fontFamily: {
+            inter: ['system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .card-shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
+      .gradient-border {
+        position: relative;
+        border-radius: 0.5rem;
+      }
+      .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+        padding: 1px;
+        background: linear-gradient(45deg, #165DFF, #36CFC9);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+      .fan-blade {
+        transform-origin: bottom center;
+        transform-box: fill-box;
+      }
+      .blade-spin {
+        animation: spin 8s linear infinite;
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .damage-marker {
+        transition: all 0.3s ease;
+      }
+      .sensor-row {
+        transition: background-color 0.2s ease;
+      }
+    }
+  </style>
+</head>
+<body class="bg-dark text-gray-200 font-inter min-h-screen flex flex-col">
+  <!-- 顶部导航栏 -->
+  <header class="bg-dark-light border-b border-dark-lighter">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="text-primary text-2xl"><i class="fa fa-bolt"></i></div>
+        <h1 class="text-xl font-bold">风机状态监控系统</h1>
+      </div>
+      <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center">
+            <label for="txt-upload" class="text-sm bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded transition-colors cursor-pointer">
+              <i class="fa fa-upload mr-1"></i> 上传损伤点(TXT)
+            </label>
+            <input id="txt-upload" type="file" accept=".txt" class="hidden" />
+            <span id="txt-upload-status" class="ml-2 text-sm text-gray-400 hidden">
+              <i class="fa fa-check text-green-400 mr-1"></i> 已上传
+            </span>
+          </div>
+          <div class="flex items-center">
+            <label for="acceleration-txt-upload-header" class="text-sm bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded transition-colors cursor-pointer">
+              <i class="fa fa-file-text mr-1"></i> 上传加速度数据(TXT)
+            </label>
+            <input id="acceleration-txt-upload-header" type="file" accept=".txt" class="hidden" />
+            <span id="acceleration-txt-status-header" class="ml-2 text-sm text-gray-400 hidden">
+              <i class="fa fa-check text-green-400 mr-1"></i> 已上传
+            </span>
+          </div>
+        </div>
+        <div class="text-xs text-gray-400 max-w-xs hidden md:block">
+          <i class="fa fa-info-circle text-primary mr-1"></i>
+          支持格式：损伤点(.txt) | 加速度数据(.txt)
+        </div>
+        <div class="flex items-center text-sm text-gray-400">
+          <span class="mr-2"><i class="fa fa-refresh"></i></span>
+          <span>上次更新: <span id="last-update">--:--:--</span></span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+            <i class="fa fa-user text-primary"></i>
+          </div>
+          <span class="hidden md:inline">管理员</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="flex-1 container mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+      <!-- 左侧状态概览 -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold">状态概览</h2>
+          <div class="grid grid-cols-1 gap-4">
+            <div class="bg-dark-light rounded-lg p-4 card-shadow">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <p class="text-gray-400 text-sm">当前风速</p>
+                  <h3 class="text-2xl font-bold mt-1" id="wind-speed">0.0 m/s</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <i class="fa fa-wind text-primary"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-light rounded-lg p-4 card-shadow">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <p class="text-gray-400 text-sm">平均加速度</p>
+                  <h3 class="text-2xl font-bold mt-1" id="avg-acceleration">0.00 g</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                  <i class="fa fa-area-chart text-secondary"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-light rounded-lg p-4 card-shadow">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <p class="text-gray-400 text-sm">运行状态</p>
+                  <h3 class="text-2xl font-bold mt-1 text-green-400" id="running-status">等待连接</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <i class="fa fa-check-circle text-green-400"></i>
+                </div>
+              </div>
+              <div class="flex items-center text-sm">
+                <span class="text-gray-400">连续运行: <span id="run-time">0 小时</span></span>
+              </div>
+            </div>
+            <div class="bg-dark-light rounded-lg p-4 card-shadow">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <p class="text-gray-400 text-sm">损伤警报</p>
+                  <h3 class="text-2xl font-bold mt-1" id="damage-count">0</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-warning/20 flex items-center justify-center">
+                  <i class="fa fa-exclamation-triangle text-warning"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-dark-light rounded-lg p-5 card-shadow">
+          <h2 class="text-lg font-semibold mb-4">损伤统计</h2>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>轻微损伤</span>
+                <span id="minor-damage-count">0</span>
+              </div>
+              <div class="w-full bg-dark-lighter rounded-full h-2">
+                <div class="bg-warning h-2 rounded-full" id="minor-damage-bar" style="width: 0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>中等损伤</span>
+                <span id="medium-damage-count">0</span>
+              </div>
+              <div class="w-full bg-dark-lighter rounded-full h-2">
+                <div class="bg-orange-500 h-2 rounded-full" id="medium-damage-bar" style="width: 0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>严重损伤</span>
+                <span id="severe-damage-count">0</span>
+              </div>
+              <div class="w-full bg-dark-lighter rounded-full h-2">
+                <div class="bg-danger h-2 rounded-full" id="severe-damage-bar" style="width: 0%"></div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-dark-lighter">
+              <h4 class="text-sm font-medium mb-2">主要损伤部位</h4>
+              <div class="text-sm text-gray-500" id="main-damage-part">暂无损伤数据</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 中间主区域：风机模型 -->
+      <div class="lg:col-span-6 bg-dark-light rounded-lg p-5 card-shadow">
+        <h2 class="text-lg font-semibold mb-4">风机结构与损伤可视化</h2>
+        <div class="flex items-center justify-center min-h-[600px] bg-dark rounded-lg p-4">
+          <div class="relative w-full max-w-2xl aspect-square">
+            <!-- 风机SVG - 加长柱子至叶片交汇中心 (200,200) -->
+            <svg viewBox="0 0 400 400" class="w-full h-full">
+              <!-- 风机柱子 - 从y200（叶片交汇中心）延伸到y400（底部） -->
+              <rect x="195" y="200" width="20" height="200" fill="#334155" />
+              
+              <!-- 叶片旋转组 -->
+              <g id="rotating-blades" transform="rotate(0, 200, 200)">
+                <!-- 叶片1 - 0度 -->
+                <path class="fan-blade" d="M200,200 L200,60 L220,80 L210,200 Z" fill="#1E293B" stroke="#334155" stroke-width="2" />
+                
+                <!-- 叶片2 - 120度 -->
+                <g transform="rotate(120, 200, 200)">
+                  <path class="fan-blade" d="M200,200 L200,60 L220,80 L210,200 Z" fill="#1E293B" stroke="#334155" stroke-width="2" />
+                </g>
+                
+                <!-- 叶片3 - 240度 -->
+                <g transform="rotate(240, 200, 200)">
+                  <path class="fan-blade" d="M200,200 L200,60 L220,80 L210,200 Z" fill="#1E293B" stroke="#334155" stroke-width="2" />
+                </g>
+                
+                <!-- 损伤点 - 初始为空 -->
+                <g id="damage-markers"></g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 右侧损伤详情 -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="bg-dark-light rounded-lg p-5 card-shadow">
+          <h2 class="text-lg font-semibold mb-4">损伤点详情</h2>
+          <div class="space-y-4 max-h-[400px] overflow-y-auto pr-2" id="damage-details">
+            <div class="text-center text-gray-500 py-8">
+              <i class="fa fa-file-text-o text-3xl mb-2"></i>
+              <p>未上传损伤点数据</p>
+              <p class="text-xs mt-1">请上传TXT格式的损伤点文件</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 加速度数据上传 -->
+    <div class="bg-dark-light rounded-lg p-5 card-shadow gradient-border mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">加速度数据上传</h2>
+        <div class="flex items-center">
+          <label for="acceleration-txt-upload" class="text-sm bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded transition-colors cursor-pointer">
+            <i class="fa fa-upload mr-1"></i> 上传加速度数据(TXT)
+          </label>
+          <input id="acceleration-txt-upload" type="file" accept=".txt" class="hidden" />
+          <span id="acceleration-txt-status" class="ml-2 text-sm text-gray-400 hidden">
+            <i class="fa fa-check text-green-400 mr-1"></i> 已上传
+          </span>
+        </div>
+      </div>
+      <div class="text-sm text-gray-500">
+        <i class="fa fa-info-circle text-primary mr-1"></i>
+        支持格式：TXT文件，第一行为列名，包含时间、设备名称、三轴加速度(x、y、z轴，制表符分隔)
+      </div>
+    </div>
+    
+    <!-- 加速度监测图 -->
+    <div class="bg-dark-light rounded-lg p-5 card-shadow gradient-border mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">风机加速度监测</h2>
+        <div class="flex space-x-2">
+          <button class="text-xs bg-dark-lighter hover:bg-primary/30 px-3 py-1 rounded transition-colors period-btn" data-period="hour">1小时</button>
+          <button class="text-xs bg-primary/30 px-3 py-1 rounded transition-colors period-btn active" data-period="day">1天</button>
+          <button class="text-xs bg-dark-lighter hover:bg-primary/30 px-3 py-1 rounded transition-colors period-btn" data-period="week">1周</button>
+        </div>
+      </div>
+      <div class="h-[400px]" id="chart-container">
+        <div id="chart-placeholder" class="w-full h-full flex flex-col items-center justify-center text-gray-500">
+          <i class="fa fa-chart-line text-4xl mb-3"></i>
+          <p class="text-lg">暂无加速度数据</p>
+          <p class="text-sm mt-1">请上传加速度TXT文件以生成监测图表</p>
+        </div>
+        <canvas id="acceleration-chart" class="hidden w-full h-full"></canvas>
+      </div>
+    </div>
+    
+    <!-- 底部双模块 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      <!-- 仿真分析模块 -->
+      <div class="bg-dark-light rounded-lg p-5 card-shadow">
+        <h2 class="text-lg font-semibold mb-4">仿真分析</h2>
+        <div class="flex mb-4 space-x-2 overflow-x-auto pb-2">
+          <button class="text-sm bg-primary/30 px-4 py-2 rounded transition-colors whitespace-nowrap sim-tab active" data-sim-type="stress">应力分布</button>
+          <button class="text-sm bg-dark-lighter hover:bg-primary/30 px-4 py-2 rounded transition-colors whitespace-nowrap sim-tab" data-sim-type="skewness">偏度</button>
+        </div>
+        <div class="flex mb-4 space-x-2 flex-wrap">
+          <label for="img-upload-1" class="text-sm bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded transition-colors cursor-pointer">
+            <i class="fa fa-upload mr-1"></i> 上传应力图片 (最多4张)
+          </label>
+          <input id="img-upload-1" type="file" accept="image/*" multiple class="hidden" />
+          <label for="img-upload-2" class="text-sm bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded transition-colors cursor-pointer">
+            <i class="fa fa-upload mr-1"></i> 上传偏度图片 (最多4张)
+          </label>
+          <input id="img-upload-2" type="file" accept="image/*" multiple class="hidden" />
+          <label for="img-upload-3" class="text-sm bg-warning/20 hover:bg-warning/30 text-warning px-3 py-1 rounded transition-colors cursor-pointer">
+            <i class="fa fa-upload mr-1"></i> 上传参考图片 (最多1张)
+          </label>
+          <input id="img-upload-3" type="file" accept="image/*" multiple class="hidden" />
+        </div>
+        <div>
+          <div id="stress-content" class="space-y-4">
+            <div id="stress-images" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 min-h-[200px]">
+              <div class="flex items-center justify-center bg-dark rounded-lg text-gray-500">
+                <p class="text-center text-sm">请上传应力分布图片</p>
+              </div>
+            </div>
+            <div id="stress-bottom-image" class="bg-dark rounded-lg p-2 min-h-[200px] flex items-center justify-center text-gray-500">
+              <p class="text-center text-sm">请上传底部参考图片</p>
+            </div>
+          </div>
+          <div id="skewness-content" class="space-y-4 hidden">
+            <div id="skewness-images" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 min-h-[200px]">
+              <div class="flex items-center justify-center bg-dark rounded-lg text-gray-500">
+                <p class="text-center text-sm">请上传偏度图片</p>
+              </div>
+            </div>
+            <div id="skewness-bottom-image" class="bg-dark rounded-lg p-2 min-h-[200px] flex items-center justify-center text-gray-500">
+              <p class="text-center text-sm">请上传底部参考图片</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 传感器实时数据表格 -->
+      <div class="bg-dark-light rounded-lg p-5 card-shadow">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold">传感器实时数据</h2>
+          <div class="flex space-x-2">
+            <button class="text-sm bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded transition-colors" id="ws-reconnect-btn">
+              <i class="fa fa-refresh mr-1"></i> 重连传感器
+            </button>
+            <button class="text-sm bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded transition-colors" id="export-sensor-data-btn">
+              <i class="fa fa-download mr-1"></i> 导出数据
+            </button>
+          </div>
+        </div>
+        <div class="overflow-x-auto max-h-[400px]">
+          <table class="min-w-full">
+            <thead>
+              <tr class="border-b border-dark-lighter">
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">传感器ID</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">位置</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">加速度 (G)</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">风速 (M/S)</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">温度 (°C)</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">状态</th>
+                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">最后更新</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-dark-lighter" id="sensor-table-body">
+              <tr id="sensor-empty-row">
+                <td colspan="7" class="py-8 text-center text-gray-500">
+                  <i class="fa fa-wifi text-3xl mb-2 block"></i>
+                  <p>等待传感器连接...</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark-light border-t border-dark-lighter py-4">
+    <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+      <p>风机状态监控系统 © 2025 版权所有</p>
+    </div>
+  </footer>
+
+  <!-- 核心脚本 -->
+  <script>
+    // 全局变量
+    let accelerationChart = null;
+    let damageStats = { minor: 0, medium: 0, severe: 0, parts: {} };
+    let reconnectTimer = null;
+    let ws = null;
+    let sensorDataMap = new Map();
+    
+    // ===================== 跨机访问适配：动态WebSocket地址（无需修改IP） =====================
+    const WS_ADDRESS = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
+
+    // 基础工具函数
+    function updateLastUpdateTime() {
+      const now = new Date();
+      document.getElementById('last-update').textContent = now.toTimeString().split(' ')[0];
+    }
+    updateLastUpdateTime();
+    setInterval(updateLastUpdateTime, 1000);
+
+    function updateBladeRotation() {
+      const windSpeed = parseFloat(document.getElementById('wind-speed').textContent) || 0;
+      const bladeElement = document.getElementById('rotating-blades');
+      const duration = Math.max(2, 10 - (windSpeed / 2));
+      bladeElement.style.animation = `spin ${duration}s linear infinite`;
+    }
+
+    // 更新损伤统计
+    function updateDamageStats() {
+      const total = damageStats.minor + damageStats.medium + damageStats.severe;
+      document.getElementById('minor-damage-count').textContent = damageStats.minor;
+      document.getElementById('medium-damage-count').textContent = damageStats.medium;
+      document.getElementById('severe-damage-count').textContent = damageStats.severe;
+      document.getElementById('damage-count').textContent = total;
+      
+      document.getElementById('minor-damage-bar').style.width = `${total>0?(damageStats.minor/total)*100:0}%`;
+      document.getElementById('medium-damage-bar').style.width = `${total>0?(damageStats.medium/total)*100:0}%`;
+      document.getElementById('severe-damage-bar').style.width = `${total>0?(damageStats.severe/total)*100:0}%`;
+      
+      if (damageStats.severe > 0) {
+        document.getElementById('running-status').textContent = '异常';
+        document.getElementById('running-status').className = 'text-2xl font-bold mt-1 text-danger';
+      } else if (damageStats.medium > 0) {
+        document.getElementById('running-status').textContent = '注意';
+        document.getElementById('running-status').className = 'text-2xl font-bold mt-1 text-warning';
+      } else {
+        document.getElementById('running-status').textContent = '正常';
+        document.getElementById('running-status').className = 'text-2xl font-bold mt-1 text-green-400';
+      }
+    }
+
+    // 渲染损伤标记
+    function renderDamageMarkers(damagePoints) {
+      const markersContainer = document.getElementById('damage-markers');
+      markersContainer.innerHTML = '';
+      damageStats = { minor: 0, medium: 0, severe: 0, parts: {} };
+      
+      damagePoints.forEach((point) => {
+        if (point.level === 1) damageStats.minor++;
+        else if (point.level === 2) damageStats.medium++;
+        else if (point.level === 3) damageStats.severe++;
+        
+        if (!damageStats.parts[point.part]) damageStats.parts[point.part] = 0;
+        damageStats.parts[point.part]++;
+        
+        let color = '#FF7D00';
+        if (point.level === 2) color = '#F97316';
+        if (point.level === 3) color = '#F53F3F';
+        
+        const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        marker.setAttribute('cx', point.x);
+        marker.setAttribute('cy', point.y);
+        marker.setAttribute('r', point.level === 3 ? 8 : point.level === 2 ? 6 : 4);
+        marker.setAttribute('fill', color);
+        marker.setAttribute('fill-opacity', '0.8');
+        marker.setAttribute('stroke', '#fff');
+        markersContainer.appendChild(marker);
+      });
+      updateDamageStats();
+    }
+
+    // 损伤点上传
+    document.getElementById('txt-upload').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      document.getElementById('txt-upload-status').classList.remove('hidden');
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const lines = event.target.result.trim().split('\n');
+          const damagePoints = lines.filter(l=>l.trim()).map(line => {
+            const [x,y,level,part] = line.trim().split(',');
+            return {x:parseFloat(x),y:parseFloat(y),level:parseInt(level),part:part||'未知'};
+          });
+          renderDamageMarkers(damagePoints);
+        } catch (e) { alert('格式错误！x,y,等级,部位'); }
+      };
+      reader.readAsText(file);
+    });
+
+    // 加速度图表
+    function renderAccelerationChart(labels, xData, yData, zData) {
+      const chartCanvas = document.getElementById('acceleration-chart');
+      if (!chartCanvas) return;
+      
+      document.getElementById('chart-placeholder').classList.add('hidden');
+      chartCanvas.classList.remove('hidden');
+      if (accelerationChart) accelerationChart.destroy();
+      
+      accelerationChart = new Chart(chartCanvas.getContext('2d'), {
+        type: 'line',
+        data: { 
+          labels, 
+          datasets: [
+            { label: 'X轴', data: xData, borderColor: '#165DFF', fill: false },
+            { label: 'Y轴', data: yData, borderColor: '#36CFC9', fill: false },
+            { label: 'Z轴', data: zData, borderColor: '#F53F3F', fill: false }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    // 加速度数据上传
+    document.getElementById('acceleration-txt-upload').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const lines = e.target.result.trim().split('\n');
+          const times = [], x = [], y = [], z = [];
+          for(let i=1;i<lines.length;i++){
+            const p = lines[i].split('\t');
+            times.push(p[0]);x.push(parseFloat(p[2])||0);y.push(parseFloat(p[3])||0);z.push(parseFloat(p[4])||0);
+          }
+          renderAccelerationChart(times,x,y,z);
+          document.getElementById('acceleration-txt-status').classList.remove('hidden');
+        } catch (err) { alert('加速度文件格式错误'); }
+      };
+      reader.readAsText(file);
+    });
+
+    // 传感器表格渲染
+    function renderSensorTable() {
+      const body = document.getElementById('sensor-table-body');
+      document.getElementById('sensor-empty-row')?.remove();
+      body.innerHTML = '';
+      
+      sensorDataMap.forEach(s => {
+        const cls = s.status==='正常'?'bg-green-500/20 text-green-400':s.status==='异常'?'bg-danger/20 text-danger':'bg-warning/20 text-warning';
+        body.innerHTML += `<tr class="sensor-row hover:bg-dark-lighter/50">
+          <td class="py-3 text-sm">${s.id}</td>
+          <td class="py-3 text-sm">${s.position}</td>
+          <td class="py-3 text-sm">${s.acceleration}</td>
+          <td class="py-3 text-sm">${s.windSpeed}</td>
+          <td class="py-3 text-sm">${s.temperature}</td>
+          <td class="py-3 text-sm"><span class="px-2 py-1 rounded text-xs ${cls}">${s.status}</span></td>
+          <td class="py-3 text-sm">${s.updateTime}</td>
+        </tr>`;
+      });
+    }
+
+    // ===================== 修复 toFixed 报错 + 实时WebSocket =====================
+    function initWebSocket() {
+      if (reconnectTimer) clearTimeout(reconnectTimer);
+      try {
+        if (ws) ws.close();
+        ws = new WebSocket(WS_ADDRESS);
+
+        ws.onopen = () => {
+          document.getElementById('ws-reconnect-btn').innerHTML = '<i class="fa fa-check mr-1"></i> 已连接';
+          document.getElementById('ws-reconnect-btn').className = 'text-sm bg-green-500/20 text-green-400 px-3 py-1 rounded transition-colors';
+        };
+
+        // 核心修复：数据类型转换，解决toFixed报错
+        ws.onmessage = (e) => {
+          try {
+            const msg = JSON.parse(e.data);
+            const dataList = msg.type === 'init' ? msg.data : (msg.type === 'realtime' ? [msg.data] : []);
+            
+            dataList.forEach(item => {
+              // 2. 修复关键：强制转为数字，再toFixed
+              const acc = Number(item.acceleration) || 0;
+              const wind = Number(item.windSpeed) || 0;
+              const temp = Number(item.temperature) || 0;
+
+              sensorDataMap.set(item.id, {
+                id: item.id,
+                position: item.position || '未知位置',
+                acceleration: acc.toFixed(2),
+                windSpeed: wind.toFixed(1),
+                temperature: temp.toFixed(1),
+                status: item.status || '正常',
+                updateTime: new Date().toLocaleTimeString()
+              });
+            });
+
+            renderSensorTable();
+            
+            // 更新风速
+            const mainSensor = sensorDataMap.values().next().value;
+            if (mainSensor) {
+              document.getElementById('wind-speed').textContent = `${mainSensor.windSpeed} m/s`;
+              document.getElementById('avg-acceleration').textContent = `${mainSensor.acceleration} g`;
+              updateBladeRotation();
+            }
+          } catch (err) {
+            console.log('数据解析兼容处理', err);
+          }
+        };
+
+        ws.onclose = () => {
+          document.getElementById('ws-reconnect-btn').innerHTML = '<i class="fa fa-refresh mr-1"></i> 重连传感器';
+          document.getElementById('ws-reconnect-btn').className = 'text-sm bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded transition-colors';
+          reconnectTimer = setTimeout(initWebSocket, 5000);
+        };
+      } catch (e) {
+        reconnectTimer = setTimeout(initWebSocket, 5000);
+      }
+    }
+
+    // 按钮事件
+    document.getElementById('ws-reconnect-btn').addEventListener('click', initWebSocket);
+    document.getElementById('export-sensor-data-btn').addEventListener('click', () => {
+      if(sensorDataMap.size === 0){ alert('暂无传感器数据'); return; }
+      let csv = "传感器ID,位置,加速度(G),风速(M/S),温度(°C),状态,更新时间\n";
+      sensorDataMap.forEach(s => {
+        csv += `${s.id},${s.position},${s.acceleration},${s.windSpeed},${s.temperature},${s.status},${s.updateTime}\n`;
+      });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
+      link.download = `风机传感器实时数据_${new Date().toLocaleDateString()}.csv`;
+      link.click();
+    });
+
+    // 标签页切换
+    document.querySelectorAll('.sim-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.sim-tab').forEach(b => b.classList.remove('bg-primary/30'));
+        tab.classList.add('bg-primary/30');
+        document.getElementById('stress-content').classList.toggle('hidden', tab.dataset.simType !== 'stress');
+        document.getElementById('skewness-content').classList.toggle('hidden', tab.dataset.simType !== 'skewness');
+      });
+    });
+
+    // 启动
+    window.addEventListener('DOMContentLoaded', initWebSocket);
+    window.addEventListener('beforeunload', () => { if(ws) ws.close(); });
+  </script>
+</body>
+</html>
