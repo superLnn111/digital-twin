@@ -439,6 +439,9 @@ function CampusGate({ x, z }: { x:number; z:number }) {
   );
 }
 
+
+
+
 // ─── Campus Decoration Layer (shared between GLB & procedural) ────────────────
 function CampusDecoration() {
   return (
@@ -498,6 +501,8 @@ function CampusDecoration() {
 
       {/* North gate (北门, near coast) */}
       <CampusGate x={-8} z={-31.5} />
+
+
     </>
   );
 }
@@ -532,15 +537,12 @@ function BlenderCampusModel() {
     );
   }, []);
 
-  if (loadFailed) return <CampusEnvironment />;
+  if (loadFailed) return null;
   if (!model) return null;
 
   return (
-    <group position={[0, -2.7, 0]}>
-      <gridHelper args={[130, 26, THEME.wire, THEME.wire]} position={[0, 0.02, 0]} />
+    <group position={[0, 0, 0]}>
       <primitive object={model} />
-      <CampusDecoration />
-      <CEBeacon x={CE.x} z={CE.z} />
     </group>
   );
 }
@@ -691,6 +693,13 @@ export function TurbineModel({
 
 // ─── Main Canvas ──────────────────────────────────────────────────────────────
 export function WindTurbine3D() {
+  // ═══════════════════════════════════════════════════════════════
+  // 调整以下参数来对齐 GLB 地形和风机位置（保存后页面自动刷新）
+  // ═══════════════════════════════════════════════════════════════
+  const glbPos: [number, number, number] = [0, -40, 0];       // GLB 地形 X, Y(上下), Z
+  const turbinePos: [number, number, number] = [14, 4, 11];  // 风机在场景中的 X, Y(高度), Z
+  const turbineScale = 1.5;                                   // 风机缩放
+
   return (
     <div className="h-full w-full bg-[#020617]">
       <Canvas
@@ -702,26 +711,23 @@ export function WindTurbine3D() {
         {/* Cinematic lighting */}
         <ambientLight intensity={0.12} />
         <directionalLight position={[0, 60, 0]} intensity={0.9} color="#00f0ff" />
-        <pointLight position={[15, 28, 10]} intensity={2.8} color="#06b6d4" />   {/* over CE / turbine */}
-        <pointLight position={[-25, 22, -20]} intensity={1.8} color="#3b82f6" /> {/* north / library */}
-        <pointLight position={[45, 18, -10]} intensity={1.4} color="#0ea5e9" /> {/* east coast */}
+        <pointLight position={[15, 28, 10]} intensity={2.8} color="#06b6d4" />
+        <pointLight position={[-25, 22, -20]} intensity={1.8} color="#3b82f6" />
+        <pointLight position={[45, 18, -10]} intensity={1.4} color="#0ea5e9" />
 
-        {/* Campus terrain (GLB or procedural fallback) */}
+        {/* GLB 校园地形 */}
         <Suspense fallback={null}>
-          <BlenderCampusModel />
+          <group position={glbPos}>
+            <BlenderCampusModel />
+          </group>
         </Suspense>
 
-        {/* Ascending data particle streams */}
+        {/* 数据粒子流 */}
         <DataStreams />
 
-        {/*
-          Wind Turbine — placed on the lawn directly in front of
-          Civil Engineering Building (CE at campus-local x=14, z=4)
-          Lawn south of CE south wall (z = 4 + 10/2 = 9) → turbine at z=11
-          scale=1.5 → internal y offset = -1.8×1.5 = -2.7 → base at world y=-2.7 (ground) ✓
-        */}
-        <group position={[14, 0, 11]}>
-          <TurbineModel scale={1.5} />
+        {/* 风机 — 调整 turbinePos 使其落在土木工程学院楼前草地上 */}
+        <group position={turbinePos}>
+          <TurbineModel scale={turbineScale} />
         </group>
 
         <OrbitControls
