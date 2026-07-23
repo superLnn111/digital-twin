@@ -2,43 +2,40 @@ import { DataCard } from "../components/DataCard";
 import { WindTurbine3D } from "../components/WindTurbine3D";
 import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const generateData = () => {
-  const now = Date.now();
-  return Array.from({ length: 20 }, (_, i) => {
-    const time = now - (20 - i) * 2000;
-    const d = new Date(time);
-    return {
-      id: `id-${time}`,
-      time: `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}:${d.getSeconds().toString().padStart(2, '0')}`,
-      acceleration: 0.5 + Math.random() * 2,
-    };
-  });
-};
+const WS_URL = "ws://8.138.129.114:3001";
 
 export function MainMonitor() {
-  const [data, setData] = useState(generateData());
-  const [currentAccel, setCurrentAccel] = useState(1.2);
+  const [data, setData] = useState<{ id: string; time: string; acceleration: number }[]>([]);
+  const [currentAccel, setCurrentAccel] = useState(0);
+  const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setData((prev) => {
-        const time = Date.now();
-        const d = new Date(time);
-        const newData = [
-          ...prev.slice(1), 
-          { 
-            id: `id-${time}`,
-            time: `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}:${d.getSeconds().toString().padStart(2, '0')}`, 
-            acceleration: 0.5 + Math.random() * 2 
-          }
-        ];
-        return newData;
-      });
-      setCurrentAccel(0.5 + Math.random() * 2);
-    }, 2000);
-    return () => clearInterval(interval);
+    const connect = () => {
+      const ws = new WebSocket(WS_URL);
+      wsRef.current = ws;
+
+      ws.onmessage = (event) => {
+        try {
+          const sensor = JSON.parse(event.data);
+          const accel = sensor.total ?? sensor.ax ?? 0;
+          const now = new Date();
+          const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+
+          setCurrentAccel(accel);
+          setData((prev) => {
+            const newData = [...prev, { id: `id-${Date.now()}`, time: timeStr, acceleration: accel }];
+            return newData.slice(-20);
+          });
+        } catch (e) { /* ignore */ }
+      };
+
+      ws.onclose = () => setTimeout(connect, 3000);
+    };
+
+    connect();
+    return () => wsRef.current?.close();
   }, []);
 
   return (
