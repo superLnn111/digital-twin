@@ -1,16 +1,20 @@
 import { DataCard } from "../components/DataCard";
 import { WindTurbine3D } from "../components/WindTurbine3D";
 import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge } from "lucide-react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { useEffect, useState, useRef } from "react";
 
 const WS_URL = "ws://8.138.129.114:3001";
 
-export function MainMonitor() {
-  const [data, setData] = useState<{ id: string; time: string; acceleration: number }[]>([]);
-  const [currentAccel, setCurrentAccel] = useState(0);
-  const wsRef = useRef<WebSocket | null>(null);
+// 珠海气象API — 免费无需密钥
+const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=22.2769&longitude=113.5678&current=wind_speed_10m&timezone=Asia/Shanghai";
 
+export function MainMonitor() {
+  const [accelList, setAccelList] = useState<number[]>([0, 0, 0, 0]);
+  const [windSpeed, setWindSpeed] = useState("12.4");
+  const wsRef = useRef<WebSocket | null>(null);
+  const accelIndex = useRef(0);
+
+  // WebSocket 加速度数据 — 轮流分给4台风机
   useEffect(() => {
     const connect = () => {
       const ws = new WebSocket(WS_URL);
@@ -20,13 +24,11 @@ export function MainMonitor() {
         try {
           const sensor = JSON.parse(event.data);
           const accel = sensor.total ?? sensor.ax ?? 0;
-          const now = new Date();
-          const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
-
-          setCurrentAccel(accel);
-          setData((prev) => {
-            const newData = [...prev, { id: `id-${Date.now()}`, time: timeStr, acceleration: accel }];
-            return newData.slice(-20);
+          setAccelList((prev) => {
+            const next = [...prev];
+            next[accelIndex.current] = accel;
+            accelIndex.current = (accelIndex.current + 1) % 4;
+            return next;
           });
         } catch (e) { /* ignore */ }
       };
@@ -37,6 +39,24 @@ export function MainMonitor() {
     connect();
     return () => wsRef.current?.close();
   }, []);
+
+  // 珠海气象风速 — 每5分钟刷新
+  useEffect(() => {
+    const fetchWind = () => {
+      fetch(WEATHER_URL)
+        .then((res) => res.json())
+        .then((json) => {
+          const speed = json?.current?.wind_speed_10m;
+          if (speed != null) setWindSpeed(speed.toFixed(1));
+        })
+        .catch(() => {});
+    };
+    fetchWind();
+    const interval = setInterval(fetchWind, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+ 
 
   return (
     <div className="relative h-[800px] w-full rounded-xl overflow-hidden bg-[#030614] border border-cyan-500/20 shadow-[0_0_40px_rgba(6,182,212,0.1)]">
@@ -63,14 +83,13 @@ export function MainMonitor() {
         {/* Parameters */}
         <div className="pointer-events-auto rounded-lg border border-cyan-500/30 bg-[#0a0e27]/70 backdrop-blur-md p-4 shadow-lg">
           <h2 className="mb-4 text-sm font-semibold text-cyan-400 flex items-center gap-2">
-            <Activity className="h-4 w-4" /> 实时参数矩阵
+            <Activity className="h-4 w-4" /> 实时参数
           </h2>
           <div className="space-y-3">
-            <DataCard label="风速" value="12.4" unit="m/s" icon={<Wind className="h-5 w-5" />} trend="up" />
+            <DataCard label="风速（珠海气象台）" value= {windSpeed} unit="m/s" icon={<Wind className="h-5 w-5" />} trend="up" />
             <DataCard label="发电量" value="1458" unit="kW" icon={<Zap className="h-5 w-5" />} trend="up" status="normal" />
             <DataCard label="温度" value="68.4" unit="°C" icon={<Thermometer className="h-5 w-5" />} trend="neutral" />
             <DataCard label="转速" value="12.5" unit="RPM" icon={<Gauge className="h-5 w-5" />} trend="up" />
-            <DataCard label="加速度" value={currentAccel.toFixed(2)} unit="m/s²" icon={<Activity className="h-5 w-5" />} trend="down" />
           </div>
         </div>
 
@@ -97,24 +116,20 @@ export function MainMonitor() {
         </div>
       </div>
 
-      {/* Right Panel - Charts & Controls */}
-      <div className="absolute right-4 top-4 w-80 flex flex-col gap-4 pointer-events-none z-10">
-        {/* Accel Chart */}
+      {/* Right Panel - 4台风机加速度 */}
+      <div className="absolute right-4 top-4 w-72 flex flex-col gap-4 pointer-events-none z-10">
         <div className="pointer-events-auto rounded-lg border border-cyan-500/30 bg-[#0a0e27]/70 backdrop-blur-md p-4 shadow-lg">
           <h3 className="mb-3 text-xs font-semibold text-cyan-400 flex items-center gap-2">
-            <Activity className="h-4 w-4" /> 振动加速度动态分析
+            <Activity className="h-4 w-4" /> 实时加速度 (m/s²)
           </h3>
-          <LineChart width={285} height={140} data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
-            <XAxis dataKey="time" stroke="#06b6d4" style={{ fontSize: 10 }} tick={{ fill: '#06b6d4' }} />
-            <YAxis stroke="#06b6d4" style={{ fontSize: 10 }} tick={{ fill: '#06b6d4' }} />
-            <Tooltip
-              contentStyle={{ backgroundColor: "rgba(10, 14, 39, 0.9)", border: "1px solid rgba(6, 182, 212, 0.4)", borderRadius: 4 }}
-              labelStyle={{ color: "#06b6d4" }}
-              itemStyle={{ color: "#38bdf8" }}
-            />
-            <Line type="monotone" dataKey="acceleration" stroke="#0ea5e9" strokeWidth={2} dot={false} isAnimationActive={false} />
-          </LineChart>
+          <div className="space-y-2">
+            {["WT-01", "WT-02", "WT-03", "WT-04"].map((label, i) => (
+              <div key={i} className="flex items-center justify-between rounded border border-cyan-500/20 bg-cyan-500/5 px-3 py-2">
+                <span className="text-xs text-cyan-400/70 font-mono">{label}</span>
+                <span className="text-lg font-bold text-cyan-300 font-mono">{accelList[i].toFixed(2)}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

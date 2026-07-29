@@ -691,14 +691,52 @@ export function TurbineModel({
   );
 }
 
+// ─── XYZ 坐标轴 (红X, 绿Y, 蓝Z) ────────────────────────────────────────
+function CoordinateAxes() {
+  const axisLength = 3;
+  const arrowHead = 0.3;
+
+  return (
+    <group position={[0, 0, 0]}>
+      {/* X轴 - 红色 */}
+      <mesh>
+        <cylinderGeometry args={[0.03, 0.03, axisLength, 8]} />
+        <meshBasicMaterial color="#ff4444" />
+      </mesh>
+      <mesh position={[axisLength / 2, 0, 0]} rotation={[0, 0, -Math.PI / 2]}>
+        <coneGeometry args={[arrowHead, 0.6, 8]} />
+        <meshBasicMaterial color="#ff4444" />
+      </mesh>
+      {/* Y轴 - 绿色 */}
+      <mesh rotation={[0, 0, 0]}>
+        <cylinderGeometry args={[0.03, 0.03, axisLength, 8]} />
+        <meshBasicMaterial color="#44ff44" />
+      </mesh>
+      <mesh position={[0, axisLength / 2, 0]}>
+        <coneGeometry args={[arrowHead, 0.6, 8]} />
+        <meshBasicMaterial color="#44ff44" />
+      </mesh>
+      {/* Z轴 - 蓝色 */}
+      <mesh rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[0.03, 0.03, axisLength, 8]} />
+        <meshBasicMaterial color="#4488ff" />
+      </mesh>
+      <mesh position={[0, 0, axisLength / 2]}>
+        <coneGeometry args={[arrowHead, 0.6, 8]} />
+        <meshBasicMaterial color="#4488ff" />
+      </mesh>
+    </group>
+  );
+}
+
 // ─── Main Canvas ──────────────────────────────────────────────────────────────
 export function WindTurbine3D() {
   // ═══════════════════════════════════════════════════════════════
   // 调整以下参数来对齐 GLB 地形和风机位置（保存后页面自动刷新）
   // ═══════════════════════════════════════════════════════════════
   const glbPos: [number, number, number] = [0, -40, 0];       // GLB 地形 X, Y(上下), Z
-  const turbinePos: [number, number, number] = [14, 4, 11];  // 风机在场景中的 X, Y(高度), Z
-  const turbineScale = 1.5;                                   // 风机缩放
+  const turbinePos: [number, number, number] = [-11, 3, 5];  // 风机在场景中的 X, Y(高度), Z
+  const turbineScale = 0.8;                                   // 风机缩放
 
   return (
     <div className="h-full w-full bg-[#020617]">
@@ -725,10 +763,20 @@ export function WindTurbine3D() {
         {/* 数据粒子流 */}
         <DataStreams />
 
-        {/* 风机 — 调整 turbinePos 使其落在土木工程学院楼前草地上 */}
-        <group position={turbinePos}>
-          <TurbineModel scale={turbineScale} />
-        </group>
+        {/* 4台风机 2x2矩阵 — 原风机 + X+方向 + Z+方向 + X+Z+方向 */}
+        {[
+          [turbinePos[0], turbinePos[1], turbinePos[2]],
+          [turbinePos[0] + 6, turbinePos[1], turbinePos[2]],
+          [turbinePos[0], turbinePos[1], turbinePos[2] + 6],
+          [turbinePos[0] + 6, turbinePos[1], turbinePos[2] + 6],
+        ].map((pos, i) => (
+          <group key={i} position={pos as [number, number, number]}>
+            <TurbineModel scale={turbineScale} />
+          </group>
+        ))}
+
+        {/* XYZ小型坐标轴 — 红X 绿Y 蓝Z */}
+        <CoordinateAxes />
 
         <OrbitControls
           enablePan={true}

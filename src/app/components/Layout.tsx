@@ -1,14 +1,24 @@
 import { Outlet, NavLink } from "react-router";
-import { Wind, Map, LineChart, Activity } from "lucide-react";
+import { Wind, LineChart, Activity } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Layout() {
   const navItems = [
     { path: "/", label: "主监测", icon: Wind },
-    { path: "/map", label: "地图视图", icon: Map },
     { path: "/simulation", label: "仿真分析", icon: LineChart },
     { path: "/data", label: "实时数据", icon: Activity },
   ];
 
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const fmt = (n: number) => n.toString().padStart(2, "0");
+  const timeStr = `${now.getFullYear()}-${fmt(now.getMonth() + 1)}-${fmt(now.getDate())} ${fmt(now.getHours())}:${fmt(now.getMinutes())}:${fmt(now.getSeconds())} (CST)`;
+  
   return (
     <div className="min-h-screen bg-[#0a0e27] text-white">
       {/* Header */}
@@ -26,7 +36,7 @@ export function Layout() {
           <div className="flex items-center gap-2 text-sm text-cyan-400">
             <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
             <span>系统运行正常</span>
-            <span className="ml-4 text-cyan-500/70">May 10, 2025, 22:00:14</span>
+            <span className="ml-4 text-cyan-500/70">{timeStr}</span>
           </div>
         </div>
       </header>
