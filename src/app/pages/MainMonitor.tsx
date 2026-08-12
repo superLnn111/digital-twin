@@ -1,17 +1,38 @@
 import { DataCard } from "../components/DataCard";
 import { WindTurbine3D } from "../components/WindTurbine3D";
-import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge } from "lucide-react";
+import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge, Brain } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 const WS_URL = "ws://8.138.129.114:3001";
 
+const AI_WS_URL = "ws://8.138.129.114:8000/ws";       // ← 新增：AI 诊断 WebSocket 地址·····改成服务器ip
+
 // 珠海气象API — 免费无需密钥
 const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=22.2769&longitude=113.5678&current=wind_speed_10m&timezone=Asia/Shanghai";
+
+// ← 新增：AI 预警数据的 TypeScript 类型定义
+interface AIAlert {
+  time: string;
+  class: number;
+  confidence: number;
+  status: string;
+  sensor_data: string;
+  class_name?: string;   // ← 新增
+}
+
+const CLASS_LABELS: Record<number, string> = {
+  0: "叶片裂纹",
+  1: "正常",
+  2: "异物/挂冰",
+  3: "轴承故障",
+};
 
 export function MainMonitor() {
   const [accelList, setAccelList] = useState<number[]>([0, 0, 0, 0]);
   const [windSpeed, setWindSpeed] = useState("12.4");
+  const [aiAlerts, setAiAlerts] = useState<AIAlert[]>([]);   // ← 新增：AI 预警列表
   const wsRef = useRef<WebSocket | null>(null);
+  const aiWsRef = useRef<WebSocket | null>(null);             // ← 新增：AI WebSocket 引用
   const accelIndex = useRef(0);
 
   // WebSocket 加速度数据 — 轮流分给4台风机
@@ -38,6 +59,28 @@ export function MainMonitor() {
 
     connect();
     return () => wsRef.current?.close();
+  }, []);
+
+  // AI 诊断 WebSocket — 接收实时诊断预警
+  useEffect(() => {
+    const connectAI = () => {
+      const ws = new WebSocket(AI_WS_URL);
+      aiWsRef.current = ws;
+
+      ws.onmessage = (event) => {
+        try {
+          const result: AIAlert = JSON.parse(event.data);
+          if (result.status === "异常") {
+            setAiAlerts((prev) => [result, ...prev].slice(0, 5));
+          }
+        } catch (e) { /* ignore */ }
+      };
+
+      ws.onclose = () => setTimeout(connectAI, 3000);
+    };
+
+    connectAI();
+    return () => aiWsRef.current?.close();
   }, []);
 
   // 珠海气象风速 — 每5分钟刷新
@@ -93,25 +136,34 @@ export function MainMonitor() {
           </div>
         </div>
 
-        {/* Alerts */}
+        {/* AI 智能诊断预警 */}
         <div className="pointer-events-auto rounded-lg border border-red-500/30 bg-red-950/40 backdrop-blur-md p-4 shadow-lg">
           <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-red-400">
-            <AlertTriangle className="h-4 w-4 animate-pulse" />
-            <span>智能诊断预警</span>
+            <Brain className="h-4 w-4 animate-pulse" />
+            <span>DANN 智能诊断预警</span>
           </div>
-          <div className="space-y-2">
-            <div className="rounded border border-red-500/40 bg-red-500/10 p-2 text-xs relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500"></div>
-              <div className="pl-2 font-mono font-semibold text-red-400">ERR_GEARBOX_TEMP</div>
-              <div className="pl-2 text-red-300">齿轮箱温度过高: 92°C</div>
-              <div className="pl-2 mt-1 text-red-400/60">建议立即降载检修</div>
-            </div>
-            <div className="rounded border border-yellow-500/40 bg-yellow-500/10 p-2 text-xs relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-yellow-500"></div>
-              <div className="pl-2 font-mono font-semibold text-yellow-400">WARN_MAIN_SHAFT</div>
-              <div className="pl-2 text-yellow-300">主轴承振动值偏高</div>
-              <div className="pl-2 mt-1 text-yellow-400/60">系统持续监控中</div>
-            </div>
+          <div className="space-y-2 max-h-[200px] overflow-auto">
+            {aiAlerts.length === 0 ? (
+              <div className="rounded border border-green-500/40 bg-green-500/10 p-2 text-xs relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-500"></div>
+                <div className="pl-2 font-mono font-semibold text-green-400">STATUS_OK</div>
+                <div className="pl-2 text-green-300">AI 模型未检测到异常</div>
+                <div className="pl-2 mt-1 text-green-400/60">神经网络持续监控中</div>
+              </div>
+            ) : (
+              aiAlerts.map((alert, i) => (
+                <div key={i} className="rounded border border-red-500/40 bg-red-500/10 p-2 text-xs relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500"></div>
+                  <div className="pl-2 font-mono font-semibold text-red-400">
+                    AI_ALERT_{CLASS_LABELS[alert.class]?.replace(/[^\u4e00-\u9fa5]/g, "") || "UNKNOWN"}
+                  </div>
+                  <div className="pl-2 text-red-300">
+                    {CLASS_LABELS[alert.class] || "未知故障"} (置信度: {(alert.confidence * 100).toFixed(1)}%)
+                  </div>
+                  <div className="pl-2 mt-1 text-red-400/60">{alert.time}</div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

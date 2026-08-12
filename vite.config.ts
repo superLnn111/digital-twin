@@ -19,18 +19,19 @@ function figmaAssetResolver() {
 export default defineConfig({
   plugins: [
     figmaAssetResolver(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
   resolve: {
-    alias: {
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
+    alias: { '@': path.resolve(__dirname, './src') },
+  },
+  server: {                              // ← 新增 server 配置块
+    proxy: {
+      '/ws': {                           // 拦截所有 /ws 开头的请求
+        target: 'ws://localhost:8000',   // 转发到 Python 后端
+        ws: true,                        // 支持 WebSocket 协议升级
+      },
     },
   },
-
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })

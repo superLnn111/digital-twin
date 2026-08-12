@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from "react-router";
-import { Wind, LineChart, Activity } from "lucide-react";
+import { Wind, LineChart, Activity , Brain} from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function Layout() {
@@ -7,6 +7,7 @@ export function Layout() {
     { path: "/", label: "主监测", icon: Wind },
     { path: "/simulation", label: "仿真分析", icon: LineChart },
     { path: "/data", label: "实时数据", icon: Activity },
+    { path: "/ai", label: "AI诊断", icon: Brain },               // ← 新增导航项
   ];
 
   const [now, setNow] = useState(new Date());
