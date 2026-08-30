@@ -1,13 +1,14 @@
 import { Outlet, NavLink } from "react-router";
 import { Wind, LineChart, Activity , Brain} from "lucide-react";
 import { useEffect, useState } from "react";
+import { DiagnosisProvider } from "../context/DiagnosisContext";
 
 export function Layout() {
   const navItems = [
     { path: "/", label: "主监测", icon: Wind },
     { path: "/simulation", label: "仿真分析", icon: LineChart },
     { path: "/data", label: "实时数据", icon: Activity },
-    { path: "/ai", label: "AI诊断", icon: Brain },               // ← 新增导航项
+    { path: "/ai", label: "智能诊断", icon: Brain },               // ← 新增导航项
   ];
 
   const [now, setNow] = useState(new Date());
@@ -67,7 +68,9 @@ export function Layout() {
 
       {/* Main Content */}
       <main className="container mx-auto p-6">
-        <Outlet />
+          <DiagnosisProvider>
+            <Outlet />
+          </DiagnosisProvider>
       </main>
     </div>
   );

@@ -521,19 +521,17 @@ function BlenderCampusModel() {
           if ((child as THREE.Mesh).isMesh) {
             const mesh = child as THREE.Mesh;
             mesh.material = new THREE.MeshStandardMaterial({
-              color: THEME.glass, transparent: true,
-              opacity: 0.13, roughness: 0.1, metalness: 0.95, side: THREE.DoubleSide,
+              color: "#e8e8e8",
+              roughness: 0.65,
+              metalness: 0.05,
+              side: THREE.DoubleSide,
             });
-            mesh.add(new THREE.LineSegments(
-              new THREE.EdgesGeometry(mesh.geometry, 15),
-              new THREE.LineBasicMaterial({ color: THEME.wire, transparent: true, opacity: 0.8 })
-            ));
           }
         });
         setModel(gltf.scene);
       },
       undefined,
-      (err) => { console.warn("campus.glb not found, using procedural fallback.", err); setLoadFailed(true); }
+      (err) => { console.warn("campus.glb not found.", err); setLoadFailed(true); }
     );
   }, []);
 
@@ -592,10 +590,42 @@ function CampusEnvironment() {
   );
 }
 
+function BladeDamageMarker({ bladeAngle, defectType }: { bladeAngle: number; defectType: string }) {
+  const pulseRef = useRef<THREE.Mesh>(null);
+  const ringRef = useRef<THREE.Mesh>(null);
+
+  useFrame(({ clock }) => {
+    const t = clock.elapsedTime;
+    const s = 1 + Math.sin(t * 3) * 0.3;
+    if (pulseRef.current) pulseRef.current.scale.setScalar(s);
+    if (ringRef.current) {
+      const rs = 1 + Math.sin(t * 2.5) * 0.5;
+      ringRef.current.scale.setScalar(rs);
+      (ringRef.current.material as THREE.MeshBasicMaterial).opacity = 0.5 - Math.sin(t * 2.5) * 0.3;
+    }
+  });
+
+  return (
+    <group rotation={[0, 0, bladeAngle]}>
+      <mesh ref={pulseRef} position={[0, 1.2, 0]}>
+        <sphereGeometry args={[0.12, 16, 16]} />
+        <meshBasicMaterial color="#ff3333" transparent opacity={0.9} />
+      </mesh>
+      <mesh ref={ringRef} position={[0, 1.2, 0]}>
+        <ringGeometry args={[0.18, 0.25, 32]} />
+        <meshBasicMaterial color="#ff4444" transparent opacity={0.5} side={THREE.DoubleSide} />
+      </mesh>
+      <pointLight position={[0, 1.2, 0]} intensity={2} color="#ff3333" distance={4} />
+    </group>
+  );
+}
+
+
 // ─── Wind Turbine Model (exported for other views) ────────────────────────────
 export function TurbineModel({
   status = "normal", scale = 1,
-}: { status?: "normal"|"warning"|"danger"; scale?: number }) {
+  defect,
+}: { status?: "normal"|"warning"|"danger"; scale?: number; defect?: { bladeIndex: number; type: string } | null }) {
   const rotorRef = useRef<THREE.Group>(null);
   const shaftRef = useRef<THREE.Group>(null);
 
@@ -675,14 +705,17 @@ export function TurbineModel({
             <group key={i} rotation={[0, 0, angle]}>
               <mesh position={[0, 0.2, 0]}>
                 <cylinderGeometry args={[0.06, 0.06, 0.15, 12]} />
-                <meshStandardMaterial color={THEME.accentGreen} emissive={THEME.accentGreen} emissiveIntensity={0.6} transparent opacity={0.8} />
-                <Edges color="#6ee7b7" />
+                <meshStandardMaterial color={defect && defect.bladeIndex === i ? "#ff3333" : THEME.accentGreen} emissive={defect && defect.bladeIndex === i ? "#ff3333" : THEME.accentGreen} emissiveIntensity={0.6} transparent opacity={0.8} />
+                <Edges color={defect && defect.bladeIndex === i ? "#ff6666" : "#6ee7b7"} />
               </mesh>
               <mesh position={[0, 1.4, 0]}>
                 <boxGeometry args={[0.15, 2.4, 0.04]} />
-                <meshStandardMaterial color={glassColor} transparent opacity={0.1} roughness={0.4} metalness={0.8} />
-                <Edges scale={1} threshold={15} color={edgeColor} />
+                <meshStandardMaterial color={defect && defect.bladeIndex === i ? "#3b0000" : glassColor} transparent opacity={0.1} roughness={0.4} metalness={0.8} />
+                <Edges scale={1} threshold={15} color={defect && defect.bladeIndex === i ? "#ff4444" : edgeColor} />
               </mesh>
+              {defect && defect.bladeIndex === i && (
+                <BladeDamageMarker bladeAngle={0} defectType={defect.type} />
+              )}
             </group>
           ))}
         </group>
@@ -730,7 +763,7 @@ function CoordinateAxes() {
 }
 
 // ─── Main Canvas ──────────────────────────────────────────────────────────────
-export function WindTurbine3D() {
+export function WindTurbine3D({ defectMap }: { defectMap?: Record<number, { bladeIndex: number; type: string }> }) {
   // ═══════════════════════════════════════════════════════════════
   // 调整以下参数来对齐 GLB 地形和风机位置（保存后页面自动刷新）
   // ═══════════════════════════════════════════════════════════════
@@ -771,7 +804,7 @@ export function WindTurbine3D() {
           [turbinePos[0] + 6, turbinePos[1], turbinePos[2] + 6],
         ].map((pos, i) => (
           <group key={i} position={pos as [number, number, number]}>
-            <TurbineModel scale={turbineScale} />
+            <TurbineModel scale={turbineScale} defect={defectMap?.[i] ?? null} />
           </group>
         ))}
 

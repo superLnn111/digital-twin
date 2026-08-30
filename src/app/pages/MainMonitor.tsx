@@ -1,5 +1,6 @@
 import { DataCard } from "../components/DataCard";
-import { WindTurbine3D } from "../components/WindTurbine3D";
+import { Suspense, lazy } from "react";
+const WindTurbine3D = lazy(() => import("../components/WindTurbine3D").then(m => ({ default: m.WindTurbine3D })));
 import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge, Brain } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
@@ -31,6 +32,7 @@ export function MainMonitor() {
   const [accelList, setAccelList] = useState<number[]>([0, 0, 0, 0]);
   const [windSpeed, setWindSpeed] = useState("12.4");
   const [aiAlerts, setAiAlerts] = useState<AIAlert[]>([]);   // ← 新增：AI 预警列表
+  const [defectMap, setDefectMap] = useState<Record<number, { bladeIndex: number; type: string }>>({});
   const wsRef = useRef<WebSocket | null>(null);
   const aiWsRef = useRef<WebSocket | null>(null);             // ← 新增：AI WebSocket 引用
   const accelIndex = useRef(0);
@@ -72,6 +74,12 @@ export function MainMonitor() {
           const result: AIAlert = JSON.parse(event.data);
           if (result.status === "异常") {
             setAiAlerts((prev) => [result, ...prev].slice(0, 5));
+            setDefectMap((prev) => ({
+              ...prev,
+              [result.class % 4]: { bladeIndex: result.class % 3, type: CLASS_LABELS[result.class] || "未知" },
+            }));
+          } else {
+            setDefectMap({});
           }
         } catch (e) { /* ignore */ }
       };
@@ -104,9 +112,18 @@ export function MainMonitor() {
   return (
     <div className="relative h-[800px] w-full rounded-xl overflow-hidden bg-[#030614] border border-cyan-500/20 shadow-[0_0_40px_rgba(6,182,212,0.1)]">
       {/* Center 3D Model (Full Background) */}
-      <div className="absolute inset-0">
-        <WindTurbine3D />
+<div className="absolute inset-0">
+  <Suspense fallback={
+    <div className="flex items-center justify-center h-full bg-[#020617]">
+      <div className="flex flex-col items-center gap-4">
+        <div className="h-12 w-12 animate-spin rounded-full border-2 border-cyan-500 border-t-transparent" />
+        <span className="text-cyan-400 text-sm font-mono">加载 3D 场景...</span>
       </div>
+    </div>
+  }>
+    <WindTurbine3D defectMap={defectMap} />
+  </Suspense>
+</div>
 
       {/* Top Header Overlay */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 pointer-events-none">
