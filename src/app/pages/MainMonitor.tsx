@@ -4,7 +4,7 @@ const WindTurbine3D = lazy(() => import("../components/WindTurbine3D").then(m =>
 import { Activity, Wind, Zap, Thermometer, AlertTriangle, Gauge, Brain } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
-const WS_URL = "ws://8.138.129.114:3001";
+const WS_URL = "ws://8.138.129.114/api/v1/live?gateway_id=gateway-01";
 
 const AI_WS_URL = "ws://8.138.129.114:8000/ws";       // ← 新增：AI 诊断 WebSocket 地址·····改成服务器ip
 
@@ -45,14 +45,17 @@ export function MainMonitor() {
 
       ws.onmessage = (event) => {
         try {
-          const sensor = JSON.parse(event.data);
-          const accel = sensor.total ?? sensor.ax ?? 0;
-          setAccelList((prev) => {
-            const next = [...prev];
-            next[accelIndex.current] = accel;
-            accelIndex.current = (accelIndex.current + 1) % 4;
-            return next;
-          });
+          const msg = JSON.parse(event.data);
+          if (msg.type !== "sensor_sample_batch" || !msg.data?.length) return;
+          const samples = msg.data;
+          const newAccelList = [0, 0, 0, 0];
+          for (let i = 0; i < Math.min(samples.length, 4); i++) {
+            const acc = samples[i]?.physical?.acceleration_m_s2;
+            if (acc) {
+              newAccelList[i] = Math.sqrt(acc.x ** 2 + acc.y ** 2 + acc.z ** 2);
+            }
+          }
+          setAccelList(newAccelList);
         } catch (e) { /* ignore */ }
       };
 
