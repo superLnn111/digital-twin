@@ -1,3 +1,5 @@
+//路由配置，定义所有页面路由。所有页面共用 <Layout /> 外壳，子路由通过 <Outlet /> 渲染：
+
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 import { MainMonitor } from "./pages/MainMonitor";

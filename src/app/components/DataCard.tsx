@@ -1,3 +1,7 @@
+//可复用的数据展示小组件，
+//接收 label（标签）、value（数值）、unit（单位）、
+// icon（图标）、trend（涨跌趋势）、status（normal/warning/danger 状态色）
+
 import { ReactNode } from "react";
 
 interface DataCardProps {

@@ -1,3 +1,5 @@
+/* 样式聚合入口，依次引入 fonts.css → tailwind.css → theme.css，然后设置 html/body/#root 全屏 */
+
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
