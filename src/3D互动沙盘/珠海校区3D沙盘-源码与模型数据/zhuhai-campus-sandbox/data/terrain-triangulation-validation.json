@@ -1,0 +1,227 @@
+{
+  "valid": true,
+  "coordinateSystem": {
+    "width": 1960,
+    "height": 1248,
+    "unit": "source map pixel",
+    "origin": "top-left"
+  },
+  "gridSpacingPx": 5,
+  "boardRing": [
+    [
+      930,
+      5
+    ],
+    [
+      1039,
+      5
+    ],
+    [
+      1104,
+      71
+    ],
+    [
+      1103,
+      133
+    ],
+    [
+      1070,
+      178
+    ],
+    [
+      1042,
+      209
+    ],
+    [
+      1087,
+      207
+    ],
+    [
+      1083,
+      240
+    ],
+    [
+      1119,
+      282
+    ],
+    [
+      1205,
+      285
+    ],
+    [
+      1368,
+      448
+    ],
+    [
+      1356,
+      477
+    ],
+    [
+      1365,
+      500
+    ],
+    [
+      1497,
+      551
+    ],
+    [
+      1761,
+      710
+    ],
+    [
+      1850,
+      730
+    ],
+    [
+      1960,
+      780
+    ],
+    [
+      1960,
+      1248
+    ],
+    [
+      1600,
+      1248
+    ],
+    [
+      1580,
+      1143
+    ],
+    [
+      1497,
+      1147
+    ],
+    [
+      1350,
+      1120
+    ],
+    [
+      1238,
+      1077
+    ],
+    [
+      1145,
+      909
+    ],
+    [
+      1142,
+      865
+    ],
+    [
+      1064,
+      865
+    ],
+    [
+      1064,
+      775
+    ],
+    [
+      1104,
+      775
+    ],
+    [
+      1020,
+      691
+    ],
+    [
+      950,
+      824
+    ],
+    [
+      817,
+      775
+    ],
+    [
+      767,
+      870
+    ],
+    [
+      725,
+      878
+    ],
+    [
+      631,
+      822
+    ],
+    [
+      532,
+      815
+    ],
+    [
+      277,
+      865
+    ],
+    [
+      53,
+      577
+    ],
+    [
+      99,
+      523
+    ],
+    [
+      226,
+      473
+    ],
+    [
+      344,
+      349
+    ],
+    [
+      344,
+      215
+    ],
+    [
+      510,
+      90
+    ],
+    [
+      676,
+      101
+    ],
+    [
+      788,
+      153
+    ],
+    [
+      868,
+      128
+    ],
+    [
+      917,
+      128
+    ],
+    [
+      887,
+      80
+    ]
+  ],
+  "boardAreaPx2": 1139964.5,
+  "boundarySource": "campus-revisions.json:boardRing",
+  "testSiteBBoxFullyCovered": true,
+  "vertices": 47763,
+  "triangles": 93286,
+  "fullyInteriorGridTriangles": 89958,
+  "boundarySourceFragments": 2299,
+  "boundaryVertices": 2238,
+  "coveredSourceTrianglesSplitForBoundaryConformity": 4,
+  "winding": "negative algebraic XY signed area (clockwise); +Y normal for X=px-CX,Z=py-CZ",
+  "allFlatNormalsPositiveY": true,
+  "minimumFlatNormalYCrossProduct": 0.00013329778725640573,
+  "vertexDeduplicationTolerancePx": 0.0001,
+  "storedCoordinates": "original double precision, not rounded to the dedup key",
+  "triangleOutsideAreaTotalPx2": 8.593283318022931e-12,
+  "triangleOutsideAreaMaxPx2": 3.494982081519993e-13,
+  "meshUnionAreaPx2": 1139964.5000000012,
+  "meshSymmetricDifferenceAreaPx2": 0.0,
+  "triangleOverlapAreaPx2": -1.1641532182693481e-09,
+  "holesInUnion": 0,
+  "unionGeometryType": "Polygon",
+  "maxBoundaryDistanceFromExactRingPx": 1.1765944520246785e-13,
+  "boundaryRingAreaDifferencePx2": 0.0,
+  "interiorEdgesAllSharedByTwoTriangles": true,
+  "singleOrderedBoundary": true,
+  "discardedSubtoleranceTriangleAreaPx2": 0.0,
+  "runtimeSeconds": 6.436
+}

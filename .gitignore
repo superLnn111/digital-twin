@@ -6,3 +6,7 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# 非代码/内部文件，不进公共仓库
+.dsh-acl-recovery/
+report-ppt/

@@ -1,0 +1,376 @@
+{
+  "version": "3.0",
+  "errors": [],
+  "externalRequests": [],
+  "checks": {
+    "ready": true,
+    "version": "3.0",
+    "footprints": 94,
+    "landmarks": 47,
+    "restoredWest": true,
+    "removedEast": true,
+    "parking": {
+      "id": "east-parking",
+      "center": {
+        "cx": 1332,
+        "cy": 787,
+        "bbox": [
+          1300,
+          764,
+          1364,
+          811
+        ],
+        "outer": [
+          [
+            1300,
+            764
+          ],
+          [
+            1364,
+            764
+          ],
+          [
+            1364,
+            811
+          ],
+          [
+            1300,
+            811
+          ]
+        ],
+        "entrances": [
+          [
+            [
+              1332,
+              764
+            ],
+            [
+              1332,
+              753
+            ]
+          ],
+          [
+            [
+              1364,
+              788
+            ],
+            [
+              1376,
+              788
+            ]
+          ]
+        ]
+      },
+      "bogusWest": false
+    },
+    "crossing": {
+      "band": {
+        "y0": 730,
+        "y1": 748,
+        "clearHeight": 6.4
+      },
+      "lowRay": 0,
+      "upperRay": 1,
+      "formerGapClosed": true,
+      "artificialRoadRemoved": true,
+      "onlyAllowedBand": true
+    },
+    "roads": {
+      "count": 21,
+      "samples": 141,
+      "maxGround": 2,
+      "validation": {
+        "routes": 21,
+        "corePolygons": 1,
+        "edgePolygons": 19,
+        "coreVertices": 698,
+        "outsideBoardAreaPx2": 0,
+        "waterOverlapAreaPx2": 0,
+        "fieldOverlapAreaPx2": 0,
+        "parkingOverlapAreaPx2": 0,
+        "activeBuildingOverlapAreaPx2": 0,
+        "spineRoadBounds": [
+          1268.5,
+          734.935049309604,
+          1287.6906730475969,
+          742.0662956056296
+        ],
+        "spineRoadOutsideSingleAllowedBandAreaPx2": 0,
+        "routeChecks": [
+          {
+            "id": "arterial-west-north",
+            "lengthPx": 521.16,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "arterial-west-south",
+            "lengthPx": 476.01,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "arterial-east",
+            "lengthPx": 342.17,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "median-link-1",
+            "lengthPx": 36.02,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "median-link-2",
+            "lengthPx": 35.54,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "median-link-3",
+            "lengthPx": 34.58,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "median-link-4",
+            "lengthPx": 33.91,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "median-link-5",
+            "lengthPx": 33.24,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "rongyuan-boya-valley",
+            "lengthPx": 429.65,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "qin-lake-access",
+            "lengthPx": 204.79,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "qin-lake-east-loop",
+            "lengthPx": 130,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "west-south-ring",
+            "lengthPx": 1231.71,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "concert-hall-link",
+            "lengthPx": 122.1,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "spine-existing-crossing",
+            "lengthPx": 179.04,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "sports-side-link",
+            "lengthPx": 114.6,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "haiqin-west-road",
+            "lengthPx": 446.49,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "haiqin-east-road",
+            "lengthPx": 551.57,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "south-perimeter",
+            "lengthPx": 429.25,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "parking-north-access",
+            "lengthPx": 17.9,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "parking-east-access",
+            "lengthPx": 12,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          },
+          {
+            "id": "test-site-access",
+            "lengthPx": 11,
+            "waterCenterlineLengthPx": 0,
+            "buildingCenterlineLengthPx": 0,
+            "fieldCenterlineLengthPx": 0,
+            "parkingCenterlineLengthPx": 0,
+            "exteriorCenterlineLengthPx": 0,
+            "testSiteCenterlineLengthPx": 0
+          }
+        ],
+        "singleConnectedCore": true,
+        "signedDistanceVerifiedAgainstShapelyQueries": 1007,
+        "signedDistanceMaxAbsoluteErrorPx": 2.842170943040401e-14,
+        "example50000DistanceQueriesMs": 672.3428,
+        "threeJSGeometryBuildVerified": true
+      }
+    },
+    "valley": {
+      "exists": true,
+      "points": 22,
+      "first": [
+        915.5,
+        535
+      ],
+      "last": [
+        1047,
+        135
+      ],
+      "allCenterlineOnRoad": true,
+      "maxGround": 2
+    },
+    "southernSummit": {
+      "center": [
+        470,
+        700
+      ],
+      "height": 282,
+      "highestOther": 138.00582420709003,
+      "highestAll": 282,
+      "observatory": {
+        "cx": 457,
+        "cy": 700,
+        "plateauCx": 470,
+        "plateauCy": 700,
+        "halfWidth": 57,
+        "halfDepth": 41,
+        "blend": 55
+      }
+    },
+    "turbines": {
+      "count": 4,
+      "angles": [
+        0.7143139999951421,
+        1.633317999994606,
+        2.634811999995411,
+        1.2038159999948739
+      ],
+      "independent": true,
+      "allOperating": true
+    },
+    "retained": {
+      "middleFloors": 3,
+      "treesInTrack": 0,
+      "stairsWallIntersections": 0
+    },
+    "stats": {
+      "calls": 594,
+      "triangles": 731163,
+      "footprints": 94
+    },
+    "windSearch": 1,
+    "windSelected": true,
+    "night": true,
+    "tour": true
+  }
+}

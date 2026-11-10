@@ -1,0 +1,47 @@
+{
+  "errors": [],
+  "externalRequests": [],
+  "checks": {
+    "boot": {
+      "footprints": 102,
+      "triangles": 667637,
+      "trees": 3385,
+      "landmarks": 44,
+      "labels": 13
+    },
+    "orbit": true,
+    "wheelZoom": true,
+    "pan": true,
+    "search": 6,
+    "selectedName": "海琴4号",
+    "plannedHidden": true,
+    "hiddenSearchReveals": true,
+    "existingLake": "水面保留 · 景观提升规划（参考图）",
+    "lakeDoesNotEnablePlanning": true,
+    "buildingsHide": true,
+    "treesHide": true,
+    "labelsHide": true,
+    "night": {
+      "body": true,
+      "table": "192f3c",
+      "windowEmissive": 2.1
+    },
+    "topView": true,
+    "autoOrbit": true,
+    "tourStart": true,
+    "tourStop": true,
+    "referenceImages": true,
+    "referenceZoom": true,
+    "sources": 3,
+    "desktopOverflow": true,
+    "mobile": {
+      "width": 390,
+      "scroll": 390,
+      "barRight": 360.5,
+      "aboutVisible": true,
+      "frustum": 1700
+    },
+    "mobileSelect": true,
+    "pinch": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "buildings": 102,
+  "holes": 36,
+  "vertices": 6121,
+  "minimumHoleVertexDistanceToOuterPx": 0.2,
+  "issues": [],
+  "bboxWithinMap": true
+}

@@ -1,0 +1,7 @@
+const fs=require('fs'),vm=require('vm'),path=require('path');const root=__dirname,read=f=>fs.readFileSync(path.join(root,f),'utf8'),json=f=>JSON.parse(read(f));
+const fp=json('data/building-footprints.json'),lm=json('reference/landmarks.json'),revisions=json('data/campus-revisions.json');require('./apply-revisions.cjs')(lm,fp,revisions);
+const data={footprints:fp,landmarks:lm.landmarks,revisions,forest:json('assets/forest-mask.json'),roadDesign:json('data/road-design.json')};
+const ctx=vm.createContext({THREE:{},document:{getElementById:()=>({textContent:JSON.stringify(data)}),querySelectorAll:()=>[]}});
+vm.runInContext(read('utils.js')+'\n'+read('campus-road-design.js')+'\n'+read('campus-roads.js'),ctx);
+const result=vm.runInContext(`(()=>{let p=DATA.revisions.southPeak,maxOther=0,maxAll=0,where=null,maxOtherWhere=null;for(let y=20;y<1248;y+=5)for(let x=20;x<1960;x+=5){if(!pointInRing(x,y,BOARD_RING))continue;let h=terrainHeight(x,y);if(h>maxAll){maxAll=h;where=[x,y]}if(((x-p.cx)/p.rx)**2+((y-p.cy)/p.ry)**2>1.1&&h>maxOther){maxOther=h;maxOtherWhere=[x,y]}}let top=terrainHeight(p.cx,p.cy);return {top,maxOther,maxOtherWhere,maxAll,where,relativeRise:top/maxOther,profileX:[-180,-120,-80,-40,0,40,80,120,180].map(dx=>[p.cx+dx,terrainHeight(p.cx+dx,p.cy)]),profileY:[-160,-120,-80,-40,0,40,80,120,160].map(dy=>[p.cy+dy,terrainHeight(p.cx,p.cy+dy)])}})()`,ctx);
+console.log(JSON.stringify(result));

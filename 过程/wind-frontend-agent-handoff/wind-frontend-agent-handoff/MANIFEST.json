@@ -1,0 +1,524 @@
+{
+  "package": "wind-frontend-agent-handoff",
+  "source_repo": "/srv/xsy-agent-share/wind-monitoring",
+  "default_local_api": "http://127.0.0.1:8101/wind-v2",
+  "default_dev_read_token": "wind-dev-token",
+  "file_count": 103,
+  "files": [
+    {
+      "path": "00_给Agent_先读我.md",
+      "size_bytes": 12176,
+      "sha256": "1a9acfd2ab6f918cd76d549c5d91b32553bbf488ca564e00dd9489091c5bb1f0"
+    },
+    {
+      "path": "AGENTS.md",
+      "size_bytes": 12176,
+      "sha256": "1a9acfd2ab6f918cd76d549c5d91b32553bbf488ca564e00dd9489091c5bb1f0"
+    },
+    {
+      "path": "contracts/api-contract.md",
+      "size_bytes": 8795,
+      "sha256": "5139111b2bfa61206f26f318f031da07e9322be116e1f581ca615c244cc1ec07"
+    },
+    {
+      "path": "contracts/frontend-cleanroom-spec.md",
+      "size_bytes": 8349,
+      "sha256": "cbe96006262134597e75ae9e1295bd569091ca56f285068fa4635ccfa2d25438"
+    },
+    {
+      "path": "contracts/nginx-wind-monitoring.conf",
+      "size_bytes": 927,
+      "sha256": "9db11bd089677aeb2c67aef41818c2072a3476e914af3a56e7610459b0d808e0"
+    },
+    {
+      "path": "contracts/openapi.json",
+      "size_bytes": 8964,
+      "sha256": "9408a4256a5e9649eada6da76775ae15bb599753ec23c51c6e0201b53422fd6c"
+    },
+    {
+      "path": "contracts/principles.md",
+      "size_bytes": 8147,
+      "sha256": "c893d8e5fc2ae6470617f4e6d305268cab79f3e3901de5cb41750ee2db91baed"
+    },
+    {
+      "path": "contracts/storage-and-architecture.md",
+      "size_bytes": 11148,
+      "sha256": "27fe0914d36721339bd8dfa213b24c02412233e4a7a77a94155d7756ade93c6e"
+    },
+    {
+      "path": "contracts/wire-examples.json",
+      "size_bytes": 6724,
+      "sha256": "119d6257ffabff5d0505ed76249cedeb43ce9635bd6a9a69e6cad65ed31f70cb"
+    },
+    {
+      "path": "local-backend/cloud/pyproject.toml",
+      "size_bytes": 337,
+      "sha256": "e5386cf5753c5178d9f5ef6bd25be6a38ed14f13f1b9212356e7b525363004de"
+    },
+    {
+      "path": "local-backend/cloud/src/wind_cloud/__init__.py",
+      "size_bytes": 82,
+      "sha256": "cec6a4d3f9d55743dde2ea6b63c4e4fbb0f6889982944467cff02a02b8cb23c0"
+    },
+    {
+      "path": "local-backend/cloud/src/wind_cloud/app.py",
+      "size_bytes": 7402,
+      "sha256": "803b23930d0e160e411e1c24485c5796992c3f24680150b7d952fde92cdd31e6"
+    },
+    {
+      "path": "local-backend/cloud/src/wind_cloud/store.py",
+      "size_bytes": 7403,
+      "sha256": "6d33e103d957ff3e0b8d059043aa5f3aba02ff621592c638d6155b820f0f424e"
+    },
+    {
+      "path": "local-backend/proto/pyproject.toml",
+      "size_bytes": 310,
+      "sha256": "8894933d2412a71cd990b2648172d79c206077e804724c4b9afdfc8418641512"
+    },
+    {
+      "path": "local-backend/proto/src/wind_proto/__init__.py",
+      "size_bytes": 466,
+      "sha256": "bc36b5342b6471a61cfe963ac7a0017e9b9229b432f353789b8c9a6876b63f63"
+    },
+    {
+      "path": "local-backend/proto/src/wind_proto/imu.py",
+      "size_bytes": 3619,
+      "sha256": "38a6286a0a226210457a84a1028e63d48da0378049ecd2090d252e60dcbb986e"
+    },
+    {
+      "path": "local-backend/proto/src/wind_proto/segment.py",
+      "size_bytes": 7512,
+      "sha256": "03c9faaf4aa9ef5f877709407525b840d0ad2029f0f01f8f7d7c37dfa493f2db"
+    },
+    {
+      "path": "local-backend/proto/tests/test_contract.py",
+      "size_bytes": 6652,
+      "sha256": "666d7ffbb5fdf29476f536f17c48949467d0515b1c92e4fbe984fb55c741df5d"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if00-seg0-e1688730d2df.wind.zst",
+      "size_bytes": 919,
+      "sha256": "e1688730d2df2eea9349238bcd441bc8f7b088d862d843f45283c0c5731d71b6"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if00-seg1-0e331a6ae248.wind.zst",
+      "size_bytes": 927,
+      "sha256": "0e331a6ae248e1e130fa3d0cfc7284aa8170454cb80452618bdf955924310443"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if00-seg2-95334cb0a25c.wind.zst",
+      "size_bytes": 1193,
+      "sha256": "95334cb0a25c5c01945e0173597398f7b3890b95a34549225c9ac146e28542ef"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if02-seg0-657110ad40f6.wind.zst",
+      "size_bytes": 1182,
+      "sha256": "657110ad40f66aea1ece87500b4e2354222dd3891ac2228ab58610f9890fda83"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if02-seg1-fc477cfb3217.wind.zst",
+      "size_bytes": 1180,
+      "sha256": "fc477cfb3217bc35415d68efbfe0104062768323ec8b4a8540cd565c906763c1"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if02-seg2-a83fdf0db2c7.wind.zst",
+      "size_bytes": 1206,
+      "sha256": "a83fdf0db2c7672791ab82ce83fd8b830ee0f767b4adda2a7a9c27787dfe9f39"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if04-seg0-670dcf0a2e4d.wind.zst",
+      "size_bytes": 1178,
+      "sha256": "670dcf0a2e4d1ab724ec86223eec59a6ffbe03084d86ebd8f30dc504a4bc61c2"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if04-seg1-2549e4508b35.wind.zst",
+      "size_bytes": 1189,
+      "sha256": "2549e4508b3500e276ba9069673b97e977b2178c74cc8887947e6613a1599a1e"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if04-seg2-2a39e73f5acd.wind.zst",
+      "size_bytes": 1196,
+      "sha256": "2a39e73f5acdf510b4302fafd5709129bbb7a04559290a3a163832e0c215dfd1"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if06-seg0-e8c7bdf27b67.wind.zst",
+      "size_bytes": 1178,
+      "sha256": "e8c7bdf27b67936c52a835055a339ffb1902e3576d9cd5c732f07e88f0adebea"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if06-seg1-b331ac2a803c.wind.zst",
+      "size_bytes": 1190,
+      "sha256": "b331ac2a803cbbea4375952e1511970196682884189de9d76d0bc63891dd6a4f"
+    },
+    {
+      "path": "local-backend/sample-segments/usb-if06-seg2-b46701047a6c.wind.zst",
+      "size_bytes": 1206,
+      "sha256": "b46701047a6cdcb984a1704c7ac8db05cf3a7974595f5496e255a26af17a398c"
+    },
+    {
+      "path": "local-backend/sample-segments-decoded.json",
+      "size_bytes": 106055,
+      "sha256": "55cda55e193f4f3691dd5abc95b204dc209f62df82b834513d4b93498a35acba"
+    },
+    {
+      "path": "local-backend/serve_archive.py",
+      "size_bytes": 4212,
+      "sha256": "0fd9057dcc0f83cee6f7582c5dd8de365fb5ed82bff3e2792705ac75326b9947"
+    },
+    {
+      "path": "local-backend/standalone_mock_backend.py",
+      "size_bytes": 18748,
+      "sha256": "a17f9d7ab525187a6c2ea2254661bab09283e0767358ed03d02c96f251010fbd"
+    },
+    {
+      "path": "reference-ts-sdk/api/client.ts",
+      "size_bytes": 3619,
+      "sha256": "6a9c77e4db87ca940b24ce906efe112c7aa057f9388f969454fb6eac941a2d62"
+    },
+    {
+      "path": "reference-ts-sdk/api/types.ts",
+      "size_bytes": 2075,
+      "sha256": "41b99b9b016d93a8740ed723e17f90f07d84ccd5638a7871cda506a85c30ada5"
+    },
+    {
+      "path": "reference-ts-sdk/api/ws.ts",
+      "size_bytes": 3272,
+      "sha256": "e7d802398fc80f84191031f708d6b1a51bf5ac8135c4af6de6cc4eeed18141bd"
+    },
+    {
+      "path": "reference-ts-sdk/lib/cursor.test.ts",
+      "size_bytes": 3194,
+      "sha256": "b8c762410175876d404e14f68a0caadb22508339ab820b472a53bfb858a5e672"
+    },
+    {
+      "path": "reference-ts-sdk/lib/cursor.ts",
+      "size_bytes": 1836,
+      "sha256": "48c008f881a58a6b6745671f9b207359f36720136632331b77475610a4fde7ff"
+    },
+    {
+      "path": "reference-ts-sdk/lib/host.test.ts",
+      "size_bytes": 4069,
+      "sha256": "6e989ffe99c0bdb1c2a7d225b863984afa2dfa9dfaf1199ec07992975534504a"
+    },
+    {
+      "path": "reference-ts-sdk/lib/host.ts",
+      "size_bytes": 4739,
+      "sha256": "c51358dc95ff8ae2018aa10cabddac3b179ece587de85385d502d01f58ca70dc"
+    },
+    {
+      "path": "reference-ts-sdk/lib/ns.test.ts",
+      "size_bytes": 2320,
+      "sha256": "1665ba02df73a24de31a587e9f4444227ee84a906e638723261640e7d56e3274"
+    },
+    {
+      "path": "reference-ts-sdk/lib/ns.ts",
+      "size_bytes": 5521,
+      "sha256": "bacfc45310f2dce83211959ff2279a4882e082f7005ef1d3fc822464addfdb44"
+    },
+    {
+      "path": "reference-ts-sdk/lib/quality.ts",
+      "size_bytes": 2034,
+      "sha256": "7e6ace649f6473546ff73403e19cf80189781041501111ab3a80f80228a98cb6"
+    },
+    {
+      "path": "reference-ts-sdk/lib/ring.ts",
+      "size_bytes": 1734,
+      "sha256": "f1b6d19c852d1264d57108c2ab9c012aa46979fb59a64f311a2c58a747c3f334"
+    },
+    {
+      "path": "reference-ts-sdk/lib/stats.ts",
+      "size_bytes": 1261,
+      "sha256": "1934b411c8e270459115db3e02a3d9d2f26e56c1b36b18191a24561a3f8cfbc7"
+    },
+    {
+      "path": "reference-ts-sdk/lib/throttled.ts",
+      "size_bytes": 1727,
+      "sha256": "37d3de12d5bd6444522178489f087aef9e43e3c7de50a27498380f0e8d4c1658"
+    },
+    {
+      "path": "reference-ts-sdk/protocol/imu.test.ts",
+      "size_bytes": 4183,
+      "sha256": "798923237e58761344ffaed8dd633122ec57e8a63fd697404d2c7878dd03d216"
+    },
+    {
+      "path": "reference-ts-sdk/protocol/imu.ts",
+      "size_bytes": 9054,
+      "sha256": "96721104a7f004d6dea322fcf59b6d4f06be440ca8c85fc3c4b590761eec0f4a"
+    },
+    {
+      "path": "reference-ts-sdk/replay/player.ts",
+      "size_bytes": 6234,
+      "sha256": "bd1bfb089b0aab9d93f91ebed7a21a5541302465b84c477c83236c2a5c7094aa"
+    },
+    {
+      "path": "reference-ts-sdk/replay/replay.test.ts",
+      "size_bytes": 9288,
+      "sha256": "af461373fed6c293b4f7c707a2ec2823ca035462a09439c9a7ec3c1f87181adf"
+    },
+    {
+      "path": "reference-ts-sdk/replay/stream.ts",
+      "size_bytes": 5389,
+      "sha256": "f9288c4dc2ca7aa86c63ceb2436e070b07cc4b7d70f9ccb06ba2f8ae39ffa772"
+    },
+    {
+      "path": "reference-ts-sdk/sim/simulator.test.ts",
+      "size_bytes": 1606,
+      "sha256": "9486d6135a8bd47a273640e34368e21e0d4447fc9197dc6902aee34f923d2c6a"
+    },
+    {
+      "path": "reference-ts-sdk/sim/simulator.ts",
+      "size_bytes": 8115,
+      "sha256": "f5fea7f863e609e6af31765c5e2e4f830d275937649b211395e252334c11a454"
+    },
+    {
+      "path": "reference-ts-sdk/telemetry/store.ts",
+      "size_bytes": 8399,
+      "sha256": "76fc803857ea7eb804fe43f28692b883257f4e64a7dff44f29ca175de3dc2f9d"
+    },
+    {
+      "path": "reference-web-app/.gitignore",
+      "size_bytes": 35,
+      "sha256": "a34350980bfe73c46b141d92911ff8e0655530cc1a92c0fd95fb0d067c39bfbd"
+    },
+    {
+      "path": "reference-web-app/README.md",
+      "size_bytes": 3244,
+      "sha256": "9055bd8211b5597987f927c2beb1b37acf1b5f3d80c13b22933bb5dcb87bf6c6"
+    },
+    {
+      "path": "reference-web-app/index.html",
+      "size_bytes": 834,
+      "sha256": "fb68f7a64467007c2fbce400d0917e084d41e8d1229c889a5aea8c09e926aebe"
+    },
+    {
+      "path": "reference-web-app/package-lock.json",
+      "size_bytes": 81712,
+      "sha256": "87c2bc6490bf97cd678aa0d4ed5e3db5de73110a83f12b3c18a0370ed9796df5"
+    },
+    {
+      "path": "reference-web-app/package.json",
+      "size_bytes": 598,
+      "sha256": "f83fec40ee599692f6168308e2d11743001695c147512a2a8bc0b43d0b6092ea"
+    },
+    {
+      "path": "reference-web-app/serve_archive.py",
+      "size_bytes": 4216,
+      "sha256": "59536c68c79cc1cb0ddca6405a1378b7082b4b005d9d8abe815e7746e412a16e"
+    },
+    {
+      "path": "reference-web-app/src/App.tsx",
+      "size_bytes": 10604,
+      "sha256": "dd5fdd4f775398ffdd29db1052684d814bdbcb4853d6e7fc65a2a3eb0f2f5e71"
+    },
+    {
+      "path": "reference-web-app/src/api/client.ts",
+      "size_bytes": 3619,
+      "sha256": "6a9c77e4db87ca940b24ce906efe112c7aa057f9388f969454fb6eac941a2d62"
+    },
+    {
+      "path": "reference-web-app/src/api/types.ts",
+      "size_bytes": 2075,
+      "sha256": "41b99b9b016d93a8740ed723e17f90f07d84ccd5638a7871cda506a85c30ada5"
+    },
+    {
+      "path": "reference-web-app/src/api/ws.ts",
+      "size_bytes": 3272,
+      "sha256": "e7d802398fc80f84191031f708d6b1a51bf5ac8135c4af6de6cc4eeed18141bd"
+    },
+    {
+      "path": "reference-web-app/src/app/hooks.ts",
+      "size_bytes": 11096,
+      "sha256": "181018f232ae59730b0e4b1a72091f1be8c4211ee8df48994d81ccde9e5b622f"
+    },
+    {
+      "path": "reference-web-app/src/app/settings.ts",
+      "size_bytes": 1561,
+      "sha256": "a222474e959c7f971164edbc44eeb30f52659d3dc3a666fda60352b6d895a425"
+    },
+    {
+      "path": "reference-web-app/src/components/FrameBytes.tsx",
+      "size_bytes": 1954,
+      "sha256": "ff74256db095a7cafe2cd5156fd00985edc6145fef4b1520c6a687176e697388"
+    },
+    {
+      "path": "reference-web-app/src/components/HostPanel.tsx",
+      "size_bytes": 6291,
+      "sha256": "2ac8f1a6448ea09b505598b919ae0cb1c33fee8f03f43ebf71a7b5f0bd8bdaef"
+    },
+    {
+      "path": "reference-web-app/src/components/Inspector.tsx",
+      "size_bytes": 13306,
+      "sha256": "6ae870b76964d2711a232fa578e53365bd8d86fb1dea5b02b9b98bd9e1ac047b"
+    },
+    {
+      "path": "reference-web-app/src/components/SettingsSheet.tsx",
+      "size_bytes": 4202,
+      "sha256": "5a9a35e85b544931385371322058b8b615070c0888692a07841a26e829ed84f3"
+    },
+    {
+      "path": "reference-web-app/src/components/TopBar.tsx",
+      "size_bytes": 2989,
+      "sha256": "8a406b14696d21e1b352182afa261993f1f27eb29741c7e154c361703cb4a388"
+    },
+    {
+      "path": "reference-web-app/src/components/Transport.tsx",
+      "size_bytes": 7206,
+      "sha256": "d1ca8e43f83406aa2b61f9b23eceefd4444d13203ce9de3cd639a3d554b9161c"
+    },
+    {
+      "path": "reference-web-app/src/components/VideoPanel.tsx",
+      "size_bytes": 2569,
+      "sha256": "b5339273a67a5cbdc4b50f88d31c16275d156f12607ed67a1c4b5669387cb25d"
+    },
+    {
+      "path": "reference-web-app/src/components/WaveformTracks.tsx",
+      "size_bytes": 14675,
+      "sha256": "04a8bf00e05f5b5da96dcf505e4adcdc9db5bf3d3f1071876899164fae40893a"
+    },
+    {
+      "path": "reference-web-app/src/components/ui.tsx",
+      "size_bytes": 3522,
+      "sha256": "c108d0b1a02a9329bc01a5e8037b5a87e0cdbf4dcc87d61ccfd0e0953ec24641"
+    },
+    {
+      "path": "reference-web-app/src/history/HistoryWorkspace.tsx",
+      "size_bytes": 20023,
+      "sha256": "aedc00d734a2041bac5aa4d0c65a312180f6d480bf7474843d1f4ce1018782bf"
+    },
+    {
+      "path": "reference-web-app/src/lib/cursor.test.ts",
+      "size_bytes": 3194,
+      "sha256": "b8c762410175876d404e14f68a0caadb22508339ab820b472a53bfb858a5e672"
+    },
+    {
+      "path": "reference-web-app/src/lib/cursor.ts",
+      "size_bytes": 1836,
+      "sha256": "48c008f881a58a6b6745671f9b207359f36720136632331b77475610a4fde7ff"
+    },
+    {
+      "path": "reference-web-app/src/lib/host.test.ts",
+      "size_bytes": 4069,
+      "sha256": "6e989ffe99c0bdb1c2a7d225b863984afa2dfa9dfaf1199ec07992975534504a"
+    },
+    {
+      "path": "reference-web-app/src/lib/host.ts",
+      "size_bytes": 4739,
+      "sha256": "c51358dc95ff8ae2018aa10cabddac3b179ece587de85385d502d01f58ca70dc"
+    },
+    {
+      "path": "reference-web-app/src/lib/ns.test.ts",
+      "size_bytes": 2320,
+      "sha256": "1665ba02df73a24de31a587e9f4444227ee84a906e638723261640e7d56e3274"
+    },
+    {
+      "path": "reference-web-app/src/lib/ns.ts",
+      "size_bytes": 5521,
+      "sha256": "bacfc45310f2dce83211959ff2279a4882e082f7005ef1d3fc822464addfdb44"
+    },
+    {
+      "path": "reference-web-app/src/lib/quality.ts",
+      "size_bytes": 2034,
+      "sha256": "7e6ace649f6473546ff73403e19cf80189781041501111ab3a80f80228a98cb6"
+    },
+    {
+      "path": "reference-web-app/src/lib/ring.ts",
+      "size_bytes": 1734,
+      "sha256": "f1b6d19c852d1264d57108c2ab9c012aa46979fb59a64f311a2c58a747c3f334"
+    },
+    {
+      "path": "reference-web-app/src/lib/stats.ts",
+      "size_bytes": 1261,
+      "sha256": "1934b411c8e270459115db3e02a3d9d2f26e56c1b36b18191a24561a3f8cfbc7"
+    },
+    {
+      "path": "reference-web-app/src/lib/throttled.ts",
+      "size_bytes": 1727,
+      "sha256": "37d3de12d5bd6444522178489f087aef9e43e3c7de50a27498380f0e8d4c1658"
+    },
+    {
+      "path": "reference-web-app/src/main.tsx",
+      "size_bytes": 231,
+      "sha256": "0598f29b2853e9f6803e24371a7ec3fa145e262d0b78852af08e93f8b093c1b0"
+    },
+    {
+      "path": "reference-web-app/src/protocol/imu.test.ts",
+      "size_bytes": 4183,
+      "sha256": "798923237e58761344ffaed8dd633122ec57e8a63fd697404d2c7878dd03d216"
+    },
+    {
+      "path": "reference-web-app/src/protocol/imu.ts",
+      "size_bytes": 9054,
+      "sha256": "96721104a7f004d6dea322fcf59b6d4f06be440ca8c85fc3c4b590761eec0f4a"
+    },
+    {
+      "path": "reference-web-app/src/replay/player.ts",
+      "size_bytes": 6234,
+      "sha256": "bd1bfb089b0aab9d93f91ebed7a21a5541302465b84c477c83236c2a5c7094aa"
+    },
+    {
+      "path": "reference-web-app/src/replay/replay.test.ts",
+      "size_bytes": 9288,
+      "sha256": "af461373fed6c293b4f7c707a2ec2823ca035462a09439c9a7ec3c1f87181adf"
+    },
+    {
+      "path": "reference-web-app/src/replay/stream.ts",
+      "size_bytes": 5389,
+      "sha256": "f9288c4dc2ca7aa86c63ceb2436e070b07cc4b7d70f9ccb06ba2f8ae39ffa772"
+    },
+    {
+      "path": "reference-web-app/src/sim/simulator.test.ts",
+      "size_bytes": 1606,
+      "sha256": "9486d6135a8bd47a273640e34368e21e0d4447fc9197dc6902aee34f923d2c6a"
+    },
+    {
+      "path": "reference-web-app/src/sim/simulator.ts",
+      "size_bytes": 8115,
+      "sha256": "f5fea7f863e609e6af31765c5e2e4f830d275937649b211395e252334c11a454"
+    },
+    {
+      "path": "reference-web-app/src/styles.css",
+      "size_bytes": 33147,
+      "sha256": "a9cbe163db58d30679cd602d94bcdfceffa99a4dfc27360386f457e7fe9e5b79"
+    },
+    {
+      "path": "reference-web-app/src/telemetry/store.ts",
+      "size_bytes": 8399,
+      "sha256": "76fc803857ea7eb804fe43f28692b883257f4e64a7dff44f29ca175de3dc2f9d"
+    },
+    {
+      "path": "reference-web-app/src/twin/TwinViewport.tsx",
+      "size_bytes": 18643,
+      "sha256": "a9fc94945ea89d8b61370e0d8b81d637a04faaa6c144d5f88bf6ce7243e5efb2"
+    },
+    {
+      "path": "reference-web-app/src/twin/turbine.ts",
+      "size_bytes": 10241,
+      "sha256": "bfb73852f2c03ba520b81c4be3087eb628621a1adbd1a328e122ffecdf2b6084"
+    },
+    {
+      "path": "reference-web-app/src/vite-env.d.ts",
+      "size_bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "reference-web-app/tsconfig.app.json",
+      "size_bytes": 622,
+      "sha256": "ffbaa9bbac434ecd16f015f05811f608a910935eb991ebb4f087058c61e95f9c"
+    },
+    {
+      "path": "reference-web-app/tsconfig.json",
+      "size_bytes": 119,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "path": "reference-web-app/tsconfig.node.json",
+      "size_bytes": 550,
+      "sha256": "d1dca3f992b2a8aee9f885dde1e8c4ba2750b4a84cbb506d9dc6d261b0038c3f"
+    },
+    {
+      "path": "reference-web-app/vite.config.ts",
+      "size_bytes": 1446,
+      "sha256": "9bb87ee46298ae09c2232cfcc59e39ef02358f475eb009b3b274f6327838b3e8"
+    }
+  ]
+}

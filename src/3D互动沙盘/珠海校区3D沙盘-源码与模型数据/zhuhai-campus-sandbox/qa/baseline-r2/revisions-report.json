@@ -1,0 +1,78 @@
+{
+  "errors": [],
+  "externalRequests": [],
+  "checks": {
+    "ready": true,
+    "footprints": 98,
+    "removed": true,
+    "renamed": true,
+    "libraryWhite": [
+      [
+        "eeeee7",
+        "f5f3ed"
+      ],
+      [
+        "eeeee7",
+        "f5f3ed"
+      ]
+    ],
+    "spineWhite": [
+      "efefe7",
+      "f4f3ed"
+    ],
+    "passage": {
+      "clearHeight": 6.4,
+      "lowRayHits": 0,
+      "upperRayHits": 1
+    },
+    "middleBuilding": {
+      "floors": 3,
+      "height": 9.600000000000001
+    },
+    "hills": [
+      {
+        "id": "north-hill",
+        "top": 21
+      },
+      {
+        "id": "library-hill",
+        "top": 25.409071888517374
+      }
+    ],
+    "treesInTrack": 0,
+    "roads": {
+      "samples": 24,
+      "min": 2,
+      "max": 2
+    },
+    "addedSites": true,
+    "stairs": {
+      "exists": true,
+      "entranceWidth": 3,
+      "wallIntersections": 0
+    },
+    "observatory": {
+      "base": 130.9574688060877,
+      "anchor": {
+        "cx": 397,
+        "cy": 420,
+        "plateauCx": 410,
+        "plateauCy": 420,
+        "halfWidth": 57,
+        "halfDepth": 41,
+        "blend": 70
+      }
+    },
+    "stats": {
+      "calls": 459,
+      "triangles": 738006,
+      "footprints": 98
+    },
+    "overflow": true,
+    "observatorySearch": "山顶天文台",
+    "about": true,
+    "referenceImages": true,
+    "night": true,
+    "tour": true
+  }
+}

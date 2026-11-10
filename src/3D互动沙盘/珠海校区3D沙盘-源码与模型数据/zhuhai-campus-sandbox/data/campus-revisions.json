@@ -1,0 +1,368 @@
+{
+  "date": "2026-11-03",
+  "basis": "User-supplied campus corrections and observatory photograph override the older planning map; exact new-site dimensions remain schematic.",
+  "removeFootprints": [
+    "B100",
+    "B088",
+    "B078",
+    "B079",
+    "B080",
+    "B081",
+    "B082",
+    "B083"
+  ],
+  "buildingOverrides": {
+    "B075": {
+      "wall": "#f4f3ed",
+      "roof": "#efefe7",
+      "passage": {
+        "y0": 730,
+        "y1": 748,
+        "clearHeight": 6.4
+      }
+    },
+    "B090": {
+      "wall": "#f5f3ed",
+      "roof": "#eeeee7"
+    },
+    "B091": {
+      "wall": "#f5f3ed",
+      "roof": "#eeeee7"
+    },
+    "B060": {
+      "floors": 3,
+      "landmark": "jinyuan-canteen"
+    }
+  },
+  "hills": [
+    {
+      "id": "north-hill",
+      "cx": 1266,
+      "cy": 500,
+      "rx": 36,
+      "ry": 38,
+      "height": 19
+    },
+    {
+      "id": "library-hill",
+      "cx": 1278,
+      "cy": 868,
+      "rx": 44,
+      "ry": 48,
+      "height": 23
+    }
+  ],
+  "observatory": {
+    "cx": 457,
+    "cy": 700,
+    "plateauCx": 470,
+    "plateauCy": 700,
+    "halfWidth": 57,
+    "halfDepth": 41,
+    "blend": 82,
+    "cornerRadius": 9
+  },
+  "parking": {
+    "cx": 1332,
+    "cy": 787,
+    "bbox": [
+      1300,
+      764,
+      1364,
+      811
+    ],
+    "outer": [
+      [
+        1300,
+        764
+      ],
+      [
+        1364,
+        764
+      ],
+      [
+        1364,
+        811
+      ],
+      [
+        1300,
+        811
+      ]
+    ],
+    "entrances": [
+      [
+        [
+          1332,
+          764
+        ],
+        [
+          1332,
+          753
+        ]
+      ],
+      [
+        [
+          1364,
+          788
+        ],
+        [
+          1376,
+          788
+        ]
+      ]
+    ]
+  },
+  "testSite": {
+    "cx": 1105,
+    "cy": 815,
+    "bbox": [
+      1075,
+      780,
+      1135,
+      850
+    ]
+  },
+  "passageRoad": [
+    [
+      1249,
+      747
+    ],
+    [
+      1260,
+      741
+    ],
+    [
+      1275,
+      739
+    ],
+    [
+      1294,
+      740
+    ],
+    [
+      1322,
+      745
+    ],
+    [
+      1348,
+      755
+    ]
+  ],
+  "stairs": {
+    "start": [
+      1286,
+      919
+    ],
+    "end": [
+      1278,
+      868
+    ],
+    "width": 9
+  },
+  "boardRing": [
+    [
+      930,
+      5
+    ],
+    [
+      1039,
+      5
+    ],
+    [
+      1104,
+      71
+    ],
+    [
+      1103,
+      133
+    ],
+    [
+      1070,
+      178
+    ],
+    [
+      1042,
+      209
+    ],
+    [
+      1087,
+      207
+    ],
+    [
+      1083,
+      240
+    ],
+    [
+      1119,
+      282
+    ],
+    [
+      1205,
+      285
+    ],
+    [
+      1368,
+      448
+    ],
+    [
+      1356,
+      477
+    ],
+    [
+      1365,
+      500
+    ],
+    [
+      1497,
+      551
+    ],
+    [
+      1761,
+      710
+    ],
+    [
+      1850,
+      730
+    ],
+    [
+      1960,
+      780
+    ],
+    [
+      1960,
+      1248
+    ],
+    [
+      1600,
+      1248
+    ],
+    [
+      1580,
+      1143
+    ],
+    [
+      1497,
+      1147
+    ],
+    [
+      1350,
+      1120
+    ],
+    [
+      1238,
+      1077
+    ],
+    [
+      1145,
+      909
+    ],
+    [
+      1142,
+      865
+    ],
+    [
+      1064,
+      865
+    ],
+    [
+      1064,
+      775
+    ],
+    [
+      1104,
+      775
+    ],
+    [
+      1020,
+      691
+    ],
+    [
+      950,
+      824
+    ],
+    [
+      817,
+      775
+    ],
+    [
+      767,
+      870
+    ],
+    [
+      725,
+      878
+    ],
+    [
+      631,
+      822
+    ],
+    [
+      532,
+      815
+    ],
+    [
+      277,
+      865
+    ],
+    [
+      53,
+      577
+    ],
+    [
+      99,
+      523
+    ],
+    [
+      226,
+      473
+    ],
+    [
+      344,
+      349
+    ],
+    [
+      344,
+      215
+    ],
+    [
+      510,
+      90
+    ],
+    [
+      676,
+      101
+    ],
+    [
+      788,
+      153
+    ],
+    [
+      868,
+      128
+    ],
+    [
+      917,
+      128
+    ],
+    [
+      887,
+      80
+    ]
+  ],
+  "notes": [
+    "Parking replaces the six red-wall bars B078–B083 east of the teaching spine; western B074/B074-2 restored.",
+    "Only the existing road at the southern end of Yin Lake crosses the spine; previous artificial diagonal road removed.",
+    "Observatory remains on the south summit, now only slightly higher than other peaks with a broad natural ridge.",
+    "Four wind turbines rotate independently in the test site.",
+    "Boya access follows the WEST side of Rongyuan; previous east-side route and its terrain cut removed."
+  ],
+  "revision": "r4",
+  "southPeak": {
+    "cx": 470,
+    "cy": 700,
+    "rx": 240,
+    "ry": 200,
+    "height": 153,
+    "profile": "smooth Gaussian ridge blend; top about155 model units"
+  }
+}

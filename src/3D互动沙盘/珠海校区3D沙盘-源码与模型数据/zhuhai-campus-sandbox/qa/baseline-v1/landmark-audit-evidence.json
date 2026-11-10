@@ -1,0 +1,524 @@
+{
+  "html": {
+    "mtime": "2026-11-02T08:05:42.836Z",
+    "sha256": "641f0aa976403a2bccd99949e26ba48509304befaa351da617b0a08bfa946b43"
+  },
+  "errors": [],
+  "screenshots": [
+    "landmark-overview.png",
+    "landmark-north-top.png",
+    "landmark-library.png",
+    "landmark-teaching-spine.png",
+    "landmark-museum.png",
+    "landmark-concert-hall.png",
+    "landmark-haiqin-4.png",
+    "landmark-haiqin-6.png",
+    "landmark-tianqin-building.png",
+    "landmark-search-haiqin-2.png",
+    "landmark-yin-lake-status.png",
+    "landmark-hidden-planned-library-selection.png",
+    "landmark-canvas-pick-library.png"
+  ],
+  "interactions": [
+    {
+      "test": "search 海琴",
+      "items": [
+        "海琴1号",
+        "海琴2号",
+        "海琴3号",
+        "海琴4号",
+        "海琴5号",
+        "海琴6号"
+      ]
+    },
+    {
+      "test": "select 海琴2号",
+      "selected": "海琴2号",
+      "status": "按所给参考图重建"
+    },
+    {
+      "test": "select 隐湖",
+      "selected": "隐湖",
+      "status": "规划（按参考图）"
+    },
+    {
+      "test": "search library while planned hidden",
+      "items": [
+        "图书馆",
+        "行政楼（图书馆）"
+      ]
+    },
+    {
+      "test": "select hidden library",
+      "selected": "图书馆",
+      "status": "规划（按参考图）",
+      "plannedChecked": false,
+      "libraryVisible": false
+    },
+    {
+      "test": "canvas library click",
+      "point": {
+        "x": 1060.0000000000002,
+        "y": 390.90588906656575
+      },
+      "selected": "图书馆"
+    }
+  ],
+  "initial": {
+    "ready": true,
+    "stats": {
+      "calls": 443,
+      "triangles": 665489,
+      "footprints": 102
+    },
+    "treeCount": 3385,
+    "labels": 13
+  },
+  "landmarkFeatures": [
+    {
+      "id": "library",
+      "name": "图书馆",
+      "expected": [
+        1266,
+        500
+      ],
+      "features": [
+        {
+          "id": "library",
+          "center": [
+            1266,
+            500
+          ],
+          "category": "planned_construction",
+          "planned": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "teaching-spine",
+      "name": "教学楼长轴",
+      "expected": [
+        1276,
+        686
+      ],
+      "features": [
+        {
+          "id": "B075",
+          "center": [
+            1275.49,
+            685.22
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1259.5,
+            537.5,
+            32.5,
+            296.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "museum",
+      "name": "博物馆",
+      "expected": [
+        1274,
+        870
+      ],
+      "features": [
+        {
+          "id": "museum",
+          "center": [
+            1274,
+            870
+          ],
+          "category": "planned_construction",
+          "planned": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "administration",
+      "name": "行政楼（图书馆）",
+      "expected": [
+        1286,
+        933
+      ],
+      "features": [
+        {
+          "id": "B090",
+          "center": [
+            1270.85,
+            931.55
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1255,
+            912.5,
+            29,
+            35.5
+          ]
+        },
+        {
+          "id": "B091",
+          "center": [
+            1302.05,
+            929.57
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1288,
+            911.5,
+            31,
+            34.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concert-hall",
+      "name": "音乐厅",
+      "expected": [
+        1198,
+        819
+      ],
+      "features": [
+        {
+          "id": "concert-hall",
+          "center": [
+            1198,
+            819
+          ],
+          "category": "planned_construction",
+          "planned": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "haiqin-1",
+      "name": "海琴1号",
+      "expected": [
+        1600,
+        640
+      ],
+      "features": [
+        {
+          "id": "B072",
+          "center": [
+            1599.01,
+            640.15
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1559,
+            613.5,
+            82,
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haiqin-2",
+      "name": "海琴2号",
+      "expected": [
+        1574,
+        695
+      ],
+      "features": [
+        {
+          "id": "B076",
+          "center": [
+            1573.65,
+            693.91
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1522.5,
+            661,
+            102.5,
+            67.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haiqin-3",
+      "name": "海琴3号",
+      "expected": [
+        1541,
+        791
+      ],
+      "features": [
+        {
+          "id": "B084",
+          "center": [
+            1541.76,
+            790.41
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1489.5,
+            758,
+            103.5,
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haiqin-4",
+      "name": "海琴4号",
+      "expected": [
+        1528,
+        881
+      ],
+      "features": [
+        {
+          "id": "B089",
+          "center": [
+            1527.51,
+            880.6
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1475,
+            819.5,
+            105,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haiqin-5",
+      "name": "海琴5号",
+      "expected": [
+        1513,
+        976
+      ],
+      "features": [
+        {
+          "id": "B092",
+          "center": [
+            1512.71,
+            975.76
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1487.5,
+            947.5,
+            51.5,
+            56.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haiqin-6",
+      "name": "海琴6号",
+      "expected": [
+        1412,
+        1080
+      ],
+      "features": [
+        {
+          "id": "B097",
+          "center": [
+            1419.21,
+            1078.7
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1374,
+            1047.5,
+            94.5,
+            62.5
+          ]
+        },
+        {
+          "id": "B098",
+          "center": [
+            1362.51,
+            1092.94
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1353,
+            1080.5,
+            19.5,
+            25.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "international-center",
+      "name": "国际交流中心",
+      "expected": [
+        1542,
+        1059
+      ],
+      "features": [
+        {
+          "id": "B095",
+          "center": [
+            1538.51,
+            1062.26
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1516,
+            1012.5,
+            42.5,
+            92
+          ]
+        },
+        {
+          "id": "B099",
+          "center": [
+            1554.84,
+            1101.03
+          ],
+          "category": "planned_construction",
+          "planned": true,
+          "visible": true,
+          "bbox": [
+            1522.5,
+            1057,
+            49.5,
+            69.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sports-hall",
+      "name": "体育馆",
+      "expected": [
+        1429,
+        621
+      ],
+      "features": [
+        {
+          "id": "B069",
+          "center": [
+            1437.56,
+            632.94
+          ],
+          "category": "public_support",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            1388.5,
+            583,
+            90,
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jinyuan-track",
+      "name": "槿园运动场/田径场",
+      "expected": [
+        1339,
+        568
+      ],
+      "features": []
+    },
+    {
+      "id": "tianqin-building",
+      "name": "天琴楼",
+      "expected": [
+        634,
+        548
+      ],
+      "features": [
+        {
+          "id": "B052",
+          "center": [
+            633.52,
+            548.63
+          ],
+          "category": "teaching_research_office",
+          "planned": false,
+          "visible": true,
+          "bbox": [
+            596,
+            510,
+            75.5,
+            66
+          ]
+        },
+        {
+          "id": "B061",
+          "center": [
+            591.21,
+            585.05
+          ],
+          "category": "planned_construction",
+          "planned": true,
+          "visible": true,
+          "bbox": [
+            582,
+            578.5,
+            19,
+            14
+          ]
+        }
+      ]
+    }
+  ],
+  "hidden": {
+    "features": [
+      {
+        "id": "teaching-spine",
+        "visible": true
+      },
+      {
+        "id": "library",
+        "visible": false
+      },
+      {
+        "id": "museum",
+        "visible": false
+      },
+      {
+        "id": "concert-hall",
+        "visible": false
+      }
+    ],
+    "lakeLabels": [
+      {
+        "name": "若海",
+        "display": "block"
+      }
+    ]
+  }
+}

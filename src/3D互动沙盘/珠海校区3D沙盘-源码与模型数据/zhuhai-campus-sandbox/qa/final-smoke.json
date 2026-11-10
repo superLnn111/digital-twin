@@ -1,0 +1,10 @@
+{
+  "version": "4.0",
+  "errors": [],
+  "externalRequests": [],
+  "desktopHint": "左键拖动旋转 · 滚轮缩放 · 右键平移 · 点击建筑查看",
+  "mobileHint": "单指旋转 · 双指缩放与平移 · 点选建筑查看",
+  "mobileSelection": true,
+  "pinch": true,
+  "licenseEmbedded": true
+}

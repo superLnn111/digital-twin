@@ -1,0 +1,120 @@
+{
+  "task": "中山大学珠海校区本地3D校园沙盘HTML参考核验",
+  "verified_date": "2026-11-02",
+  "evidence_boundary": {
+    "full_videos_watched": false,
+    "full_video_downloaded": false,
+    "retrieved": ["Bilibili公开view API的标题、作者、简介与时长", "三个视频的封面和首帧小图", "公开player接口的字幕列表", "公开videoshot接口的故事板元数据（未继续下载故事板图）", "中大官方网页可检索内容"],
+    "visually_inspected": ["三个视频的封面"],
+    "not_verified": ["完整视频内容", "音频或逐字字幕", "视频中鼠标/键盘操作的确切功能", "模型真实尺寸与所有建筑细部"],
+    "page_access": "普通web页面读取失败或返回412；Bilibili官方公开API读取成功。",
+    "subtitle_boundary": "三个视频的匿名公开player接口subtitles均为空；未取得字幕。此结果不证明登录后或其他条件下绝对不存在字幕。"
+  },
+  "videos": [
+    {
+      "bvid": "BV1bcmMYwEK8",
+      "role": "校园实景参考",
+      "url": "https://www.bilibili.com/video/BV1bcmMYwEK8/",
+      "metadata_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1bcmMYwEK8",
+      "title": "看见中珠",
+      "uploader": "中山大学",
+      "duration_seconds": 217,
+      "description_summary": "官方介绍为珠海校区风光集锦，署名作者为中山大学大气科学学院副教授高斯。",
+      "cid": 26320634701,
+      "cover_url": "https://i2.hdslb.com/bfs/archive/da6669742610ac45022ec4499fa251591772a5e7.jpg",
+      "local_cover": "BV1bcmMYwEK8-cover.jpg",
+      "local_first_frame": "BV1bcmMYwEK8-first-frame.jpg",
+      "cover_observations": [
+        "可见临水岸线、成片草坪、行道树和后方绿色山体。",
+        "建筑群呈橙红色立面、浅色基座和柱廊、绿色屋顶的组合，并有不同高度的体量。",
+        "封面为实景风光画面；仅凭此图不能逐栋确认楼名，也不能据此测量高度。"
+      ],
+      "subtitle_status": "公开player接口未列出字幕。",
+      "interaction_claim": "实景视频，不据此推断沙盘交互。"
+    },
+    {
+      "bvid": "BV1yDez63ECM",
+      "role": "沙盘风格参考",
+      "url": "https://www.bilibili.com/video/BV1yDez63ECM/",
+      "metadata_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1yDez63ECM",
+      "title": "GPT Astra 还原广工大学城 3D 微缩沙盘",
+      "uploader": "SnowyAlex",
+      "duration_seconds": 69,
+      "cid": 42056745461,
+      "description_summary": "作者描述为使用Codex/GPT搭建广工大学城校园微缩沙盘，技术包括React、TypeScript和Three.js/WebGL，并参考校园地图与实景照片。此处仅转述作者页面说明，未独立审查其源代码。",
+      "cover_url": "https://i0.hdslb.com/bfs/archive/c7daeecff3e8d79a157b86d7a4b79ed21335c594.jpg",
+      "local_cover": "BV1yDez63ECM-cover.jpg",
+      "local_first_frame": "BV1yDez63ECM-first-frame.jpg",
+      "cover_observations": [
+        "俯斜角度展示独立底板上的完整校园，建筑以浅米白、灰白为主，植被低饱和绿。",
+        "道路、水系、田径场和成排建筑使功能分区清楚；重点建筑有悬浮名称标签。",
+        "模型有柔和阴影与轻量细节，呈建筑沙盘质感，而非写实街景。"
+      ],
+      "subtitle_status": "公开player接口未列出字幕。",
+      "interaction_claim": "封面证明名称标签与俯斜沙盘构图；未核实点击、自动巡航或搜索功能。"
+    },
+    {
+      "bvid": "BV1ysbA69EgM",
+      "role": "沙盘风格参考",
+      "url": "https://www.bilibili.com/video/BV1ysbA69EgM/",
+      "metadata_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ysbA69EgM",
+      "title": "让 GPT6 Astra 给南京大学鼓楼校区建个模",
+      "uploader": "周玄渊",
+      "duration_seconds": 50,
+      "cid": 41651144407,
+      "description_summary": "公开view接口简介为空。",
+      "cover_url": "https://i2.hdslb.com/bfs/archive/f89015a0c2b1e0be0ae5de4b1f820de0b5b69712.jpg",
+      "local_cover": "BV1ysbA69EgM-cover.jpg",
+      "local_first_frame": "BV1ysbA69EgM-first-frame.jpg",
+      "cover_observations": [
+        "奶油色背景上呈现不规则校园底板，画面采用俯斜观察角度。",
+        "浅色建筑与灰蓝屋顶、成排小树、红色跑道构成清楚的层级，阴影柔和。",
+        "建筑有院落与不同屋顶轮廓；大标题置于空白处，模型保持完整可读。"
+      ],
+      "subtitle_status": "公开player接口未列出字幕。",
+      "interaction_claim": "封面仅支持构图与材质风格判断；未核实漫游的操作方式。"
+    }
+  ],
+  "official_landmarks": [
+    {
+      "name": "珠海校区图书馆",
+      "verified_features": "官方图书馆资料描述为两幢底层连接的13层楼，正面像展开的书，面向校区南门。",
+      "modeling_advice": "应保留成对展开的体量与中部连接关系，作为旧教学轴线的识别核心；不能把它画成滨海新楼群的通用红楼。",
+      "sources": ["https://library.sysu.edu.cn/campus-library-1", "https://fgw.sysu.edu.cn/zhuhai/campuslife/wh"],
+      "dimension_boundary": "13层来自官方说明；层高、曲面、屋顶与精确占地尚未实测。"
+    },
+    {
+      "name": "教学实验大楼",
+      "verified_features": "官方资料给出571.2米长的五层教学楼，并描述首层架空及立面的彩色大球。",
+      "modeling_advice": "用长条且有分段、开口和架空感的浅色体量表达，避免缩成普通塔楼；可用几个彩色球点出识别特征。",
+      "sources": ["https://fgw.sysu.edu.cn/zhuhai/campuslife/wh", "https://phil-zh.sysu.edu.cn/zh-hans/article/2022"],
+      "dimension_boundary": "名义长度来自官方历史资料；本地沙盘若未按测绘坐标校准，仍标为比例示意。"
+    },
+    {
+      "name": "南门—图书馆—教学楼轴线",
+      "verified_features": "校区管委会资料把南门、图书馆和教学楼列为布局纵轴。",
+      "modeling_advice": "优先保证这条空间关系及图书馆后方山体/台阶联系；轴线可作为预设视角或导览路线。",
+      "sources": ["https://fgw.sysu.edu.cn/zhuhai/campuslife/wh", "https://phil-zh.sysu.edu.cn/zh-hans/article/2022"],
+      "dimension_boundary": "关系有官方依据；精确坐标、坡度与台阶细节未实测。"
+    },
+    {
+      "name": "滨海学院楼群与海琴片区",
+      "verified_features": "中珠官方视频封面可见红橙立面、浅色柱廊及绿屋顶楼群；学院官方报道亦使用海琴滨海办公楼与红墙绿瓦的描述。",
+      "modeling_advice": "在基础浅色沙盘上保留少量红橙墙面、绿屋顶和柱廊，配合滨水草坪，避免把全校统一成无特征白盒。具体楼名以官方地图逐栋匹配。",
+      "sources": ["https://www.bilibili.com/video/BV1bcmMYwEK8/", "https://sir.sysu.edu.cn/zh-hans/node/527", "https://atmos.sysu.edu.cn/article/2610"],
+      "dimension_boundary": "封面并不足以逐栋确认名称或楼高；体量细节为参考建模。"
+    }
+  ],
+  "recommended_design": {
+    "visual_style": ["浅米白的建筑沙盘基调，低饱和植被、浅蓝水面和柔和阴影。", "保留中珠特色的红橙墙、绿屋顶与山海背景，避免全校园材质完全相同。", "独立有厚度的底板，保留海岸/山体轮廓与主要道路，不以完整矩形城区替代校园。"],
+    "interaction_proposals": ["左键拖动环绕、滚轮缩放、右键平移；这些是本项目建议，未声称视频已展示。", "点击建筑高亮并弹出名称、功能及资料来源卡片；名称常显标签保持少量。", "设置全校鸟瞰、南门轴线、图书馆、教学楼、滨海楼群等预设视角与复位按钮。", "可设旋转开关、标签开关和昼夜光照；属本项目可实现交互建议。"],
+    "uncertainty_label": "依据公开地图与图片制作的校园建筑示意模型；非测绘成果，建筑高度和细部存在近似。",
+    "avoid": ["不要把广州南校园大钟楼混入珠海校区。", "不要把视频封面的其他学校建筑直接复制成中珠地标。", "不要把未看过的交互、未取得的字幕或未实测的高度写成已验证事实。"]
+  },
+  "artifacts": {
+    "report": "video-reference-report.txt",
+    "metadata_files": ["BV1bcmMYwEK8-view.json", "BV1yDez63ECM-view.json", "BV1ysbA69EgM-view.json"],
+    "subtitle_metadata_files": ["BV1bcmMYwEK8-player.json", "BV1yDez63ECM-player.json", "BV1ysbA69EgM-player.json"],
+    "public_thumbnail_note": "封面/首帧仅作内部视觉研究依据；未取得完整视频，也未将参考图片当成可自由再授权资产。"
+  }
+}

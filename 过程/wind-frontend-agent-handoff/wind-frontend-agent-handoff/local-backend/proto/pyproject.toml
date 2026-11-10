@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wind-proto"
+version = "0.1.0"
+description = "ATK-IMU901 valid frames and a single standard-Zstd segment format"
+requires-python = ">=3.15"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]

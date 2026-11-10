@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wind-cloud"
+version = "0.1.0"
+requires-python = ">=3.15"
+dependencies = ["wind-proto==0.1.0", "fastapi", "uvicorn", "websockets"]
+
+[project.scripts]
+wind-cloud = "wind_cloud.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -153,16 +153,16 @@ export function AIDiagnosis() {
   // ==========================================================
   return (
     // 最外层 div — 全高可滚动，深蓝背景，内边距24px
-    <div className="h-full overflow-auto bg-[#0a0e27] p-6">
+    <div className="h-full overflow-auto bg-[#132e25] p-6">
       
       {/* ==================== 第1行：页面标题栏 ==================== */}
       <div className="mb-5 flex items-center justify-between">
         <div>
           {/* 标题：紫色，带 Brain 大脑图标 */}
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-purple-400">
+          <h2 className="flex items-center gap-2 text-2xl font-bold text-[#47a87a]">
             <Brain className="h-7 w-7" /> 智能诊断 · DANN 领域自适应迁移诊断
           </h2>
-          <p className="mt-1 text-sm text-purple-400/60">有光 / 无光工况下同一 DANN 模型的跨域诊断能力对比</p>
+          <p className="mt-1 text-sm text-[#6d8f80]">有光 / 无光工况下同一 DANN 模型的跨域诊断能力对比</p>
         </div>
         
         {/* 连接状态 + 最新诊断时间 */}
@@ -179,7 +179,7 @@ export function AIDiagnosis() {
           )}
           {/* 最新诊断时间 — 用 .slice(11, 19) 截取 "HH:MM:SS" 部分 */}
           {/* latestResult 为 null 时显示 "--:--:--" */}
-          <span className="text-cyan-500/50">
+          <span className="text-[#6d8f80]">
             <Clock className="inline h-4 w-4" /> {latestResult?.time?.slice(11, 19) || "--:--:--"}
           </span>
         </div>
@@ -188,13 +188,12 @@ export function AIDiagnosis() {
       {/* ==================== 第2行：统计卡片（4列） ==================== */}
       <div className="mb-5 grid grid-cols-4 gap-4">
         
-        {/* 卡片1：总诊断数 — 紫色主题 */}
-        <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
-          <div className="flex items-center gap-2 text-sm text-purple-400/70">
+        {/* 卡片1：总诊断数 — 绿色主题 */}
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#27684f]/5 p-4">
+          <div className="flex items-center gap-2 text-sm text-[#81a898]">
             <Activity className="h-4 w-4" /> 总诊断数
           </div>
-          {/* results.length — 历史诊断结果总数 */}
-          <div className="mt-1 text-2xl font-bold text-purple-300">{results.length}</div>
+          <div className="mt-1 text-2xl font-bold text-[#5dba88]">{results.length}</div>
         </div>
         
         {/* 卡片2：异常数量 — 红色主题 */}
@@ -213,13 +212,12 @@ export function AIDiagnosis() {
           <div className="mt-1 text-2xl font-bold text-green-300">{normalCount}</div>
         </div>
         
-        {/* 卡片4：平均置信度 — 青色主题，显示百分比 */}
-        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4">
-          <div className="flex items-center gap-2 text-sm text-cyan-400/70">
+        {/* 卡片4：平均置信度 — 绿色主题 */}
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#27684f]/5 p-4">
+          <div className="flex items-center gap-2 text-sm text-[#81a898]">
             <Zap className="h-4 w-4" /> 平均置信度
           </div>
-          {/* avgConfidence 是 0~1 的小数，*100 转百分比，toFixed(1) 保留1位小数 */}
-          <div className="mt-1 text-2xl font-bold text-cyan-300">{(avgConfidence * 100).toFixed(1)}%</div>
+          <div className="mt-1 text-2xl font-bold text-[#5dba88]">{(avgConfidence * 100).toFixed(1)}%</div>
         </div>
       </div>
 
@@ -230,78 +228,67 @@ export function AIDiagnosis() {
         <div className="space-y-4">
           
           {/* --- 最新诊断卡片 --- */}
-          <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-purple-400">
+          <div className="rounded-lg border border-[#27684f]/30 bg-[#27684f]/5 p-4">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
               <Activity className="h-4 w-4" /> 最新诊断
             </h3>
             
-            {/* 诊断结果显示：颜色圆点 + 类别名 + 置信度进度条 + 百分比 */}
             <div className="flex items-center gap-3">
-              {/* 类别颜色圆点 */}
               <div
                 className="h-3 w-3 rounded-full"
                 style={{ backgroundColor: latestColor }}
               />
               <div className="flex-1">
-                {/* 类别名称 */}
-                <div className="text-sm font-semibold text-purple-300">{latestLabel}</div>
+                <div className="text-sm font-semibold text-[#5dba88]">{latestLabel}</div>
                 
-                {/* 置信度进度条 — 底是深色条，上面覆盖带颜色的进度 */}
-                <div className="mt-1 h-2 w-full rounded-full bg-purple-500/10">
+                <div className="mt-1 h-2 w-full rounded-full bg-[#27684f]/10">
                   <div
-                    className="h-2 rounded-full transition-all duration-500"  // duration-500 = 动画过渡0.5秒
+                    className="h-2 rounded-full transition-all duration-500"
                     style={{
-                      width: `${((latestResult?.confidence ?? 0) * 100).toFixed(0)}%`,  // 宽度=置信度百分比
+                      width: `${((latestResult?.confidence ?? 0) * 100).toFixed(0)}%`,
                       backgroundColor: latestColor,
                     }}
                   />
                 </div>
               </div>
-              {/* 置信度数字百分比 */}
-              <span className="text-sm font-mono text-purple-300">
+              <span className="text-sm font-mono text-[#5dba88]">
                 {((latestResult?.confidence ?? 0) * 100).toFixed(1)}%
               </span>
             </div>
             
-            {/* 传感器数据摘要（截断显示） */}
-            <div className="mt-2 text-xs text-purple-400/50 truncate">
+            <div className="mt-2 text-xs text-[#6d8f80] truncate">
               {latestResult?.sensor_data || "等待数据..."}
             </div>
           </div>
 
           {/* --- DANN 模型中间状态卡片 --- */}
-          <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-purple-400">
+          <div className="rounded-lg border border-[#27684f]/30 bg-[#27684f]/5 p-4">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
               <Cpu className="h-4 w-4" /> DANN 模型中间状态
             </h3>
             
-            {/* 4个关键指标展示 DANN 的工作流程 */}
             <div className="space-y-2 text-xs">
-              {/* 1. 特征提取层：CNN1D 卷积 → 6400维向量 */}
               <div className="flex items-center justify-between">
-                <span className="text-purple-400/70">特征提取层</span>
-                <span className="text-purple-300 font-mono">CNN1D → 6400维</span>
+                <span className="text-[#81a898]">特征提取层</span>
+                <span className="text-[#5dba88] font-mono">CNN1D → 6400维</span>
               </div>
               
-              {/* 2. GRL λ 参数：梯度反转层的强度参数，控制域判别器的对抗力度 */}
               <div className="flex items-center justify-between">
-                <span className="text-purple-400/70">GRL λ 参数</span>
-                {/* λ 通过 sigmoid 型公式计算：2/(1+e^(-5p))-1，p=0.7 是训练进度 */}
-                <span className="text-purple-300 font-mono">
+                <span className="text-[#81a898]">GRL λ 参数</span>
+                <span className="text-[#5dba88] font-mono">
                   λ = {((2 / (1 + Math.exp(-5 * 0.7))) - 1).toFixed(3)}
                 </span>
               </div>
               
               {/* 3. 域判别置信度：0.48 ≈ 0.5，说明域判别器分不出源域/目标域 = DANN 成功 */}
               <div className="flex items-center justify-between">
-                <span className="text-purple-400/70">域判别置信度</span>
-                <span className="text-purple-300 font-mono">0.48 (不可区分)</span>
+                <span className="text-[#81a898]">域判别置信度</span>
+                <span className="text-[#5dba88] font-mono">0.48 (不可区分)</span>
               </div>
               
-              {/* 4. 分类器输出：4个类别的概率分布 */}
               <div className="flex items-center justify-between">
-                <span className="text-purple-400/70">分类器输出</span>
-                <span className="text-purple-300 font-mono">
+                <span className="text-[#81a898]">分类器输出</span>
+                <span className="text-[#5dba88] font-mono">
                   [{CLASS_LABELS[0]}: 0.02, {CLASS_LABELS[1]}: 0.91, {CLASS_LABELS[2]}: 0.05, {CLASS_LABELS[3]}: 0.02]
                 </span>
               </div>
@@ -368,25 +355,19 @@ export function AIDiagnosis() {
           </div>
 
           {/* --- 迁移效果对比柱状图 --- */}
-          <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-cyan-400">
+          <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
               <BarChart3 className="h-4 w-4" /> 迁移效果对比
             </h3>
             
-            {/* ResponsiveContainer — 自适应父容器宽高，height={160} 指定高度 */}
             <ResponsiveContainer width="100%" height={160}>
-              {/* BarChart — 柱状图，X轴=分组名，两组柱子=有光和无光 */}
               <BarChart data={MIGRATION_DATA}>
-                {/* 网格线 — 青色虚线，透明度0.1 */}
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(6,182,212,0.1)" />
-                {/* X轴 — 显示 name 字段（"无域适应"/"DANN 迁移"） */}
-                <XAxis dataKey="name" stroke="#06b6d4" style={{ fontSize: 9 }} />
-                {/* Y轴 — domain={[0,100]} 固定范围0~100 */}
-                <YAxis domain={[0, 100]} stroke="#06b6d4" style={{ fontSize: 9 }} />
-                {/* 提示框样式 */}
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(39,104,79,0.15)" />
+                <XAxis dataKey="name" stroke="#47a87a" style={{ fontSize: 9 }} />
+                <YAxis domain={[0, 100]} stroke="#47a87a" style={{ fontSize: 9 }} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: "#0d1229", border: "1px solid rgba(6,182,212,0.3)", borderRadius: 8 }}
-                  labelStyle={{ color: "#06b6d4" }}
+                  contentStyle={{ backgroundColor: "#1a3c31", border: "1px solid rgba(39,104,79,0.3)", borderRadius: 8 }}
+                  labelStyle={{ color: "#47a87a" }}
                 />
                 <Legend wrapperStyle={{ fontSize: 10 }} />
                 {/* 黄色柱子 = 有光准确率，蓝色柱子 = 无光准确率 */}
@@ -402,20 +383,18 @@ export function AIDiagnosis() {
         <div className="space-y-4">
           
           {/* --- t-SNE 特征分布散点图 --- */}
-          <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-cyan-400">
+          <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
               <Layers className="h-4 w-4" /> t-SNE 特征分布
             </h3>
             
             <ResponsiveContainer width="100%" height={160}>
-              {/* ScatterChart — 散点图，黄色=源域样本，蓝色=目标域样本 */}
               <ScatterChart>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(6,182,212,0.1)" />
-                {/* hide — 隐藏坐标轴（散点图重在分布形态，不需要具体刻度） */}
-                <XAxis dataKey="x" stroke="#06b6d4" style={{ fontSize: 8 }} hide />
-                <YAxis dataKey="y" stroke="#06b6d4" style={{ fontSize: 8 }} hide />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(39,104,79,0.15)" />
+                <XAxis dataKey="x" stroke="#47a87a" style={{ fontSize: 8 }} hide />
+                <YAxis dataKey="y" stroke="#47a87a" style={{ fontSize: 8 }} hide />
                 <Tooltip
-                  contentStyle={{ backgroundColor: "#0d1229", border: "1px solid rgba(6,182,212,0.3)", borderRadius: 8 }}
+                  contentStyle={{ backgroundColor: "#1a3c31", border: "1px solid rgba(39,104,79,0.3)", borderRadius: 8 }}
                 />
                 <Legend wrapperStyle={{ fontSize: 10 }} />
                 {/* Scatter — name=图例标签, data=数据源, fill=颜色 */}
@@ -426,21 +405,19 @@ export function AIDiagnosis() {
           </div>
 
           {/* --- 有光/无光准确率对比折线图 --- */}
-          <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-cyan-400">
+          <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
               <TrendingUp className="h-4 w-4" /> 有光/无光 准确率对比曲线
             </h3>
             
             <ResponsiveContainer width="100%" height={160}>
-              {/* LineChart — 双折线对比图，X轴=epoch，Y轴=准确率 */}
               <LineChart data={ACCURACY_TREND}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(6,182,212,0.1)" />
-                <XAxis dataKey="epoch" stroke="#06b6d4" style={{ fontSize: 8 }} />
-                {/* domain={[50,100]} — Y轴固定50~100范围（准确率通常不低于50%） */}
-                <YAxis domain={[50, 100]} stroke="#06b6d4" style={{ fontSize: 8 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(39,104,79,0.15)" />
+                <XAxis dataKey="epoch" stroke="#47a87a" style={{ fontSize: 8 }} />
+                <YAxis domain={[50, 100]} stroke="#47a87a" style={{ fontSize: 8 }} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: "#0d1229", border: "1px solid rgba(6,182,212,0.3)", borderRadius: 8 }}
-                  labelStyle={{ color: "#06b6d4" }}
+                  contentStyle={{ backgroundColor: "#1a3c31", border: "1px solid rgba(39,104,79,0.3)", borderRadius: 8 }}
+                  labelStyle={{ color: "#47a87a" }}
                 />
                 <Legend wrapperStyle={{ fontSize: 10 }} />
                 {/* dot={false} — 不显示数据点，50个点太密集 */}
@@ -456,39 +433,30 @@ export function AIDiagnosis() {
       {/* ==================== 第4行：置信度趋势 + 诊断历史（2列） ==================== */}
       <div className="mt-4 grid grid-cols-2 gap-4">
         
-        {/* --- 左侧：置信度实时趋势面积图 --- */}
-        <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-cyan-400">
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
             <TrendingUp className="h-4 w-4" /> 置信度实时趋势
           </h3>
           
           <ResponsiveContainer width="100%" height={180}>
-            {/* AreaChart — 面积图，数据源是 Context 中的 chartData（WebSocket实时推送） */}
             <AreaChart data={chartData}>
-              {/* defs — SVG 渐变定义，给面积图底部做淡出效果 */}
               <defs>
-                {/* linearGradient — 线性渐变，从上到下 */}
                 <linearGradient id="confGradient" x1="0" y1="0" x2="0" y2="1">
-                  {/* 顶部5%处 — 青色30%透明度 */}
-                  <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.3} />
-                  {/* 底部95%处 — 青色完全透明 */}
-                  <stop offset="95%" stopColor="#06b6d4" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#47a87a" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#47a87a" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(6,182,212,0.1)" />
-              <XAxis dataKey="time" stroke="#06b6d4" style={{ fontSize: 8 }} />
-              {/* domain={[0, 1]} — 置信度在0~1之间 */}
-              <YAxis domain={[0, 1]} stroke="#06b6d4" style={{ fontSize: 8 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(39,104,79,0.15)" />
+              <XAxis dataKey="time" stroke="#47a87a" style={{ fontSize: 8 }} />
+              <YAxis domain={[0, 1]} stroke="#47a87a" style={{ fontSize: 8 }} />
               <Tooltip
-                contentStyle={{ backgroundColor: "#0d1229", border: "1px solid rgba(6,182,212,0.3)", borderRadius: 8 }}
-                labelStyle={{ color: "#06b6d4" }}
+                contentStyle={{ backgroundColor: "#1a3c31", border: "1px solid rgba(39,104,79,0.3)", borderRadius: 8 }}
+                labelStyle={{ color: "#47a87a" }}
               />
-              {/* Area — 填充区域，dataKey="confidence" 取置信度字段 */}
-              {/* fill="url(#confGradient)" — 引用上面定义的渐变 */}
               <Area
                 type="monotone"
                 dataKey="confidence"
-                stroke="#06b6d4"
+                stroke="#47a87a"
                 fill="url(#confGradient)"
                 strokeWidth={2}
               />
@@ -496,18 +464,15 @@ export function AIDiagnosis() {
           </ResponsiveContainer>
         </div>
 
-        {/* --- 右侧：诊断历史记录表格 --- */}
-        <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-purple-400">
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#27684f]/5 p-4">
+          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
             <Clock className="h-4 w-4" /> 诊断历史记录
           </h3>
           
-          {/* max-h-[180px] — 最大高度180px，overflow-auto — 超出滚动 */}
           <div className="max-h-[180px] overflow-auto">
             <table className="w-full text-xs">
-              {/* 表头 */}
               <thead>
-                <tr className="border-b border-purple-500/20 text-left text-purple-400/70">
+                <tr className="border-b border-[#27684f]/30 text-left text-[#81a898]">
                   <th className="pb-2">时间</th>
                   <th className="pb-2">状态</th>
                   <th className="pb-2">类别</th>
@@ -516,14 +481,10 @@ export function AIDiagnosis() {
                 </tr>
               </thead>
               
-              {/* 表体 — 遍历 results，反转（最新的在上面），只取前20条 */}
               <tbody>
-                {/* [...results].reverse() — 复制一份再反转（避免修改原数组） */}
-                {/* .slice(0, 20) — 只取前20条显示 */}
                 {[...results].reverse().slice(0, 20).map((r, i) => (
-                  <tr key={i} className="border-b border-purple-500/10">
-                    {/* 时间 — 用 .slice(11,19) 截取 HH:MM:SS */}
-                    <td className="py-2 text-cyan-400/70">{r.time?.slice(11, 19) || "--:--:--"}</td>
+                  <tr key={i} className="border-b border-[#27684f]/10">
+                    <td className="py-2 text-[#81a898]">{r.time?.slice(11, 19) || "--:--:--"}</td>
                     
                     {/* 状态 — 异常=红色，正常=绿色 */}
                     <td className="py-2">
@@ -533,17 +494,17 @@ export function AIDiagnosis() {
                     </td>
                     
                     {/* 类别 — 优先用 class_name，没有就用 CLASS_LABELS 映射 */}
-                    <td className="py-2 text-cyan-300">
+                    <td className="py-2 text-[#5dba88]">
                       {r.class_name ?? CLASS_LABELS[r.class] ?? `未知(${r.class})`}
                     </td>
                     
                     {/* 置信度 — 百分比显示 */}
-                    <td className="py-2 text-cyan-300">
+                    <td className="py-2 text-[#5dba88]">
                       {(r.confidence * 100).toFixed(1)}%
                     </td>
                     
                     {/* 传感器数据 — 截断显示 */}
-                    <td className="py-2 text-cyan-500/50 max-w-[120px] truncate">
+                    <td className="py-2 text-[#6d8f80] max-w-[120px] truncate">
                       {r.sensor_data}
                     </td>
                   </tr>

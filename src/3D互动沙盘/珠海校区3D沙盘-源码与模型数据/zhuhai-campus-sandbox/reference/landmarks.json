@@ -1,0 +1,1578 @@
+{
+  "sourceImages": {
+    "topDown": "E:\\Sun Yat-Sen University\\Teaching\\Undergraduate innovation project\\2026\\Zhuhai Campus Map.jpg",
+    "aerial": "E:\\Sun Yat-Sen University\\Teaching\\Undergraduate innovation project\\2026\\Zhuhai Campus Map 3D view.png"
+  },
+  "coordinateSystem": {
+    "type": "image pixels",
+    "width": 1960,
+    "height": 1248,
+    "origin": "top-left",
+    "xDirection": "right/east",
+    "yDirection": "down/south",
+    "northUp": true,
+    "originalWidth": 9917,
+    "originalHeight": 6315,
+    "scaleToOriginalX": 5.0596938775510205,
+    "scaleToOriginalY": 5.060096153846154,
+    "formula": "original_x=cx*9917/1960; original_y=cy*6315/1248",
+    "positionPrecision": "主要建筑中心约±3—8缩图px；区域锚点与水系约±10—25px；无地理坐标或测量精度保证"
+  },
+  "sourceDate": {
+    "topDown": "2024-03（图例明确）",
+    "aerial": "未见日期；建筑效果图/可视化，非当前实景测绘"
+  },
+  "heightNotice": "所有roughFloors均为3D沙盘示意，不是实测层数或高度；不从缩图提取真实建筑高度，不用鸟瞰渲染证明2026已建。",
+  "mapLegend": {
+    "yellow": "宿舍公寓",
+    "pinkRed": "教学科研办公",
+    "magenta": "公共配套设施",
+    "cyan": "规划在建"
+  },
+  "statusRules": [
+    "青色建筑保留规划/在建状态，并优先使用图上文字细分。",
+    "粉色/黄色只表示用地或功能分类，不自动等于当前已建。",
+    "隐湖/若海“规划景观提升”不能解释为整座湖尚未存在。",
+    "行政楼（图书馆）双标签按原图保留，不凭效果图断言最新用途。"
+  ],
+  "landmarks": [
+    {
+      "id": "library",
+      "name": "图书馆",
+      "cx": 1266,
+      "cy": 500,
+      "use": "图书与学习",
+      "shape": "圆形鼓状建筑，蓝灰平屋顶与白色竖向柱/肋，圆形基座",
+      "roughFloors": {
+        "suggested": 4,
+        "range": [
+          3,
+          6
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "俯视图明确标“图书馆（规划）”，青色。鸟瞰图画有完整体量不能证明2026已建。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1234,
+        467,
+        1299,
+        534
+      ],
+      "aerialCorrespondence": "鸟瞰图教学楼长轴最北端的圆盘状白色建筑。",
+      "cxOriginal": 6406,
+      "cyOriginal": 2530
+    },
+    {
+      "id": "teaching-spine",
+      "name": "教学楼长轴",
+      "cx": 1276,
+      "cy": 686,
+      "use": "综合教学",
+      "shape": "南北向极长条连续体量，近直线，多段浅青屋顶/采光带；不能缩成普通小楼",
+      "roughFloors": {
+        "suggested": 4,
+        "range": [
+          3,
+          5
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "北接图书馆，南接博物馆；长轴约向东倾3°。source颜色为教学科研办公。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1256,
+        536,
+        1297,
+        836
+      ],
+      "aerialCorrespondence": "鸟瞰图中央从图书馆向博物馆延伸的最长连续教学体。",
+      "cxOriginal": 6456,
+      "cyOriginal": 3471
+    },
+    {
+      "id": "museum",
+      "name": "博物馆",
+      "cx": 1274,
+      "cy": 870,
+      "use": "博物展示",
+      "shape": "圆形鼓状体量，深蓝圆屋顶，外围弧形平台/阶梯",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          4
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "俯视图明确标“博物馆（规划）”，青色。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1236,
+        835,
+        1310,
+        903
+      ],
+      "aerialCorrespondence": "鸟瞰图中央偏下圆形蓝屋顶，位于教学楼南端。",
+      "cxOriginal": 6446,
+      "cyOriginal": 4402
+    },
+    {
+      "id": "administration",
+      "name": "行政楼（图书馆）",
+      "cx": 1286,
+      "cy": 933,
+      "use": "行政/历史功能以原图双标签保留",
+      "shape": "两翼呈V形或人字形，朝南侧广场展开",
+      "roughFloors": {
+        "suggested": 5,
+        "range": [
+          4,
+          7
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "俯视图原标签为“行政楼（图书馆）”；不能据此断定当前功能已切换。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1248,
+        908,
+        1321,
+        960
+      ],
+      "aerialCorrespondence": "博物馆南侧、湖边的V形白色屋顶建筑。",
+      "cxOriginal": 6507,
+      "cyOriginal": 4721
+    },
+    {
+      "id": "concert-hall",
+      "name": "音乐厅",
+      "cx": 1198,
+      "cy": 819,
+      "use": "演艺音乐",
+      "shape": "独立圆/椭圆形大跨场馆，浅色低穹顶或扁圆屋面",
+      "roughFloors": {
+        "suggested": 2,
+        "range": [
+          1,
+          3
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "under_construction_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "俯视图青色并标“音乐厅（在建）”；鸟瞰图显示低矮圆厅，状态不得升级为已建。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1176,
+        788,
+        1223,
+        846
+      ],
+      "aerialCorrespondence": "隐湖南侧、博物馆西北侧的扁圆低厅。",
+      "cxOriginal": 6062,
+      "cyOriginal": 4144
+    },
+    {
+      "id": "haiqin-1",
+      "name": "海琴1号",
+      "cx": 1600,
+      "cy": 640,
+      "use": "教学科研办公",
+      "shape": "长矩形院落型，内部两个狭长采光院；整体略顺海岸旋转",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1556,
+        610,
+        1645,
+        669
+      ],
+      "aerialCorrespondence": "鸟瞰图东侧海琴组最北的一栋，靠体育馆东南。",
+      "cxOriginal": 8096,
+      "cyOriginal": 3238
+    },
+    {
+      "id": "haiqin-2",
+      "name": "海琴2号",
+      "cx": 1574,
+      "cy": 695,
+      "use": "教学科研办公",
+      "shape": "长矩形/多院落组合，内部狭长庭院与中部连接体",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1520,
+        658,
+        1628,
+        731
+      ],
+      "aerialCorrespondence": "海琴1号南侧，横跨中山广场北边。",
+      "cxOriginal": 7964,
+      "cyOriginal": 3517
+    },
+    {
+      "id": "haiqin-3",
+      "name": "海琴3号",
+      "cx": 1541,
+      "cy": 791,
+      "use": "教学科研办公",
+      "shape": "长条矩形体量，近H形或带两个开口的庭院组织",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1488,
+        755,
+        1595,
+        826
+      ],
+      "aerialCorrespondence": "中山广场南侧第一栋，位于若海东岸。",
+      "cxOriginal": 7797,
+      "cyOriginal": 4003
+    },
+    {
+      "id": "haiqin-4",
+      "name": "海琴4号",
+      "cx": 1528,
+      "cy": 881,
+      "use": "教学科研办公",
+      "shape": "大型近方形C/U形围合体，显著中央庭院，东侧入口广场",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "初次粗坐标已纠正；采用主院落体量中心，而非中文标签位置。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1473,
+        817,
+        1583,
+        945
+      ],
+      "aerialCorrespondence": "海琴组中最大方院，位于若海东岸中段。",
+      "cxOriginal": 7731,
+      "cyOriginal": 4458
+    },
+    {
+      "id": "haiqin-5",
+      "name": "海琴5号",
+      "cx": 1513,
+      "cy": 976,
+      "use": "教学科研办公",
+      "shape": "较小矩形院落建筑，中心小天井/开口",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1485,
+        945,
+        1542,
+        1007
+      ],
+      "aerialCorrespondence": "海琴4号南侧、国际交流中心北侧的小院落。",
+      "cxOriginal": 7655,
+      "cyOriginal": 4939
+    },
+    {
+      "id": "haiqin-6",
+      "name": "海琴6号",
+      "cx": 1412,
+      "cy": 1080,
+      "use": "教学科研办公",
+      "shape": "大型多边形多庭院组合体，多个内院与西侧翼部，不能只画一个实心盒",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1350,
+        1043,
+        1473,
+        1114
+      ],
+      "aerialCorrespondence": "鸟瞰图若海南端以南、西南角的大型多院落建筑。",
+      "cxOriginal": 7144,
+      "cyOriginal": 5465
+    },
+    {
+      "id": "international-center",
+      "name": "国际交流中心",
+      "cx": 1542,
+      "cy": 1059,
+      "use": "国际交流与接待",
+      "shape": "弧形/折线围合体，带明显内庭，沿南北长轴组合，高度高于邻近教学楼",
+      "roughFloors": {
+        "suggested": 10,
+        "range": [
+          7,
+          13
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "主体为粉色，南端另有青色“规划建筑”，两者状态需分开。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1514,
+        1007,
+        1567,
+        1111
+      ],
+      "aerialCorrespondence": "鸟瞰图右下近海前景的高体量折线围合建筑。",
+      "cxOriginal": 7802,
+      "cyOriginal": 5359
+    },
+    {
+      "id": "sports-hall",
+      "name": "体育馆",
+      "cx": 1429,
+      "cy": 621,
+      "use": "室内运动",
+      "shape": "不规则扇形/折角大跨屋面，低层高体量；邻接室外球场",
+      "roughFloors": {
+        "suggested": 2,
+        "range": [
+          1,
+          3
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1388,
+        576,
+        1478,
+        676
+      ],
+      "aerialCorrespondence": "鸟瞰图田径场东南、海琴1号西北的大跨浅色馆体。",
+      "cxOriginal": 7230,
+      "cyOriginal": 3142
+    },
+    {
+      "id": "jinyuan-track",
+      "name": "槿园运动场/田径场",
+      "cx": 1339,
+      "cy": 568,
+      "use": "室外运动",
+      "shape": "南北向椭圆跑道围合足球场，平地设施",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "俯视图可读“槿园运动场”；鸟瞰可见红色跑道。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1312,
+        513,
+        1366,
+        609
+      ],
+      "aerialCorrespondence": "图书馆东南侧的红色椭圆跑道。",
+      "cxOriginal": 6775,
+      "cyOriginal": 2874
+    },
+    {
+      "id": "tianqin-building",
+      "name": "天琴楼",
+      "cx": 634,
+      "cy": 548,
+      "use": "教学科研",
+      "shape": "Y形/三翼建筑，近三叉星形，西侧有独立窄翼",
+      "roughFloors": {
+        "suggested": 5,
+        "range": [
+          3,
+          7
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "初次粗坐标已纠正为粉色主体中心。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        591,
+        507,
+        674,
+        583
+      ],
+      "aerialCorrespondence": "鸟瞰图西北远端、琴湖旁的三翼建筑。",
+      "cxOriginal": 3208,
+      "cyOriginal": 2773
+    },
+    {
+      "id": "qin-lake-main",
+      "name": "琴湖（主体）",
+      "cx": 712,
+      "cy": 522,
+      "use": "景观水体",
+      "shape": "南北拉长的不规则湖面",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        677,
+        459,
+        747,
+        584
+      ],
+      "cxOriginal": 3603,
+      "cyOriginal": 2641
+    },
+    {
+      "id": "qin-lake-north",
+      "name": "琴湖（北侧小水面）",
+      "cx": 638,
+      "cy": 476,
+      "use": "景观水体",
+      "shape": "小型不规则椭圆水面",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        619,
+        454,
+        656,
+        497
+      ],
+      "cxOriginal": 3228,
+      "cyOriginal": 2409
+    },
+    {
+      "id": "qin-lake-west",
+      "name": "琴湖（天琴楼南侧水面）",
+      "cx": 642,
+      "cy": 594,
+      "use": "景观水体",
+      "shape": "横向狭长曲折水面",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        596,
+        578,
+        687,
+        610
+      ],
+      "cxOriginal": 3248,
+      "cyOriginal": 3006
+    },
+    {
+      "id": "yin-lake",
+      "name": "隐湖",
+      "cx": 1202,
+      "cy": 716,
+      "use": "景观水体",
+      "shape": "不规则肾形湖面，东邻教学楼长轴",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "landscape_improvement_planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "原图标“隐湖（规划景观提升）”，表示景观提升规划，不能把整个湖理解为尚不存在。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1156,
+        644,
+        1259,
+        787
+      ],
+      "aerialCorrespondence": "教学楼西侧、音乐厅北侧的大水面。",
+      "cxOriginal": 6082,
+      "cyOriginal": 3623
+    },
+    {
+      "id": "ruohai-main",
+      "name": "若海（主要连通水面）",
+      "cx": 1401,
+      "cy": 905,
+      "use": "景观水体",
+      "shape": "长条曲折连通湖，沿海琴西侧和行政楼东/南侧形成弯折",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.95,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "landscape_improvement_planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "原图多处标“若海（规划景观提升）”；这是既有水面上景观提升标注，不等于整湖新建。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1275,
+        695,
+        1470,
+        1098
+      ],
+      "aerialCorrespondence": "海琴组西侧的长形水体，向西南绕行政楼前方延伸。",
+      "cxOriginal": 7089,
+      "cyOriginal": 4579
+    },
+    {
+      "id": "ruohai-west-arm",
+      "name": "若海西侧支水面",
+      "cx": 1237,
+      "cy": 1017,
+      "use": "景观水体",
+      "shape": "行政楼西南侧狭长弯月水面，经桥与主水面邻接",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.84,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "landscape_improvement_planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "与主若海的水系关系按地图视觉理解，精确连通需以底图边界为准。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1206,
+        973,
+        1287,
+        1056
+      ],
+      "cxOriginal": 6259,
+      "cyOriginal": 5146
+    },
+    {
+      "id": "ruohai-canteen",
+      "name": "若海食堂",
+      "cx": 1429,
+      "cy": 1016,
+      "use": "食堂/公共配套",
+      "shape": "近六边形/扇形独立低层，沿湖布置",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          4
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.99,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1397,
+        985,
+        1460,
+        1048
+      ],
+      "aerialCorrespondence": "若海南端、海琴6号北侧的独立浅色公共建筑。",
+      "cxOriginal": 7230,
+      "cyOriginal": 5141
+    },
+    {
+      "id": "rongyuan-canteen",
+      "name": "榕园食堂（榕园4号）",
+      "cx": 950,
+      "cy": 515,
+      "use": "食堂/公共配套",
+      "shape": "不规则多翼低层建筑，贴圆形前庭东侧",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          4
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        925,
+        486,
+        980,
+        539
+      ],
+      "cxOriginal": 4807,
+      "cyOriginal": 2606
+    },
+    {
+      "id": "liyuan-canteen",
+      "name": "荔园食堂（荔园13号）",
+      "cx": 1204,
+      "cy": 491,
+      "use": "食堂/公共配套",
+      "shape": "近矩形/局部折线低层体量",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          4
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.98,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1181,
+        473,
+        1227,
+        509
+      ],
+      "cxOriginal": 6092,
+      "cyOriginal": 2485
+    },
+    {
+      "id": "jinyuan-canteen",
+      "name": "槿园食堂",
+      "cx": 1444,
+      "cy": 575,
+      "use": "食堂/公共配套",
+      "shape": "小矩形体量，处于槿园宿舍两组之间",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          4
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.91,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1428,
+        557,
+        1462,
+        591
+      ],
+      "cxOriginal": 7306,
+      "cyOriginal": 2910
+    },
+    {
+      "id": "rongyuan-housing",
+      "name": "榕园宿舍区",
+      "cx": 916,
+      "cy": 409,
+      "use": "宿舍",
+      "shape": "沿山谷由北向南排列的12号至5号板式楼，南端含1–3号与食堂",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          5,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.95,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "区域点为宿舍带中心，不是一栋楼的中心。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        792,
+        312,
+        1005,
+        546
+      ],
+      "cxOriginal": 4635,
+      "cyOriginal": 2070
+    },
+    {
+      "id": "liyuan-housing",
+      "name": "荔园宿舍区",
+      "cx": 1138,
+      "cy": 489,
+      "use": "宿舍",
+      "shape": "多排平行板楼，东西小路/球场穿插，南北伸长",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          5,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "原图可读荔园1/3/5等以及19号等标签。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1090,
+        384,
+        1178,
+        590
+      ],
+      "cxOriginal": 5758,
+      "cyOriginal": 2474
+    },
+    {
+      "id": "tongyuan-apartments",
+      "name": "桐园公寓",
+      "cx": 676,
+      "cy": 451,
+      "use": "公寓宿舍",
+      "shape": "沿弧形道路分布的数栋小型楼体",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.93,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        648,
+        418,
+        710,
+        477
+      ],
+      "cxOriginal": 3420,
+      "cyOriginal": 2282
+    },
+    {
+      "id": "tongyuan-construction",
+      "name": "桐园（在建）",
+      "cx": 699,
+      "cy": 358,
+      "use": "宿舍/规划在建",
+      "shape": "三栋以上板楼与配套场地，沿谷地纵向布置",
+      "roughFloors": {
+        "suggested": 10,
+        "range": [
+          6,
+          14
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "under_construction_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "青色标注；鸟瞰图把高楼画完整，不说明当前已建。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        674,
+        307,
+        734,
+        416
+      ],
+      "cxOriginal": 3537,
+      "cyOriginal": 1812
+    },
+    {
+      "id": "jinyuan-housing",
+      "name": "槿园宿舍区",
+      "cx": 1445,
+      "cy": 563,
+      "use": "宿舍",
+      "shape": "两组长条塔/板式高层，鸟瞰图高度显著高于场馆",
+      "roughFloors": {
+        "suggested": 15,
+        "range": [
+          12,
+          18
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.92,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "区域中心；具体楼数和准确层数未测量。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1370,
+        521,
+        1518,
+        606
+      ],
+      "cxOriginal": 7311,
+      "cyOriginal": 2849
+    },
+    {
+      "id": "boya-faculty-apartments",
+      "name": "博雅苑人才公寓",
+      "cx": 984,
+      "cy": 97,
+      "use": "人才公寓/居住",
+      "shape": "山脊端多栋Y形/折形塔楼，组团道路连接",
+      "roughFloors": {
+        "suggested": 18,
+        "range": [
+          12,
+          22
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.94,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "北端分“博雅苑”和“博雅苑人才公寓”标签；不可仅凭效果图判定哪些已建。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        907,
+        40,
+        1057,
+        178
+      ],
+      "cxOriginal": 4979,
+      "cyOriginal": 491
+    },
+    {
+      "id": "hanlin-3",
+      "name": "瀚林3号（A–E栋组团）",
+      "cx": 880,
+      "cy": 607,
+      "use": "教学科研办公",
+      "shape": "多段连廊组合的长条与多个庭院，A/B/C/D/E分栋",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.92,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        764,
+        532,
+        996,
+        681
+      ],
+      "cxOriginal": 4453,
+      "cyOriginal": 3071
+    },
+    {
+      "id": "hanlin-2",
+      "name": "瀚林2号",
+      "cx": 1014,
+      "cy": 643,
+      "use": "教学科研办公",
+      "shape": "长条矩形双院落，沿道路倾斜",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.95,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        986,
+        607,
+        1044,
+        681
+      ],
+      "cxOriginal": 5131,
+      "cyOriginal": 3254
+    },
+    {
+      "id": "hanlin-1",
+      "name": "瀚林1号（在建）",
+      "cx": 1146,
+      "cy": 692,
+      "use": "教学科研办公",
+      "shape": "多段H形/折线楼体，内部庭院",
+      "roughFloors": {
+        "suggested": 6,
+        "range": [
+          4,
+          8
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "under_construction_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "原图青色，并明确“在建”。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1112,
+        638,
+        1180,
+        747
+      ],
+      "cxOriginal": 5798,
+      "cyOriginal": 3502
+    },
+    {
+      "id": "central-sports-planned",
+      "name": "中心运动场（规划）",
+      "cx": 1077,
+      "cy": 690,
+      "use": "规划室外运动",
+      "shape": "矩形运动场与球场组团",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "planned_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1045,
+        635,
+        1116,
+        751
+      ],
+      "cxOriginal": 5449,
+      "cyOriginal": 3491
+    },
+    {
+      "id": "student-service",
+      "name": "学生服务中心",
+      "cx": 1086,
+      "cy": 549,
+      "use": "学生公共服务",
+      "shape": "近弧形/折角小型公共建筑",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          5
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.91,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1062,
+        526,
+        1107,
+        572
+      ],
+      "cxOriginal": 5495,
+      "cyOriginal": 2778
+    },
+    {
+      "id": "sun-yatsen-square",
+      "name": "中山广场",
+      "cx": 1587,
+      "cy": 739,
+      "use": "开放公共空间",
+      "shape": "长矩形广场与林荫轴，位于海琴2/3号之间",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1495,
+        714,
+        1661,
+        766
+      ],
+      "cxOriginal": 8030,
+      "cyOriginal": 3739
+    },
+    {
+      "id": "tianqin-model-station",
+      "name": "天琴模拟台站",
+      "cx": 578,
+      "cy": 624,
+      "use": "科研台站",
+      "shape": "小型矩形屋面/独立台站",
+      "roughFloors": {
+        "suggested": 2,
+        "range": [
+          1,
+          3
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.93,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        563,
+        607,
+        596,
+        639
+      ],
+      "cxOriginal": 2925,
+      "cyOriginal": 3158
+    },
+    {
+      "id": "tianqin-geodesy",
+      "name": "天琴测地台站",
+      "cx": 727,
+      "cy": 647,
+      "use": "科研台站",
+      "shape": "小型近矩形独立建筑",
+      "roughFloors": {
+        "suggested": 2,
+        "range": [
+          1,
+          3
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.92,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        713,
+        633,
+        743,
+        660
+      ],
+      "cxOriginal": 3678,
+      "cyOriginal": 3274
+    },
+    {
+      "id": "west-mountains",
+      "name": "西部山体与林地",
+      "cx": 613,
+      "cy": 354,
+      "use": "山体林地",
+      "shape": "连续起伏山地，等高线密集；内部有谷地与少量建筑开口",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.97,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "这里是区域锚点，不是可直接拿矩形填充的山体轮廓；没有DEM，不提供实测高程，25M字样不能当整座山的高度。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        51,
+        90,
+        1211,
+        880
+      ],
+      "cxOriginal": 3102,
+      "cyOriginal": 1791
+    },
+    {
+      "id": "north-east-hill",
+      "name": "教学区北侧山体",
+      "cx": 1080,
+      "cy": 348,
+      "use": "山体林地",
+      "shape": "榕园与荔园之间及其北侧的狭长丘陵",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.88,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "应根据底图绿地/等高线掩膜形成起伏，不覆盖宿舍与道路。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        970,
+        201,
+        1345,
+        486
+      ],
+      "cxOriginal": 5464,
+      "cyOriginal": 1761
+    },
+    {
+      "id": "coastal-green",
+      "name": "海滨绿带",
+      "cx": 1664,
+      "cy": 1037,
+      "use": "海岸绿地/沙滩",
+      "shape": "沿海琴东侧形成的南北弯曲条带，靠海一侧为沙滩",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.94,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1597,
+        747,
+        1801,
+        1248
+      ],
+      "cxOriginal": 8419,
+      "cyOriginal": 5247
+    },
+    {
+      "id": "tangjia-bay",
+      "name": "唐家湾海面",
+      "cx": 1865,
+      "cy": 1050,
+      "use": "海域",
+      "shape": "俯视图右侧/东南侧大水面，白色浪线与沙岸相邻",
+      "roughFloors": null,
+      "confidence": {
+        "nameAndPosition": 0.96,
+        "shape": 0.75,
+        "floors": null
+      },
+      "sourceMapStatus": "shown_in_2024_map_status_unspecified",
+      "currentBuiltStatus": "not_verified",
+      "notes": "海岸线是大致示意，不是潮位边界或地籍界。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1725,
+        786,
+        1960,
+        1248
+      ],
+      "cxOriginal": 9436,
+      "cyOriginal": 5313
+    },
+    {
+      "id": "planning-annex-international",
+      "name": "国际交流中心南侧规划建筑",
+      "cx": 1545,
+      "cy": 1116,
+      "use": "规划建筑",
+      "shape": "小型沿边界矩形附属体，青色",
+      "roughFloors": {
+        "suggested": 3,
+        "range": [
+          2,
+          5
+        ],
+        "basis": "仅按鸟瞰效果图外观作沙盘示意；非实测层数/高度"
+      },
+      "confidence": {
+        "nameAndPosition": 0.91,
+        "shape": 0.75,
+        "floors": 0.3
+      },
+      "sourceMapStatus": "planned_or_under_construction_in_2024_map",
+      "currentBuiltStatus": "not_verified",
+      "notes": "此处青色与北侧国际交流中心粉色主体要分开显示。",
+      "sourceEvidence": [
+        "俯视图可读标签/建筑轮廓",
+        "鸟瞰效果图外观辅助"
+      ],
+      "bbox": [
+        1520,
+        1106,
+        1570,
+        1131
+      ],
+      "cxOriginal": 7817,
+      "cyOriginal": 5647
+    }
+  ],
+  "coastlineApproxPx": [
+    [
+      1800,
+      750
+    ],
+    [
+      1762,
+      806
+    ],
+    [
+      1713,
+      887
+    ],
+    [
+      1674,
+      994
+    ],
+    [
+      1640,
+      1110
+    ],
+    [
+      1620,
+      1248
+    ]
+  ],
+  "sourceReadOnly": true
+}

@@ -1,7 +1,3 @@
-//可复用的数据展示小组件，
-//接收 label（标签）、value（数值）、unit（单位）、
-// icon（图标）、trend（涨跌趋势）、status（normal/warning/danger 状态色）
-
 import { ReactNode } from "react";
 
 interface DataCardProps {
@@ -15,13 +11,13 @@ interface DataCardProps {
 
 export function DataCard({ label, value, unit, icon, trend, status = "normal" }: DataCardProps) {
   const statusColors = {
-    normal: "border-cyan-500/30 bg-cyan-500/5",
+    normal: "border-[#27684f]/30 bg-[#27684f]/5",
     warning: "border-yellow-500/50 bg-yellow-500/10",
     danger: "border-red-500/50 bg-red-500/10",
   };
 
   const valueColors = {
-    normal: "text-cyan-300",
+    normal: "text-[#5dba88]",
     warning: "text-yellow-400",
     danger: "text-red-400",
   };
@@ -30,20 +26,20 @@ export function DataCard({ label, value, unit, icon, trend, status = "normal" }:
     <div className={`rounded-lg border ${statusColors[status]} p-4 backdrop-blur-sm`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <div className="mb-1 text-xs text-cyan-500/70">{label}</div>
+          <div className="mb-1 text-xs text-[#81a898]">{label}</div>
           <div className={`flex items-baseline gap-1 text-2xl font-bold ${valueColors[status]}`}>
             <span>{value}</span>
             {unit && <span className="text-sm font-normal opacity-70">{unit}</span>}
           </div>
         </div>
-        {icon && <div className="text-cyan-400/50">{icon}</div>}
+        {icon && <div className="text-[#47a87a]/50">{icon}</div>}
       </div>
       {trend && (
         <div className="mt-2 flex items-center gap-1 text-xs">
           <span className={trend === "up" ? "text-green-400" : trend === "down" ? "text-red-400" : "text-gray-400"}>
             {trend === "up" ? "↑" : trend === "down" ? "↓" : "→"} {trend === "up" ? "+5%" : trend === "down" ? "-3%" : "0%"}
           </span>
-          <span className="text-cyan-500/50">vs 上一小时</span>
+          <span className="text-[#81a898]/50">vs 上一小时</span>
         </div>
       )}
     </div>

@@ -66,7 +66,7 @@ function StressBladeModel({ isRunning, loadFactor }: { isRunning: boolean, loadF
     const stress = baseStress * loadFactor;  // 实际应力 = 基础应力 × 载荷系数
     if (stress > 0.8) return "#ef4444";      // 红色 — 高应力危险区
     if (stress > 0.5) return "#f59e0b";      // 橙色 — 中等应力警告区
-    return "#06b6d4";                         // 青色 — 低应力安全区
+    return "#47a87a";                         // 青色 — 低应力安全区
   };
 
   // ============================================================
@@ -85,7 +85,7 @@ function StressBladeModel({ isRunning, loadFactor }: { isRunning: boolean, loadF
         {/* meshStandardMaterial — 材质：颜色+透明度+粗糙度+金属感 */}
         <meshStandardMaterial color="#0891b2" transparent opacity={0.15} roughness={0.1} metalness={0.9} />
         {/* Edges — 在物体边缘画白线，使其在暗色背景下也能看清轮廓 */}
-        <Edges scale={1} threshold={15} color="#06b6d4" />
+        <Edges scale={1} threshold={15} color="#47a87a" />
       </mesh>
 
       {/* ========== 轮毂（Hub）+ 3片叶片 ========== */}
@@ -163,18 +163,17 @@ export function Simulation() {
       <div className="col-span-3 space-y-4">
         
         {/* --- 仿真参数配置卡片 --- */}
-        <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-          <h2 className="mb-4 flex items-center gap-2 text-sm font-semibold text-cyan-400">
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+          <h2 className="mb-4 flex items-center gap-2 text-sm font-semibold text-[#47a87a]">
             <Settings className="h-4 w-4" />
             仿真参数配置
           </h2>
 
           <div className="space-y-4">
-            {/* 仿真类型选择 — 目前固定为"应力分布分析" */}
             <div>
-              <label className="mb-2 block text-xs text-cyan-500/70">仿真类型</label>
+              <label className="mb-2 block text-xs text-[#81a898]">仿真类型</label>
               <div className="space-y-2">
-                <button className="w-full rounded px-3 py-2 text-left text-xs transition-all border border-cyan-500 bg-cyan-500/20 text-cyan-300">
+                <button className="w-full rounded px-3 py-2 text-left text-xs transition-all border border-[#47a87a] bg-[#27684f]/20 text-[#5dba88]">
                   应力分布分析
                 </button>
               </div>
@@ -183,9 +182,9 @@ export function Simulation() {
             {/* 风速调节滑块 — 范围 5~25 m/s */}
             {/* 注意：这个滑块目前只做展示，未绑定到实际状态变量（可后续扩展） */}
             <div>
-              <label className="mb-2 block text-xs text-cyan-500/70">风速 (m/s)</label>
-              <input type="range" min="5" max="25" defaultValue="12" className="w-full accent-cyan-500" />
-              <div className="mt-1 flex justify-between text-xs text-cyan-500/50">
+              <label className="mb-2 block text-xs text-[#81a898]">风速 (m/s)</label>
+              <input type="range" min="5" max="25" defaultValue="12" className="w-full accent-[#47a87a]" />
+              <div className="mt-1 flex justify-between text-xs text-[#6d8f80]">
                 <span>5</span>
                 <span>12</span>
                 <span>25</span>
@@ -195,9 +194,9 @@ export function Simulation() {
             {/* 转速调节滑块 — 范围 8~18 RPM */}
             {/* 同样暂未绑定状态变量，仅展示 UI */}
             <div>
-              <label className="mb-2 block text-xs text-cyan-500/70">转速 (RPM)</label>
-              <input type="range" min="8" max="18" defaultValue="12" className="w-full accent-cyan-500" />
-              <div className="mt-1 flex justify-between text-xs text-cyan-500/50">
+              <label className="mb-2 block text-xs text-[#81a898]">转速 (RPM)</label>
+              <input type="range" min="8" max="18" defaultValue="12" className="w-full accent-[#47a87a]" />
+              <div className="mt-1 flex justify-between text-xs text-[#6d8f80]">
                 <span>8</span>
                 <span>12</span>
                 <span>18</span>
@@ -208,7 +207,7 @@ export function Simulation() {
             {/* value={loadFactor} — 当前值来自 state */}
             {/* onChange={...setLoadFactor} — 拖动时立即更新 state → 叶片颜色实时变化 */}
             <div>
-              <label className="mb-2 block text-xs text-cyan-500/70">动态载荷系数 (实时影响应力)</label>
+              <label className="mb-2 block text-xs text-[#81a898]">动态载荷系数 (实时影响应力)</label>
               <input 
                 type="range" 
                 min="0.5" 
@@ -216,9 +215,9 @@ export function Simulation() {
                 step="0.1"                     // 每次拖动步进0.1
                 value={loadFactor}             // 绑定到 state
                 onChange={(e) => setLoadFactor(parseFloat(e.target.value))}  // parseFloat 把字符串"1.2"转为数字1.2
-                className="w-full accent-cyan-500" 
+                className="w-full accent-[#47a87a]" 
               />
-              <div className="mt-1 flex justify-between text-xs text-cyan-500/50">
+              <div className="mt-1 flex justify-between text-xs text-[#6d8f80]">
                 <span>0.5</span>
                 <span>1.0</span>
                 <span>1.5</span>
@@ -233,7 +232,7 @@ export function Simulation() {
               className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm transition-all ${
                 isRunning 
                   ? "border border-red-500 bg-red-500/20 text-red-400 hover:bg-red-500/30"   // 运行中→红色
-                  : "border border-cyan-500 bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30" // 暂停中→青色
+                  : "border border-[#47a87a] bg-[#27684f]/20 text-[#47a87a] hover:bg-[#27684f]/30" // 暂停中→青色
               }`}
             >
               <Play className="h-4 w-4" />
@@ -243,29 +242,29 @@ export function Simulation() {
         </div>
 
         {/* --- 计算状态卡片 --- */}
-        <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4">
-          <h3 className="mb-3 text-xs font-semibold text-cyan-400">计算状态</h3>
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4">
+          <h3 className="mb-3 text-xs font-semibold text-[#47a87a]">计算状态</h3>
           <div className="space-y-2 text-xs">
             <div className="flex justify-between">
-              <span className="text-cyan-500/70">网格单元</span>
-              <span className="text-cyan-300">1,245,678</span>
+              <span className="text-[#81a898]">网格单元</span>
+              <span className="text-[#5dba88]">1,245,678</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-cyan-500/70">时间步长</span>
-              <span className="text-cyan-300">0.001s</span>
+              <span className="text-[#81a898]">时间步长</span>
+              <span className="text-[#5dba88]">0.001s</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-cyan-500/70">收敛精度</span>
+              <span className="text-[#81a898]">收敛精度</span>
               <span className="text-green-400">1e-6</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-cyan-500/70">计算进度</span>
+              <span className="text-[#81a898]">计算进度</span>
               {/* isRunning 为 true 显示"实时计算中"，为 false 显示"已暂停" */}
-              <span className="text-cyan-300">{isRunning ? "实时计算中" : "已暂停"}</span>
+              <span className="text-[#5dba88]">{isRunning ? "实时计算中" : "已暂停"}</span>
             </div>
             {/* 进度条 — 运行中整个条亮青色并闪烁，暂停中半透明 */}
-            <div className="h-1 rounded bg-cyan-500/10">
-              <div className={`h-full w-full rounded transition-all ${isRunning ? 'bg-cyan-500 animate-pulse' : 'bg-cyan-500/50'}`}></div>
+            <div className="h-1 rounded bg-[#27684f]/10">
+              <div className={`h-full w-full rounded transition-all ${isRunning ? 'bg-[#47a87a] animate-pulse' : 'bg-[#27684f]/50'}`}></div>
             </div>
           </div>
         </div>
@@ -273,14 +272,14 @@ export function Simulation() {
 
       {/* ==================== 右侧：3D 可视化区域 ==================== */}
       <div className="col-span-9 space-y-4">
-        <div className="rounded-lg border border-cyan-500/20 bg-[#0d1229]/50 p-4 h-[700px] flex flex-col">
+        <div className="rounded-lg border border-[#27684f]/30 bg-[#1a3c31]/50 p-4 h-[700px] flex flex-col">
           
           {/* 标题栏 + 导出按钮 */}
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-cyan-400">
+            <h2 className="text-sm font-semibold text-[#47a87a]">
               风机叶片 3D 应力分布分析
             </h2>
-            <button className="flex items-center gap-2 rounded bg-cyan-500/10 px-3 py-1 text-xs text-cyan-400 hover:bg-cyan-500/20">
+            <button className="flex items-center gap-2 rounded bg-[#27684f]/10 px-3 py-1 text-xs text-[#47a87a] hover:bg-[#27684f]/20">
               <Download className="h-3 w-3" />
               导出结果
             </button>
@@ -290,14 +289,14 @@ export function Simulation() {
           {/* Canvas 是 @react-three/fiber 提供的 WebGL 画布 */}
           {/* camera={{ position: [0, 0, 8], fov: 50 }} — 相机位置在Z轴8单位处，视场角50度 */}
           {/* relative — 为上面浮动的图例提供定位参考 */}
-          <div className="flex-1 overflow-hidden rounded-lg border border-cyan-500/10 bg-gradient-to-b from-[#0a0e27] to-[#0d1229] relative">
+          <div className="flex-1 overflow-hidden rounded-lg border border-[#27684f]/10 bg-gradient-to-b from-[#132e25] to-[#1a3c31] relative">
             <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
               {/* 环境光 — 均匀照亮所有物体，intensity=0.5 为亮度 */}
               <ambientLight intensity={0.5} />
               {/* 点光源 — 从右上角打光，模拟光源 */}
               <pointLight position={[10, 10, 10]} intensity={1} />
               {/* 第二个点光源 — 从左下打青色补光，增加立体感 */}
-              <pointLight position={[-10, -10, -10]} intensity={0.5} color="#06b6d4" />
+              <pointLight position={[-10, -10, -10]} intensity={0.5} color="#47a87a" />
               
               {/* ★★★ 叶片应力模型 ★★★ */}
               {/* 传入 isRunning 和 loadFactor，两者变化时模型自动更新 */}
@@ -321,18 +320,18 @@ export function Simulation() {
             {/* absolute — 绝对定位相对于父容器 */}
             {/* -translate-x-1/2 — CSS 水平居中技巧 */}
             {/* backdrop-blur — 毛玻璃模糊效果 */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#0a0e27]/80 backdrop-blur border border-cyan-500/30 px-6 py-3 rounded-full flex flex-col items-center gap-2 text-xs">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#132e25]/80 backdrop-blur border border-[#27684f]/30 px-6 py-3 rounded-full flex flex-col items-center gap-2 text-xs">
               <div className="flex items-center justify-center gap-4">
-                <span className="text-cyan-400 font-semibold">低应力 (安全)</span>
+                <span className="text-[#47a87a] font-semibold">低应力 (安全)</span>
                 {/* 渐变色条：青→橙→红，对应 低→中→高 应力 */}
                 <div className="flex h-3 w-48 overflow-hidden rounded-full border border-white/10">
-                  <div className="flex-1 bg-[#06b6d4]"></div>   {/* 青色 = 低应力 */}
+                  <div className="flex-1 bg-[#47a87a]"></div>   {/* 青色 = 低应力 */}
                   <div className="flex-1 bg-[#f59e0b]"></div>   {/* 橙色 = 中应力 */}
                   <div className="flex-1 bg-[#ef4444]"></div>   {/* 红色 = 高应力 */}
                 </div>
                 <span className="text-red-400 font-semibold">高应力 (疲劳区)</span>
               </div>
-              <div className="text-cyan-500/50">支持鼠标拖动旋转与滚轮缩放，调节左侧"载荷系数"可实时观察应力变化</div>
+              <div className="text-[#6d8f80]">支持鼠标拖动旋转与滚轮缩放，调节左侧"载荷系数"可实时观察应力变化</div>
             </div>
           </div>
         </div>

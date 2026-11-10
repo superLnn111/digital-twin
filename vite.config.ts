@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -29,22 +29,36 @@ function figmaAssetResolver() {
   }
 }
 
-export default defineConfig({
-  plugins: [
-    figmaAssetResolver(),
-    react(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: { '@': path.resolve(__dirname, './src') },
-  },
-  server: {                              // ← 新增 server 配置块
-    proxy: {
-      '/ws': {                           // 拦截所有 /ws 开头的请求
-        target: 'ws://localhost:8000',   // 转发到 Python 后端
-        ws: true,                        // 支持 WebSocket 协议升级
+export default defineConfig(({ mode }) => {
+  // wind-monitoring v2 后端地址：本地沙盒默认 8101，可用 VITE_API_TARGET 覆盖
+  const env = loadEnv(mode, process.cwd(), '')
+  const apiTarget = env.VITE_API_TARGET || 'http://127.0.0.1:8101'
+
+  return {
+    plugins: [
+      figmaAssetResolver(),
+      react(),
+      tailwindcss(),
+    ],
+    resolve: {
+      alias: { '@': path.resolve(__dirname, './src') },
+    },
+    server: {
+      proxy: {
+        // AI 诊断后端（独立服务）
+        '/ws': {
+          target: 'ws://localhost:8000',
+          ws: true,
+        },
+        // wind-monitoring v2：/wind-v2/api/* → 后端 /api/*（HTTP + WS）
+        '/wind-v2': {
+          target: apiTarget,
+          changeOrigin: true,
+          ws: true,
+          rewrite: (p) => p.replace(/^\/wind-v2/, ''),
+        },
       },
     },
-  },
-  assetsInclude: ['**/*.svg', '**/*.csv'],
+    assetsInclude: ['**/*.svg', '**/*.csv'],
+  }
 })

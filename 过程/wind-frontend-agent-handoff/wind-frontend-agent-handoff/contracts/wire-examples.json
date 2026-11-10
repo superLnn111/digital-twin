@@ -1,0 +1,206 @@
+{
+  "auth": {
+    "http_header": {
+      "Authorization": "Bearer wind-dev-token"
+    },
+    "websocket_first_message_within_5s": {
+      "token": "wind-dev-token"
+    },
+    "websocket_close_codes": {
+      "1000_with_prior_null_cursor": "Normal completion of /api/replay stream",
+      "1000_without_null_cursor": "Stream truncated before completion; resume using last next_cursor",
+      "1008_without_error_message": "Authentication failed (invalid token or >5s timeout)",
+      "1008_after_error_message": "Query validation error on /api/replay (see detail in preceding {'type':'error','detail':'...'} frame)"
+    }
+  },
+  "GET /health": {
+    "response_200": {
+      "ok": true
+    },
+    "response_401": {
+      "detail": "Bearer token required"
+    }
+  },
+  "GET /api/gateways": {
+    "response_200": {
+      "gateways": [
+        {
+          "gateway_id": "rpi5",
+          "online": true,
+          "received_utc_ns": "1790000025000000000",
+          "status": {
+            "channels": {
+              "usb-if00": {
+                "updated_utc_ns": "1790000024900000000",
+                "running": true,
+                "frames": 1200,
+                "segments": 3,
+                "quality": {
+                  "checksum_errors": 0,
+                  "length_errors": 0,
+                  "discarded_bytes": 0,
+                  "incomplete_bytes": 0
+                },
+                "read_bytes": 26400,
+                "queue_bytes": 0,
+                "queue_peak_bytes": 512,
+                "latest": {
+                  "utc_ns": "1790000023900000000",
+                  "monotonic_ns": "24900000000",
+                  "message_id": 3,
+                  "raw_hex": "5555030cdefd4bffda1f04ff9700bf0030"
+                }
+              },
+              "usb-if02": {
+                "updated_utc_ns": "1790000024900000000",
+                "running": true,
+                "frames": 1200,
+                "segments": 3,
+                "quality": {
+                  "checksum_errors": 0,
+                  "length_errors": 0,
+                  "discarded_bytes": 0,
+                  "incomplete_bytes": 0
+                },
+                "read_bytes": 26400,
+                "queue_bytes": 0,
+                "queue_peak_bytes": 512,
+                "latest": {
+                  "utc_ns": "1790000023901000000",
+                  "monotonic_ns": "24900000000",
+                  "message_id": 3,
+                  "raw_hex": "5555030c19ff9600852071fff5006200d3"
+                }
+              },
+              "usb-if04": {
+                "updated_utc_ns": "1790000024900000000",
+                "running": true,
+                "frames": 1200,
+                "segments": 3,
+                "quality": {
+                  "checksum_errors": 1,
+                  "length_errors": 0,
+                  "discarded_bytes": 4,
+                  "incomplete_bytes": 0
+                },
+                "read_bytes": 26400,
+                "queue_bytes": 0,
+                "queue_peak_bytes": 512,
+                "latest": {
+                  "utc_ns": "1790000023902000000",
+                  "monotonic_ns": "24900000000",
+                  "message_id": 3,
+                  "raw_hex": "5555030ca000a401ab20000017010000e1"
+                }
+              },
+              "usb-if06": {
+                "updated_utc_ns": "1790000024900000000",
+                "running": true,
+                "frames": 1200,
+                "segments": 3,
+                "quality": {
+                  "checksum_errors": 0,
+                  "length_errors": 0,
+                  "discarded_bytes": 0,
+                  "incomplete_bytes": 0
+                },
+                "read_bytes": 26400,
+                "queue_bytes": 0,
+                "queue_peak_bytes": 512,
+                "latest": {
+                  "utc_ns": "1790000023903000000",
+                  "monotonic_ns": "24900000000",
+                  "message_id": 3,
+                  "raw_hex": "5555030c2702070224208f00f5009dff4f"
+                }
+              }
+            },
+            "host": {
+              "boot_utc_ns": "1789996400125000000",
+              "uptime_sec": 3624.875,
+              "cpu_temp_mc": 62600,
+              "disk_used_percent": 28.4,
+              "throttled_hex": "0x0",
+              "ext5v_v": 4.9871,
+              "undervoltage_alarm": false,
+              "firmware_sample_utc_ns": "1790000020000000000"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "GET /api/sessions": {
+    "response_200": {
+      "sessions": [
+        {
+          "gateway_id": "rpi5",
+          "session_id": "field-v2-demo",
+          "segments": 12,
+          "frames": 452,
+          "start_ns": "1790000000000000000",
+          "end_ns": "1790000023903002000",
+          "checksum_errors": 1,
+          "length_errors": 0,
+          "discarded_bytes": 4,
+          "incomplete_bytes": 0
+        }
+      ]
+    }
+  },
+  "GET /api/frames": {
+    "query_example": "/api/frames?gateway_id=rpi5&channel_id=usb-if00&session_id=field-v2-demo&message_id=3&limit=2",
+    "empty_page_must_continue_example": {
+      "frames": [],
+      "next_cursor": "95334cb0a25c5c01945e0173597398f7b3890b95a34549225c9ac146e28542ef:0"
+    },
+    "non_empty_page_example": {
+      "frames": [
+        {
+          "segment_id": "95334cb0a25c5c01945e0173597398f7b3890b95a34549225c9ac146e28542ef",
+          "session_id": "field-v2-demo",
+          "utc_ns": "1790000020000000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdefd4bffda1f04ff9700bf0030",
+          "time_basis": "read_return"
+        }
+      ],
+      "next_cursor": null
+    }
+  },
+  "WS /api/live": {
+    "client_first_message": {
+      "token": "wind-dev-token"
+    },
+    "server_1hz_message": {
+      "type": "status",
+      "gateways": "Same array as GET /api/gateways .gateways"
+    }
+  },
+  "WS /api/replay": {
+    "url_example": "ws://127.0.0.1:8101/wind-v2/api/replay?gateway_id=rpi5&channel_id=usb-if00&session_id=field-v2-demo&limit=200",
+    "client_first_message": {
+      "token": "wind-dev-token"
+    },
+    "server_page_message": {
+      "type": "frames",
+      "frames": [
+        {
+          "segment_id": "95334cb0a25c5c01945e0173597398f7b3890b95a34549225c9ac146e28542ef",
+          "session_id": "field-v2-demo",
+          "utc_ns": "1790000020000000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdefd4bffda1f04ff9700bf0030",
+          "time_basis": "read_return"
+        }
+      ],
+      "next_cursor": null
+    },
+    "server_query_error_before_1008": {
+      "type": "error",
+      "detail": "since_ns must not exceed until_ns"
+    }
+  }
+}

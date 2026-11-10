@@ -33,9 +33,9 @@ const THEME = {
   wireDorm:   "#38bdf8",   // 天蓝 = 宿舍楼颜色
   wireGreen:  "#10b981",   // 翠绿 = 树木颜色
   wireTeal:   "#0d9488",   // 墨绿 = 湖边树木
-  glass:      "#020617",   // 深海军蓝 = 建筑填充色
-  glassRoof:  "#061120",   // 稍亮深蓝 = 屋顶色
-  road:       "#040a14",   // 最深黑蓝 = 道路色
+  glass:      "#0a1f1a",   // 深绿色 = 建筑填充色
+  glassRoof:  "#0a1f1a",   // 深绿色 = 屋顶色
+  road:       "#0b1f18",   // 深墨绿 = 道路色
   accentRed:  "#ef4444",   // 红色 = 故障/警告
   accentYellow:"#eab308",  // 黄色 = 预警
   accentGreen: "#10b981",  // 绿色 = 正常/叶片
@@ -845,14 +845,14 @@ export function WindTurbine3D({ defectMap }: { defectMap?: Record<number, { blad
 
   return (
     // 外层 div 必须给 Canvas 提供宽高
-    <div className="h-full w-full bg-[#020617]">
+    <div className="h-full w-full bg-[#0a1f1a]">
       {/* Canvas = Three.js 渲染的画布 */}
       <Canvas
         camera={{ position: [38, 32, 62], fov: 40 }}  // 相机初始位置 + 视场角40°
         gl={{ antialias: true, alpha: false }}          // 抗锯齿 + 无透明通道
       >
         {/* 设置画布背景色 */}
-        <color attach="background" args={["#020617"]} />
+        <color attach="background" args={["#0a1f1a"]} />
 
         {/* ===== 灯光系统 ===== */}
         {/* 环境光：均匀照亮整个场景（0.12很低，保持暗调） */}

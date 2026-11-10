@@ -1,0 +1,3424 @@
+{
+  "segments": [
+    {
+      "segment_id": "e1688730d2df2eea9349238bcd441bc8f7b088d862d843f45283c0c5731d71b6",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if00",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 40,
+        "valid_bytes": 440,
+        "start_utc_ns": 1790000000000000000,
+        "end_utc_ns": 1790000003900000000,
+        "start_monotonic_ns": 1000000000,
+        "end_monotonic_ns": 4900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000000000000000",
+          "monotonic_ns": "1000000000",
+          "message_id": 1,
+          "raw_hex": "555501060000b004000065"
+        },
+        {
+          "utc_ns": "1790000000100000000",
+          "monotonic_ns": "1100000000",
+          "message_id": 1,
+          "raw_hex": "555501060c01a2049600fa"
+        },
+        {
+          "utc_ns": "1790000000200000000",
+          "monotonic_ns": "1200000000",
+          "message_id": 1,
+          "raw_hex": "5555010613027a042c0171"
+        },
+        {
+          "utc_ns": "1790000000300000000",
+          "monotonic_ns": "1300000000",
+          "message_id": 1,
+          "raw_hex": "555501060e033804c201c1"
+        },
+        {
+          "utc_ns": "1790000000400000000",
+          "monotonic_ns": "1400000000",
+          "message_id": 1,
+          "raw_hex": "55550106f803de035802e7"
+        },
+        {
+          "utc_ns": "1790000000500000000",
+          "monotonic_ns": "1500000000",
+          "message_id": 1,
+          "raw_hex": "55550106ca046e03ee02e0"
+        },
+        {
+          "utc_ns": "1790000000600000000",
+          "monotonic_ns": "1600000000",
+          "message_id": 1,
+          "raw_hex": "555501068105e9028403a9"
+        },
+        {
+          "utc_ns": "1790000000700000000",
+          "monotonic_ns": "1700000000",
+          "message_id": 1,
+          "raw_hex": "55550106190655021a0445"
+        },
+        {
+          "utc_ns": "1790000000800000000",
+          "monotonic_ns": "1800000000",
+          "message_id": 1,
+          "raw_hex": "555501068d06b201b004ab"
+        },
+        {
+          "utc_ns": "1790000000900000000",
+          "monotonic_ns": "1900000000",
+          "message_id": 1,
+          "raw_hex": "55550106dc0606014605e5"
+        },
+        {
+          "utc_ns": "1790000001000000000",
+          "monotonic_ns": "2000000000",
+          "message_id": 1,
+          "raw_hex": "5555010603075400dc05f0"
+        },
+        {
+          "utc_ns": "1790000001100000000",
+          "monotonic_ns": "2100000000",
+          "message_id": 1,
+          "raw_hex": "555501060207a2ff7206d3"
+        },
+        {
+          "utc_ns": "1790000001200000000",
+          "monotonic_ns": "2200000000",
+          "message_id": 1,
+          "raw_hex": "55550106d806f0fe08078c"
+        },
+        {
+          "utc_ns": "1790000001300000000",
+          "monotonic_ns": "2300000000",
+          "message_id": 1,
+          "raw_hex": "55550106880644fe9e0726"
+        },
+        {
+          "utc_ns": "1790000001400000000",
+          "monotonic_ns": "2400000000",
+          "message_id": 1,
+          "raw_hex": "555501061106a3fd3408a4"
+        },
+        {
+          "utc_ns": "1790000001500000000",
+          "monotonic_ns": "2500000000",
+          "message_id": 1,
+          "raw_hex": "5555010678050ffdca080c"
+        },
+        {
+          "utc_ns": "1790000001600000000",
+          "monotonic_ns": "2600000000",
+          "message_id": 1,
+          "raw_hex": "55550106bf048cfc600965"
+        },
+        {
+          "utc_ns": "1790000001700000000",
+          "monotonic_ns": "2700000000",
+          "message_id": 1,
+          "raw_hex": "55550106eb031cfcf609b6"
+        },
+        {
+          "utc_ns": "1790000001800000000",
+          "monotonic_ns": "2800000000",
+          "message_id": 1,
+          "raw_hex": "555501060103c4fb8c0a0a"
+        },
+        {
+          "utc_ns": "1790000001900000000",
+          "monotonic_ns": "2900000000",
+          "message_id": 1,
+          "raw_hex": "55550106050283fb220b63"
+        },
+        {
+          "utc_ns": "1790000002000000000",
+          "monotonic_ns": "3000000000",
+          "message_id": 1,
+          "raw_hex": "55550106fe005dfbb80bca"
+        },
+        {
+          "utc_ns": "1790000002100000000",
+          "monotonic_ns": "3100000000",
+          "message_id": 1,
+          "raw_hex": "55550106f1ff51fb4e0c47"
+        },
+        {
+          "utc_ns": "1790000002200000000",
+          "monotonic_ns": "3200000000",
+          "message_id": 1,
+          "raw_hex": "55550106e5fe60fbe40cdf"
+        },
+        {
+          "utc_ns": "1790000002300000000",
+          "monotonic_ns": "3300000000",
+          "message_id": 1,
+          "raw_hex": "55550106defd89fb7a0d97"
+        },
+        {
+          "utc_ns": "1790000002400000000",
+          "monotonic_ns": "3400000000",
+          "message_id": 1,
+          "raw_hex": "55550106e4fcccfb100e76"
+        },
+        {
+          "utc_ns": "1790000002500000000",
+          "monotonic_ns": "3500000000",
+          "message_id": 1,
+          "raw_hex": "55550106fcfb28fca60e80"
+        },
+        {
+          "utc_ns": "1790000002600000000",
+          "monotonic_ns": "3600000000",
+          "message_id": 1,
+          "raw_hex": "555501062bfb99fc3c0fb7"
+        },
+        {
+          "utc_ns": "1790000002700000000",
+          "monotonic_ns": "3700000000",
+          "message_id": 1,
+          "raw_hex": "5555010675fa1efdd20f1c"
+        },
+        {
+          "utc_ns": "1790000002800000000",
+          "monotonic_ns": "3800000000",
+          "message_id": 1,
+          "raw_hex": "55550106e0f9b4fd6810b3"
+        },
+        {
+          "utc_ns": "1790000002900000000",
+          "monotonic_ns": "3900000000",
+          "message_id": 1,
+          "raw_hex": "555501066df957fefe107a"
+        },
+        {
+          "utc_ns": "1790000003000000000",
+          "monotonic_ns": "4000000000",
+          "message_id": 1,
+          "raw_hex": "5555010621f904ff941173"
+        },
+        {
+          "utc_ns": "1790000003100000000",
+          "monotonic_ns": "4100000000",
+          "message_id": 1,
+          "raw_hex": "55550106fcf8b6ff2a1296"
+        },
+        {
+          "utc_ns": "1790000003200000000",
+          "monotonic_ns": "4200000000",
+          "message_id": 1,
+          "raw_hex": "55550106fff86800c012e2"
+        },
+        {
+          "utc_ns": "1790000003300000000",
+          "monotonic_ns": "4300000000",
+          "message_id": 1,
+          "raw_hex": "555501062bf91a01561359"
+        },
+        {
+          "utc_ns": "1790000003400000000",
+          "monotonic_ns": "4400000000",
+          "message_id": 1,
+          "raw_hex": "555501067ef9c501ec13ed"
+        },
+        {
+          "utc_ns": "1790000003500000000",
+          "monotonic_ns": "4500000000",
+          "message_id": 1,
+          "raw_hex": "55550106f6f9660282149e"
+        },
+        {
+          "utc_ns": "1790000003600000000",
+          "monotonic_ns": "4600000000",
+          "message_id": 1,
+          "raw_hex": "5555010692faf902181565"
+        },
+        {
+          "utc_ns": "1790000003700000000",
+          "monotonic_ns": "4700000000",
+          "message_id": 1,
+          "raw_hex": "555501064cfb7b03ae1539"
+        },
+        {
+          "utc_ns": "1790000003800000000",
+          "monotonic_ns": "4800000000",
+          "message_id": 1,
+          "raw_hex": "5555010621fce903441614"
+        },
+        {
+          "utc_ns": "1790000003900000000",
+          "monotonic_ns": "4900000000",
+          "message_id": 1,
+          "raw_hex": "555501060dfd4104da16f0"
+        }
+      ]
+    },
+    {
+      "segment_id": "0e331a6ae248e1e130fa3d0cfc7284aa8170454cb80452618bdf955924310443",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if00",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 40,
+        "valid_bytes": 440,
+        "start_utc_ns": 1790000010000000000,
+        "end_utc_ns": 1790000013900000000,
+        "start_monotonic_ns": 11000000000,
+        "end_monotonic_ns": 14900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000010000000000",
+          "monotonic_ns": "11000000000",
+          "message_id": 1,
+          "raw_hex": "555501060afe80047017c4"
+        },
+        {
+          "utc_ns": "1790000010100000000",
+          "monotonic_ns": "11100000000",
+          "message_id": 1,
+          "raw_hex": "5555010611ffa504061888"
+        },
+        {
+          "utc_ns": "1790000010200000000",
+          "monotonic_ns": "11200000000",
+          "message_id": 1,
+          "raw_hex": "555501061e00af049c1836"
+        },
+        {
+          "utc_ns": "1790000010300000000",
+          "monotonic_ns": "11300000000",
+          "message_id": 1,
+          "raw_hex": "555501062a019f043219ca"
+        },
+        {
+          "utc_ns": "1790000010400000000",
+          "monotonic_ns": "11400000000",
+          "message_id": 1,
+          "raw_hex": "5555010630027404c8193c"
+        },
+        {
+          "utc_ns": "1790000010500000000",
+          "monotonic_ns": "11500000000",
+          "message_id": 1,
+          "raw_hex": "555501062a032f045e1a89"
+        },
+        {
+          "utc_ns": "1790000010600000000",
+          "monotonic_ns": "11600000000",
+          "message_id": 1,
+          "raw_hex": "555501061104d203f41aa9"
+        },
+        {
+          "utc_ns": "1790000010700000000",
+          "monotonic_ns": "11700000000",
+          "message_id": 1,
+          "raw_hex": "55550106e00460038a1b9d"
+        },
+        {
+          "utc_ns": "1790000010800000000",
+          "monotonic_ns": "11800000000",
+          "message_id": 1,
+          "raw_hex": "555501069405da02201c62"
+        },
+        {
+          "utc_ns": "1790000010900000000",
+          "monotonic_ns": "11900000000",
+          "message_id": 1,
+          "raw_hex": "5555010628064302b61cf6"
+        },
+        {
+          "utc_ns": "1790000011000000000",
+          "monotonic_ns": "12000000000",
+          "message_id": 1,
+          "raw_hex": "5555010698069f014c1d58"
+        },
+        {
+          "utc_ns": "1790000011100000000",
+          "monotonic_ns": "12100000000",
+          "message_id": 1,
+          "raw_hex": "55550106e206f300e21d8b"
+        },
+        {
+          "utc_ns": "1790000011200000000",
+          "monotonic_ns": "12200000000",
+          "message_id": 1,
+          "raw_hex": "5555010605074000781e93"
+        },
+        {
+          "utc_ns": "1790000011300000000",
+          "monotonic_ns": "12300000000",
+          "message_id": 1,
+          "raw_hex": "55550106ff068dff0e1f6f"
+        },
+        {
+          "utc_ns": "1790000011400000000",
+          "monotonic_ns": "12400000000",
+          "message_id": 1,
+          "raw_hex": "55550106d106dcfea41f25"
+        },
+        {
+          "utc_ns": "1790000011500000000",
+          "monotonic_ns": "12500000000",
+          "message_id": 1,
+          "raw_hex": "555501067c0632fe3a20bd"
+        },
+        {
+          "utc_ns": "1790000011600000000",
+          "monotonic_ns": "12600000000",
+          "message_id": 1,
+          "raw_hex": "55550106020691fdd02037"
+        },
+        {
+          "utc_ns": "1790000011700000000",
+          "monotonic_ns": "12700000000",
+          "message_id": 1,
+          "raw_hex": "555501066505fffc66219d"
+        },
+        {
+          "utc_ns": "1790000011800000000",
+          "monotonic_ns": "12800000000",
+          "message_id": 1,
+          "raw_hex": "55550106a9047efcfc21f5"
+        },
+        {
+          "utc_ns": "1790000011900000000",
+          "monotonic_ns": "12900000000",
+          "message_id": 1,
+          "raw_hex": "55550106d20311fc922247"
+        },
+        {
+          "utc_ns": "1790000012000000000",
+          "monotonic_ns": "13000000000",
+          "message_id": 1,
+          "raw_hex": "55550106e502bbfb282399"
+        },
+        {
+          "utc_ns": "1790000012100000000",
+          "monotonic_ns": "13100000000",
+          "message_id": 1,
+          "raw_hex": "55550106e8017efbbe23f4"
+        },
+        {
+          "utc_ns": "1790000012200000000",
+          "monotonic_ns": "13200000000",
+          "message_id": 1,
+          "raw_hex": "55550106e0005afb54245e"
+        },
+        {
+          "utc_ns": "1790000012300000000",
+          "monotonic_ns": "13300000000",
+          "message_id": 1,
+          "raw_hex": "55550106d3ff51fbea24dd"
+        },
+        {
+          "utc_ns": "1790000012400000000",
+          "monotonic_ns": "13400000000",
+          "message_id": 1,
+          "raw_hex": "55550106c7fe63fb802579"
+        },
+        {
+          "utc_ns": "1790000012500000000",
+          "monotonic_ns": "13500000000",
+          "message_id": 1,
+          "raw_hex": "55550106c1fd8ffb162635"
+        },
+        {
+          "utc_ns": "1790000012600000000",
+          "monotonic_ns": "13600000000",
+          "message_id": 1,
+          "raw_hex": "55550106c9fcd5fbac2618"
+        },
+        {
+          "utc_ns": "1790000012700000000",
+          "monotonic_ns": "13700000000",
+          "message_id": 1,
+          "raw_hex": "55550106e3fb34fc422728"
+        },
+        {
+          "utc_ns": "1790000012800000000",
+          "monotonic_ns": "13800000000",
+          "message_id": 1,
+          "raw_hex": "5555010615fba7fcd82763"
+        },
+        {
+          "utc_ns": "1790000012900000000",
+          "monotonic_ns": "13900000000",
+          "message_id": 1,
+          "raw_hex": "5555010663fa2ffd6e28d0"
+        },
+        {
+          "utc_ns": "1790000013000000000",
+          "monotonic_ns": "14000000000",
+          "message_id": 1,
+          "raw_hex": "55550106d1f9c6fd04296b"
+        },
+        {
+          "utc_ns": "1790000013100000000",
+          "monotonic_ns": "14100000000",
+          "message_id": 1,
+          "raw_hex": "5555010663f96afe9a2938"
+        },
+        {
+          "utc_ns": "1790000013200000000",
+          "monotonic_ns": "14200000000",
+          "message_id": 1,
+          "raw_hex": "555501061bf917ff302a35"
+        },
+        {
+          "utc_ns": "1790000013300000000",
+          "monotonic_ns": "14300000000",
+          "message_id": 1,
+          "raw_hex": "55550106faf8caffc62a5c"
+        },
+        {
+          "utc_ns": "1790000013400000000",
+          "monotonic_ns": "14400000000",
+          "message_id": 1,
+          "raw_hex": "5555010602f97d005c2bb0"
+        },
+        {
+          "utc_ns": "1790000013500000000",
+          "monotonic_ns": "14500000000",
+          "message_id": 1,
+          "raw_hex": "5555010632f92e01f22b28"
+        },
+        {
+          "utc_ns": "1790000013600000000",
+          "monotonic_ns": "14600000000",
+          "message_id": 1,
+          "raw_hex": "555501068af9d801882cc1"
+        },
+        {
+          "utc_ns": "1790000013700000000",
+          "monotonic_ns": "14700000000",
+          "message_id": 1,
+          "raw_hex": "5555010606fa77021e2d75"
+        },
+        {
+          "utc_ns": "1790000013800000000",
+          "monotonic_ns": "14800000000",
+          "message_id": 1,
+          "raw_hex": "55550106a5fa0903b42d3d"
+        },
+        {
+          "utc_ns": "1790000013900000000",
+          "monotonic_ns": "14900000000",
+          "message_id": 1,
+          "raw_hex": "5555010663fb89034a2e13"
+        }
+      ]
+    },
+    {
+      "segment_id": "95334cb0a25c5c01945e0173597398f7b3890b95a34549225c9ac146e28542ef",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if00",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 45,
+        "valid_bytes": 737,
+        "start_utc_ns": 1790000020000000000,
+        "end_utc_ns": 1790000023900002000,
+        "start_monotonic_ns": 21000000000,
+        "end_monotonic_ns": 24900002000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000020000000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca4fefcfd0c2060ffec0091ff5b"
+        },
+        {
+          "utc_ns": "1790000020000001000",
+          "monotonic_ns": "21000001000",
+          "message_id": 1,
+          "raw_hex": "555501063bfcf403e02eed"
+        },
+        {
+          "utc_ns": "1790000020100000000",
+          "monotonic_ns": "21100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfafefafd432087ff0001aeff3f"
+        },
+        {
+          "utc_ns": "1790000020200000000",
+          "monotonic_ns": "21200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c55ff0dfe7320b2ff0e01cbff35"
+        },
+        {
+          "utc_ns": "1790000020300000000",
+          "monotonic_ns": "21300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb5ff33fe9820deff1601e9ff32"
+        },
+        {
+          "utc_ns": "1790000020400000000",
+          "monotonic_ns": "21400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c15006afeae200a00170106002c"
+        },
+        {
+          "utc_ns": "1790000020500000000",
+          "monotonic_ns": "21500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7600b0feb3203600130124001e"
+        },
+        {
+          "utc_ns": "1790000020600000000",
+          "monotonic_ns": "21600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd40003ffa62062000801420002"
+        },
+        {
+          "utc_ns": "1790000020700000000",
+          "monotonic_ns": "21700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2e0160ff89208b00f7005f00d1"
+        },
+        {
+          "utc_ns": "1790000020800000000",
+          "monotonic_ns": "21800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8001c3ff5e20b100e1007c0088"
+        },
+        {
+          "utc_ns": "1790000020900000000",
+          "monotonic_ns": "21900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cca0127002a20d300c600980026"
+        },
+        {
+          "utc_ns": "1790000021000000000",
+          "monotonic_ns": "22000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0a028b00f31ff100a600b400ad"
+        },
+        {
+          "utc_ns": "1790000021000001000",
+          "monotonic_ns": "22000001000",
+          "message_id": 1,
+          "raw_hex": "55550106a605c902bc3417"
+        },
+        {
+          "utc_ns": "1790000021100000000",
+          "monotonic_ns": "22100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3e02e900bc1f09018300ce0018"
+        },
+        {
+          "utc_ns": "1790000021200000000",
+          "monotonic_ns": "22200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c65023f018c1f1b015c00e7006a"
+        },
+        {
+          "utc_ns": "1790000021300000000",
+          "monotonic_ns": "22300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7e028801671f26013400ff00a2"
+        },
+        {
+          "utc_ns": "1790000021400000000",
+          "monotonic_ns": "22400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8902c301511f2b010a001501c4"
+        },
+        {
+          "utc_ns": "1790000021500000000",
+          "monotonic_ns": "22500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8502ec014d1f2a01e1ff2a01cf"
+        },
+        {
+          "utc_ns": "1790000021600000000",
+          "monotonic_ns": "22600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c730203025a1f2101b8ff3d01c3"
+        },
+        {
+          "utc_ns": "1790000021700000000",
+          "monotonic_ns": "22700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c53020602781f120190ff4e019e"
+        },
+        {
+          "utc_ns": "1790000021800000000",
+          "monotonic_ns": "22800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2502f601a31ffd006bff5e015f"
+        },
+        {
+          "utc_ns": "1790000021900000000",
+          "monotonic_ns": "22900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ceb01d201d71fe20049ff6b0104"
+        },
+        {
+          "utc_ns": "1790000022000000000",
+          "monotonic_ns": "23000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca6019d010f20c3002cff770193"
+        },
+        {
+          "utc_ns": "1790000022000001000",
+          "monotonic_ns": "23000001000",
+          "message_id": 1,
+          "raw_hex": "55550106920471fc983a86"
+        },
+        {
+          "utc_ns": "1790000022100000000",
+          "monotonic_ns": "23100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5801580145209e0013ff800101"
+        },
+        {
+          "utc_ns": "1790000022200000000",
+          "monotonic_ns": "23200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0101070175207700fffe870154"
+        },
+        {
+          "utc_ns": "1790000022300000000",
+          "monotonic_ns": "23300000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca500ab009a204c00f2fe8c018c"
+        },
+        {
+          "utc_ns": "1790000022400000000",
+          "monotonic_ns": "23400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c46004800af202000eafe8f01ae"
+        },
+        {
+          "utc_ns": "1790000022500000000",
+          "monotonic_ns": "23500000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce5ffe4ffb320f4ffe9fe8f01bd"
+        },
+        {
+          "utc_ns": "1790000022600000000",
+          "monotonic_ns": "23600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c84ff80ffa520c7ffeefe8e01c1"
+        },
+        {
+          "utc_ns": "1790000022700000000",
+          "monotonic_ns": "23700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c26ff21ff87209cfff9fe8a01c2"
+        },
+        {
+          "utc_ns": "1790000022800000000",
+          "monotonic_ns": "23800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccdfecafe5c2073ff0aff8301c7"
+        },
+        {
+          "utc_ns": "1790000022900000000",
+          "monotonic_ns": "23900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7bfe7ffe27204dff20ff7b01dd"
+        },
+        {
+          "utc_ns": "1790000023000000000",
+          "monotonic_ns": "24000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c32fe43fef01f2bff3cff710110"
+        },
+        {
+          "utc_ns": "1790000023000001000",
+          "monotonic_ns": "24000001000",
+          "message_id": 1,
+          "raw_hex": "55550106fffab6fc744010"
+        },
+        {
+          "utc_ns": "1790000023100000000",
+          "monotonic_ns": "24100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf3fd17feb91f0eff5cff640163"
+        },
+        {
+          "utc_ns": "1790000023200000000",
+          "monotonic_ns": "24200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc0fdfefd891ff6fe80ff5501e2"
+        },
+        {
+          "utc_ns": "1790000023300000000",
+          "monotonic_ns": "24300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c99fdf9fd651fe5fea6ff450197"
+        },
+        {
+          "utc_ns": "1790000023400000000",
+          "monotonic_ns": "24400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c81fd07fe511fd9fecfff320184"
+        },
+        {
+          "utc_ns": "1790000023500000000",
+          "monotonic_ns": "24500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c77fd29fe4d1fd5fef8ff1e01a9"
+        },
+        {
+          "utc_ns": "1790000023600000000",
+          "monotonic_ns": "24600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7bfd5cfe5c1fd7fe2100090106"
+        },
+        {
+          "utc_ns": "1790000023700000000",
+          "monotonic_ns": "24700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8efd9ffe7a1fdffe4b00f20094"
+        },
+        {
+          "utc_ns": "1790000023800000000",
+          "monotonic_ns": "24800000000",
+          "message_id": 3,
+          "raw_hex": "5555030caffdf0fea61feffe7200d90050"
+        },
+        {
+          "utc_ns": "1790000023900000000",
+          "monotonic_ns": "24900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdefd4bffda1f04ff9700bf0030"
+        },
+        {
+          "utc_ns": "1790000023900002000",
+          "monotonic_ns": "24900002000",
+          "message_id": 6,
+          "raw_hex": "555506080100000001000000ba"
+        }
+      ]
+    },
+    {
+      "segment_id": "657110ad40f66aea1ece87500b4e2354222dd3891ac2228ab58610f9890fda83",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if02",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000000001000000,
+        "end_utc_ns": 1790000003901000000,
+        "start_monotonic_ns": 1000000000,
+        "end_monotonic_ns": 4900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000000001000000",
+          "monotonic_ns": "1000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c87019d019c208f00f500620081"
+        },
+        {
+          "utc_ns": "1790000000001001000",
+          "monotonic_ns": "1000001000",
+          "message_id": 1,
+          "raw_hex": "555501065e031d04000033"
+        },
+        {
+          "utc_ns": "1790000000101000000",
+          "monotonic_ns": "1100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd9015901b020b500de007f00cf"
+        },
+        {
+          "utc_ns": "1790000000201000000",
+          "monotonic_ns": "1200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c22020701b220d700c3009b00ec"
+        },
+        {
+          "utc_ns": "1790000000301000000",
+          "monotonic_ns": "1300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6002ab00a420f400a200b600d6"
+        },
+        {
+          "utc_ns": "1790000000401000000",
+          "monotonic_ns": "1400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9302480085200b017f00d10097"
+        },
+        {
+          "utc_ns": "1790000000501000000",
+          "monotonic_ns": "1500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb802e4ff58201c015800ea002d"
+        },
+        {
+          "utc_ns": "1790000000601000000",
+          "monotonic_ns": "1600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd00280ff242027012f000101a7"
+        },
+        {
+          "utc_ns": "1790000000701000000",
+          "monotonic_ns": "1700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd90221ffec1f2b010500170108"
+        },
+        {
+          "utc_ns": "1790000000801000000",
+          "monotonic_ns": "1800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd402cafeb61f2901dcff2c015e"
+        },
+        {
+          "utc_ns": "1790000000901000000",
+          "monotonic_ns": "1900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc0027ffe871f2001b3ff3f01b1"
+        },
+        {
+          "utc_ns": "1790000001001000000",
+          "monotonic_ns": "2000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9f0243fe641f10018cff50010b"
+        },
+        {
+          "utc_ns": "1790000001001001000",
+          "monotonic_ns": "2000001000",
+          "message_id": 1,
+          "raw_hex": "5555010664060dfedc0507"
+        },
+        {
+          "utc_ns": "1790000001101000000",
+          "monotonic_ns": "2100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6f0217fe501ffb0067ff5f016f"
+        },
+        {
+          "utc_ns": "1790000001201000000",
+          "monotonic_ns": "2200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3402fefd4e1fdf0046ff6d01e9"
+        },
+        {
+          "utc_ns": "1790000001301000000",
+          "monotonic_ns": "2300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cee01f9fd5d1fbf0029ff78017a"
+        },
+        {
+          "utc_ns": "1790000001401000000",
+          "monotonic_ns": "2400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9f0107fe7d1f9a0011ff810126"
+        },
+        {
+          "utc_ns": "1790000001501000000",
+          "monotonic_ns": "2500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c480129fea91f7200fefe8801e8"
+        },
+        {
+          "utc_ns": "1790000001601000000",
+          "monotonic_ns": "2600000000",
+          "message_id": 3,
+          "raw_hex": "5555030ceb005cfede1f4700f1fe8d01bf"
+        },
+        {
+          "utc_ns": "1790000001701000000",
+          "monotonic_ns": "2700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8b009ffe15201b00eafe8f01a9"
+        },
+        {
+          "utc_ns": "1790000001801000000",
+          "monotonic_ns": "2800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2a00f0fe4c20efffe9fe8f01a2"
+        },
+        {
+          "utc_ns": "1790000001901000000",
+          "monotonic_ns": "2900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccaff4bff7a20c2ffeffe8d01a2"
+        },
+        {
+          "utc_ns": "1790000002001000000",
+          "monotonic_ns": "3000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6cffacff9d2097fffafe8901a4"
+        },
+        {
+          "utc_ns": "1790000002001001000",
+          "monotonic_ns": "3000001000",
+          "message_id": 1,
+          "raw_hex": "5555010689fd9dfbb80b92"
+        },
+        {
+          "utc_ns": "1790000002101000000",
+          "monotonic_ns": "3100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c14ff1000b0206eff0cff8301a8"
+        },
+        {
+          "utc_ns": "1790000002201000000",
+          "monotonic_ns": "3200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc3fe7500b22049ff23ff7a01a6"
+        },
+        {
+          "utc_ns": "1790000002301000000",
+          "monotonic_ns": "3300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7afed500a22028ff3fff6f019d"
+        },
+        {
+          "utc_ns": "1790000002401000000",
+          "monotonic_ns": "3400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3dfe2d0182200bff60ff620190"
+        },
+        {
+          "utc_ns": "1790000002501000000",
+          "monotonic_ns": "3500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0bfe79015620f4fe84ff54017c"
+        },
+        {
+          "utc_ns": "1790000002601000000",
+          "monotonic_ns": "3600000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce6fdb7012120e3feaaff430163"
+        },
+        {
+          "utc_ns": "1790000002701000000",
+          "monotonic_ns": "3700000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccffde501e91fd8fed3ff30014c"
+        },
+        {
+          "utc_ns": "1790000002801000000",
+          "monotonic_ns": "3800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc7fd0002b31fd5fefdff1c013d"
+        },
+        {
+          "utc_ns": "1790000002901000000",
+          "monotonic_ns": "3900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccdfd0702841fd7fe2600060131"
+        },
+        {
+          "utc_ns": "1790000003001000000",
+          "monotonic_ns": "4000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce1fdfb01621fe1fe4f00ef0031"
+        },
+        {
+          "utc_ns": "1790000003001001000",
+          "monotonic_ns": "4000001000",
+          "message_id": 1,
+          "raw_hex": "5555010642f954019411e6"
+        },
+        {
+          "utc_ns": "1790000003101000000",
+          "monotonic_ns": "4100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c04fedc014f1ff1fe7600d60041"
+        },
+        {
+          "utc_ns": "1790000003201000000",
+          "monotonic_ns": "4200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c34feab014e1f07ff9b00bc0061"
+        },
+        {
+          "utc_ns": "1790000003301000000",
+          "monotonic_ns": "4300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6ffe69015e1f22ffbc00a1008b"
+        },
+        {
+          "utc_ns": "1790000003401000000",
+          "monotonic_ns": "4400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb6fe1a017f1f43ffd9008500c6"
+        },
+        {
+          "utc_ns": "1790000003501000000",
+          "monotonic_ns": "4500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c06ffc000ac1f68fff10069000a"
+        },
+        {
+          "utc_ns": "1790000003601000000",
+          "monotonic_ns": "4600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5dff5f00e11f90ff03014c0053"
+        },
+        {
+          "utc_ns": "1790000003701000000",
+          "monotonic_ns": "4700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbafffbff1820bbff10012e009d"
+        },
+        {
+          "utc_ns": "1790000003801000000",
+          "monotonic_ns": "4800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c190096ff4e20e8ff17011000e4"
+        },
+        {
+          "utc_ns": "1790000003901000000",
+          "monotonic_ns": "4900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7b0036ff7d2014001701f3ff24"
+        }
+      ]
+    },
+    {
+      "segment_id": "fc477cfb3217bc35415d68efbfe0104062768323ec8b4a8540cd565c906763c1",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if02",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000010001000000,
+        "end_utc_ns": 1790000013901000000,
+        "start_monotonic_ns": 11000000000,
+        "end_monotonic_ns": 14900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000010001000000",
+          "monotonic_ns": "11000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdb00ddfe9f2040001101d5ff54"
+        },
+        {
+          "utc_ns": "1790000010001001000",
+          "monotonic_ns": "11000001000",
+          "message_id": 1,
+          "raw_hex": "5555010683019304701753"
+        },
+        {
+          "utc_ns": "1790000010101000000",
+          "monotonic_ns": "11100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c39018ffeb1206b000501b8ff79"
+        },
+        {
+          "utc_ns": "1790000010201000000",
+          "monotonic_ns": "11200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c91014ffeb2209400f3009aff8a"
+        },
+        {
+          "utc_ns": "1790000010301000000",
+          "monotonic_ns": "11300000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce20120fea120b900dc007eff8d"
+        },
+        {
+          "utc_ns": "1790000010401000000",
+          "monotonic_ns": "11400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c290202fe8020da00bf0062ff7e"
+        },
+        {
+          "utc_ns": "1790000010501000000",
+          "monotonic_ns": "11500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6702f9fd5320f6009f0047ff66"
+        },
+        {
+          "utc_ns": "1790000010601000000",
+          "monotonic_ns": "11600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c980202fe1e200d017a002dff45"
+        },
+        {
+          "utc_ns": "1790000010701000000",
+          "monotonic_ns": "11700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbc0220fee61f1e01530014ff1f"
+        },
+        {
+          "utc_ns": "1790000010801000000",
+          "monotonic_ns": "11800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd2024ffeb01f28012a00fcfef6"
+        },
+        {
+          "utc_ns": "1790000010901000000",
+          "monotonic_ns": "11900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd9028ffe821f2b010100e6fed3"
+        },
+        {
+          "utc_ns": "1790000011001000000",
+          "monotonic_ns": "12000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd302ddfe611f2801d8ffd2feb9"
+        },
+        {
+          "utc_ns": "1790000011001001000",
+          "monotonic_ns": "12000001000",
+          "message_id": 1,
+          "raw_hex": "55550106f40652ff4c1d65"
+        },
+        {
+          "utc_ns": "1790000011101000000",
+          "monotonic_ns": "12100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbd0236ff4f1f1e01afffbffea5"
+        },
+        {
+          "utc_ns": "1790000011201000000",
+          "monotonic_ns": "12200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9a0296ff4f1f0e0188ffaefe9a"
+        },
+        {
+          "utc_ns": "1790000011301000000",
+          "monotonic_ns": "12300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6902fbff601ff80063ff9ffe94"
+        },
+        {
+          "utc_ns": "1790000011401000000",
+          "monotonic_ns": "12400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2d025f00811fdc0042ff92fe94"
+        },
+        {
+          "utc_ns": "1790000011501000000",
+          "monotonic_ns": "12500000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce601c000ae1fbb0026ff87fe92"
+        },
+        {
+          "utc_ns": "1790000011601000000",
+          "monotonic_ns": "12600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c95011a01e41f96000eff7efe8c"
+        },
+        {
+          "utc_ns": "1790000011701000000",
+          "monotonic_ns": "12700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3d0169011b206d00fcfe78fe79"
+        },
+        {
+          "utc_ns": "1790000011801000000",
+          "monotonic_ns": "12800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce000ab0151204200f0fe73fe57"
+        },
+        {
+          "utc_ns": "1790000011901000000",
+          "monotonic_ns": "12900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8000dc017f201600e9fe71fe21"
+        },
+        {
+          "utc_ns": "1790000012001000000",
+          "monotonic_ns": "13000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1f00fb01a020eaffe9fe71fed3"
+        },
+        {
+          "utc_ns": "1790000012001001000",
+          "monotonic_ns": "13000001000",
+          "message_id": 1,
+          "raw_hex": "5555010679ff54fb2823c3"
+        },
+        {
+          "utc_ns": "1790000012101000000",
+          "monotonic_ns": "13100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbfff0702b120befff0fe73fe6d"
+        },
+        {
+          "utc_ns": "1790000012201000000",
+          "monotonic_ns": "13200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c62ff0002b12093fffcfe78feef"
+        },
+        {
+          "utc_ns": "1790000012301000000",
+          "monotonic_ns": "13300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0bffe501a0206aff0eff7efe5b"
+        },
+        {
+          "utc_ns": "1790000012401000000",
+          "monotonic_ns": "13400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbafeb7017e2045ff26ff87feb5"
+        },
+        {
+          "utc_ns": "1790000012501000000",
+          "monotonic_ns": "13500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c73fe7901502024ff43ff92fe09"
+        },
+        {
+          "utc_ns": "1790000012601000000",
+          "monotonic_ns": "13600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c36fe2c011b2008ff63ff9ffe5b"
+        },
+        {
+          "utc_ns": "1790000012701000000",
+          "monotonic_ns": "13700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c06fed500e31ff2fe88ffaefeb7"
+        },
+        {
+          "utc_ns": "1790000012801000000",
+          "monotonic_ns": "13800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce3fd7500ae1fe2feafffbffe26"
+        },
+        {
+          "utc_ns": "1790000012901000000",
+          "monotonic_ns": "13900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccdfd1000801fd8fed8ffd2feaf"
+        },
+        {
+          "utc_ns": "1790000013001000000",
+          "monotonic_ns": "14000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc7fdacff5f1fd5fe0100e6fe5e"
+        },
+        {
+          "utc_ns": "1790000013001001000",
+          "monotonic_ns": "14000001000",
+          "message_id": 1,
+          "raw_hex": "55550106f9f805000429d4"
+        },
+        {
+          "utc_ns": "1790000013101000000",
+          "monotonic_ns": "14100000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccefd4aff4e1fd8fe2b00fcfe35"
+        },
+        {
+          "utc_ns": "1790000013201000000",
+          "monotonic_ns": "14200000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce4fdeffe4f1fe2fe530014ff3b"
+        },
+        {
+          "utc_ns": "1790000013301000000",
+          "monotonic_ns": "14300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c08fe9ffe611ff3fe7a002dff73"
+        },
+        {
+          "utc_ns": "1790000013401000000",
+          "monotonic_ns": "14400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3afe5cfe831f0aff9f0047ffdb"
+        },
+        {
+          "utc_ns": "1790000013501000000",
+          "monotonic_ns": "14500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c77fe28feb11f26ffbf0062ff69"
+        },
+        {
+          "utc_ns": "1790000013601000000",
+          "monotonic_ns": "14600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbffe07fee71f47ffdc007eff20"
+        },
+        {
+          "utc_ns": "1790000013701000000",
+          "monotonic_ns": "14700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c10fff9fd1e206cfff3009afff3"
+        },
+        {
+          "utc_ns": "1790000013801000000",
+          "monotonic_ns": "14800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c68fffefd542095ff0501b8ffe0"
+        },
+        {
+          "utc_ns": "1790000013901000000",
+          "monotonic_ns": "14900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc5ff17fe8120c0ff1101d5ffd8"
+        }
+      ]
+    },
+    {
+      "segment_id": "a83fdf0db2c7672791ab82ce83fd8b830ee0f767b4adda2a7a9c27787dfe9f39",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if02",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 45,
+        "valid_bytes": 737,
+        "start_utc_ns": 1790000020001000000,
+        "end_utc_ns": 1790000023901002000,
+        "start_monotonic_ns": 21000000000,
+        "end_monotonic_ns": 24900002000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000020001000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c240043fea120edff1701f3ffd5"
+        },
+        {
+          "utc_ns": "1790000020001001000",
+          "monotonic_ns": "21000001000",
+          "message_id": 1,
+          "raw_hex": "5555010689ffad04e02ef8"
+        },
+        {
+          "utc_ns": "1790000020101000000",
+          "monotonic_ns": "21100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c86007ffeb220190017011000cf"
+        },
+        {
+          "utc_ns": "1790000020201000000",
+          "monotonic_ns": "21200000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce600cafeb120450010012e00bc"
+        },
+        {
+          "utc_ns": "1790000020301000000",
+          "monotonic_ns": "21300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c430121ff9e20700003014c009b"
+        },
+        {
+          "utc_ns": "1790000020401000000",
+          "monotonic_ns": "21400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9a0180ff7c209800f100690061"
+        },
+        {
+          "utc_ns": "1790000020501000000",
+          "monotonic_ns": "21500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cea01e5ff4e20bd00d900860012"
+        },
+        {
+          "utc_ns": "1790000020601000000",
+          "monotonic_ns": "21600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c310249001820de00bc00a100a8"
+        },
+        {
+          "utc_ns": "1790000020701000000",
+          "monotonic_ns": "21700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6d02ab00e01ff9009b00bc0022"
+        },
+        {
+          "utc_ns": "1790000020801000000",
+          "monotonic_ns": "21800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9c020701ab1f0f017600d60085"
+        },
+        {
+          "utc_ns": "1790000020901000000",
+          "monotonic_ns": "21900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbf0259017e1f1f014f00ef00cf"
+        },
+        {
+          "utc_ns": "1790000021001000000",
+          "monotonic_ns": "22000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd3029e015e1f29012600060101"
+        },
+        {
+          "utc_ns": "1790000021001001000",
+          "monotonic_ns": "22000001000",
+          "message_id": 1,
+          "raw_hex": "55550106f706a400bc3442"
+        },
+        {
+          "utc_ns": "1790000021101000000",
+          "monotonic_ns": "22100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd902d3014e1f2b01fdff1c011a"
+        },
+        {
+          "utc_ns": "1790000021201000000",
+          "monotonic_ns": "22200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd102f601501f2801d3ff30011e"
+        },
+        {
+          "utc_ns": "1790000021301000000",
+          "monotonic_ns": "22300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cba020602631f1d01aaff43010a"
+        },
+        {
+          "utc_ns": "1790000021401000000",
+          "monotonic_ns": "22400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c95020302851f0c0183ff5401dd"
+        },
+        {
+          "utc_ns": "1790000021501000000",
+          "monotonic_ns": "22500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6302ec01b41ff5005fff620194"
+        },
+        {
+          "utc_ns": "1790000021601000000",
+          "monotonic_ns": "22600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2502c301ea1fd8003fff6f0133"
+        },
+        {
+          "utc_ns": "1790000021701000000",
+          "monotonic_ns": "22700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdd0188012120b70023ff7a01b5"
+        },
+        {
+          "utc_ns": "1790000021801000000",
+          "monotonic_ns": "22800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8c013e01562091000cff83011b"
+        },
+        {
+          "utc_ns": "1790000021901000000",
+          "monotonic_ns": "22900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3301e90083206900fafe890164"
+        },
+        {
+          "utc_ns": "1790000022001000000",
+          "monotonic_ns": "23000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd6008a00a3203d00effe8d0194"
+        },
+        {
+          "utc_ns": "1790000022001001000",
+          "monotonic_ns": "23000001000",
+          "message_id": 1,
+          "raw_hex": "5555010673016afb983a5c"
+        },
+        {
+          "utc_ns": "1790000022101000000",
+          "monotonic_ns": "23100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c75002700b2201100e9fe8f01af"
+        },
+        {
+          "utc_ns": "1790000022201000000",
+          "monotonic_ns": "23200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1400c2ffb020e5ffeafe8f01ba"
+        },
+        {
+          "utc_ns": "1790000022301000000",
+          "monotonic_ns": "23300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb5ff60ff9d20b9fff1fe8d01be"
+        },
+        {
+          "utc_ns": "1790000022401000000",
+          "monotonic_ns": "23400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c58ff03ff7a208efffefe8801be"
+        },
+        {
+          "utc_ns": "1790000022501000000",
+          "monotonic_ns": "23500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c01ffb0fe4b2066ff11ff8101c9"
+        },
+        {
+          "utc_ns": "1790000022601000000",
+          "monotonic_ns": "23600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb2fe69fe152041ff29ff7801e6"
+        },
+        {
+          "utc_ns": "1790000022701000000",
+          "monotonic_ns": "23700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6cfe32fedd1f21ff46ff6d0122"
+        },
+        {
+          "utc_ns": "1790000022801000000",
+          "monotonic_ns": "23800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c30fe0dfea81f05ff67ff5f0183"
+        },
+        {
+          "utc_ns": "1790000022901000000",
+          "monotonic_ns": "23900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c01fefafd7c1ff0fe8cff500114"
+        },
+        {
+          "utc_ns": "1790000023001000000",
+          "monotonic_ns": "24000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce0fdfcfd5d1fe0feb3ff3f01db"
+        },
+        {
+          "utc_ns": "1790000023001001000",
+          "monotonic_ns": "24000001000",
+          "message_id": 1,
+          "raw_hex": "555501063ef9b6fe744050"
+        },
+        {
+          "utc_ns": "1790000023101000000",
+          "monotonic_ns": "24100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cccfd10fe4e1fd7feddff2c01db"
+        },
+        {
+          "utc_ns": "1790000023201000000",
+          "monotonic_ns": "24200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc7fd38fe501fd5fe0500170112"
+        },
+        {
+          "utc_ns": "1790000023301000000",
+          "monotonic_ns": "24300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd0fd71fe641fd9fe2f00010180"
+        },
+        {
+          "utc_ns": "1790000023401000000",
+          "monotonic_ns": "24400000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce8fdb9fe871fe4fe5800e9001e"
+        },
+        {
+          "utc_ns": "1790000023501000000",
+          "monotonic_ns": "24500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0dfe0dffb61ff5fe7f00d000e7"
+        },
+        {
+          "utc_ns": "1790000023601000000",
+          "monotonic_ns": "24600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c40fe6bffed1f0dffa200b600d1"
+        },
+        {
+          "utc_ns": "1790000023701000000",
+          "monotonic_ns": "24700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7efeceff242029ffc3009b00cc"
+        },
+        {
+          "utc_ns": "1790000023801000000",
+          "monotonic_ns": "24800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc7fe320059204bffde007f00d0"
+        },
+        {
+          "utc_ns": "1790000023901000000",
+          "monotonic_ns": "24900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c19ff9600852071fff5006200d3"
+        },
+        {
+          "utc_ns": "1790000023901002000",
+          "monotonic_ns": "24900002000",
+          "message_id": 6,
+          "raw_hex": "555506080100000001000000ba"
+        }
+      ]
+    },
+    {
+      "segment_id": "670dcf0a2e4d1ab724ec86223eec59a6ffbe03084d86ebd8f30dc504a4bc61c2",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if04",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000000002000000,
+        "end_utc_ns": 1790000003902000000,
+        "start_monotonic_ns": 1000000000,
+        "end_monotonic_ns": 4900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000000002000000",
+          "monotonic_ns": "1000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc2028b009b20fc009700bf0015"
+        },
+        {
+          "utc_ns": "1790000000002001000",
+          "monotonic_ns": "1000001000",
+          "message_id": 1,
+          "raw_hex": "55550106ea05880200002a"
+        },
+        {
+          "utc_ns": "1790000000102000000",
+          "monotonic_ns": "1100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf1022700772011017200d900c7"
+        },
+        {
+          "utc_ns": "1790000000202000000",
+          "monotonic_ns": "1200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1203c3ff482021014a00f20056"
+        },
+        {
+          "utc_ns": "1790000000302000000",
+          "monotonic_ns": "1300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c250360ff1120290121000901c6"
+        },
+        {
+          "utc_ns": "1790000000402000000",
+          "monotonic_ns": "1400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c290303ffd91f2b01f8ff1e0121"
+        },
+        {
+          "utc_ns": "1790000000502000000",
+          "monotonic_ns": "1500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1f03b0fea51f2701cfff330177"
+        },
+        {
+          "utc_ns": "1790000000602000000",
+          "monotonic_ns": "1600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c070369fe791f1b01a6ff4501c9"
+        },
+        {
+          "utc_ns": "1790000000702000000",
+          "monotonic_ns": "1700000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce00232fe5b1f0a017fff550124"
+        },
+        {
+          "utc_ns": "1790000000802000000",
+          "monotonic_ns": "1800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cad020dfe4d1ff2005cff640191"
+        },
+        {
+          "utc_ns": "1790000000902000000",
+          "monotonic_ns": "1900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6e02fafd511fd5003cff710112"
+        },
+        {
+          "utc_ns": "1790000001002000000",
+          "monotonic_ns": "2000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2502fcfd661fb30020ff7b01ac"
+        },
+        {
+          "utc_ns": "1790000001002001000",
+          "monotonic_ns": "2000001000",
+          "message_id": 1,
+          "raw_hex": "5555010635043ffcdc0506"
+        },
+        {
+          "utc_ns": "1790000001102000000",
+          "monotonic_ns": "2100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd20110fe8a1f8d000aff83015d"
+        },
+        {
+          "utc_ns": "1790000001202000000",
+          "monotonic_ns": "2200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c790138feba1f6400f9fe8a0128"
+        },
+        {
+          "utc_ns": "1790000001302000000",
+          "monotonic_ns": "2300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1b0171fef11f3900eefe8e0108"
+        },
+        {
+          "utc_ns": "1790000001402000000",
+          "monotonic_ns": "2400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbb00b9fe28200c00e9fe8f01f6"
+        },
+        {
+          "utc_ns": "1790000001502000000",
+          "monotonic_ns": "2500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c59000dff5c20e0ffeafe8f01f1"
+        },
+        {
+          "utc_ns": "1790000001602000000",
+          "monotonic_ns": "2600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfaff6bff8820b4fff2fe8c01f4"
+        },
+        {
+          "utc_ns": "1790000001702000000",
+          "monotonic_ns": "2700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9effceffa52089ff00ff8701f7"
+        },
+        {
+          "utc_ns": "1790000001802000000",
+          "monotonic_ns": "2800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c48ff3200b32062ff13ff8001f9"
+        },
+        {
+          "utc_ns": "1790000001902000000",
+          "monotonic_ns": "2900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfafe9500af203dff2cff7701f4"
+        },
+        {
+          "utc_ns": "1790000002002000000",
+          "monotonic_ns": "3000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb5fef30099201dff49ff6b01e8"
+        },
+        {
+          "utc_ns": "1790000002002001000",
+          "monotonic_ns": "3000001000",
+          "message_id": 1,
+          "raw_hex": "55550106aefaf0fcb80b08"
+        },
+        {
+          "utc_ns": "1790000002102000000",
+          "monotonic_ns": "3100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7bfe4801752003ff6bff5e01db"
+        },
+        {
+          "utc_ns": "1790000002202000000",
+          "monotonic_ns": "3200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4dfe8f014520eefe90ff4e01c3"
+        },
+        {
+          "utc_ns": "1790000002302000000",
+          "monotonic_ns": "3300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2dfec8010e20dffeb8ff3d01ad"
+        },
+        {
+          "utc_ns": "1790000002402000000",
+          "monotonic_ns": "3400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1bfef001d71fd6fee1ff2a0198"
+        },
+        {
+          "utc_ns": "1790000002502000000",
+          "monotonic_ns": "3500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c17fe0402a21fd5fe0a00150188"
+        },
+        {
+          "utc_ns": "1790000002602000000",
+          "monotonic_ns": "3600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c22fe0602771fdafe3400ff0082"
+        },
+        {
+          "utc_ns": "1790000002702000000",
+          "monotonic_ns": "3700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3bfef3015a1fe5fe5c00e70085"
+        },
+        {
+          "utc_ns": "1790000002802000000",
+          "monotonic_ns": "3800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c62fecd014d1ff7fe8300ce0099"
+        },
+        {
+          "utc_ns": "1790000002902000000",
+          "monotonic_ns": "3900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c96fe9701521f0fffa600b300bd"
+        },
+        {
+          "utc_ns": "1790000003002000000",
+          "monotonic_ns": "4000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd6fe5001671f2dffc6009800ee"
+        },
+        {
+          "utc_ns": "1790000003002001000",
+          "monotonic_ns": "4000001000",
+          "message_id": 1,
+          "raw_hex": "555501060bfb52039411b1"
+        },
+        {
+          "utc_ns": "1790000003102000000",
+          "monotonic_ns": "4100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c20fffd008c1f4fffe1007c002b"
+        },
+        {
+          "utc_ns": "1790000003202000000",
+          "monotonic_ns": "4200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c73ffa000bd1f75fff7005f0071"
+        },
+        {
+          "utc_ns": "1790000003302000000",
+          "monotonic_ns": "4300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cccff3d00f41f9eff08014200bc"
+        },
+        {
+          "utc_ns": "1790000003402000000",
+          "monotonic_ns": "4400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2900d9ff2b20caff1301240006"
+        },
+        {
+          "utc_ns": "1790000003502000000",
+          "monotonic_ns": "4500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8a0075ff5f20f7ff170106004a"
+        },
+        {
+          "utc_ns": "1790000003602000000",
+          "monotonic_ns": "4600000000",
+          "message_id": 3,
+          "raw_hex": "5555030ceb0017ff892022001601e9ff84"
+        },
+        {
+          "utc_ns": "1790000003702000000",
+          "monotonic_ns": "4700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4b01c1fea7204f000e01cbffb3"
+        },
+        {
+          "utc_ns": "1790000003802000000",
+          "monotonic_ns": "4800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca70178feb32079000001aeffd1"
+        },
+        {
+          "utc_ns": "1790000003902000000",
+          "monotonic_ns": "4900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfd013dfeae20a100ec0091ffdd"
+        }
+      ]
+    },
+    {
+      "segment_id": "2549e4508b3500e276ba9069673b97e977b2178c74cc8887947e6613a1599a1e",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if04",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000010002000000,
+        "end_utc_ns": 1790000013902000000,
+        "start_monotonic_ns": 11000000000,
+        "end_monotonic_ns": 14900000000,
+        "quality": {
+          "checksum_errors": 1,
+          "length_errors": 0,
+          "discarded_bytes": 4,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000010002000000",
+          "monotonic_ns": "11000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4b0214fe9820c500d30074ffdb"
+        },
+        {
+          "utc_ns": "1790000010002001000",
+          "monotonic_ns": "11000001000",
+          "message_id": 1,
+          "raw_hex": "555501069e048803701765"
+        },
+        {
+          "utc_ns": "1790000010102000000",
+          "monotonic_ns": "11100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8f02fdfd7220e400b50059ffc7"
+        },
+        {
+          "utc_ns": "1790000010202000000",
+          "monotonic_ns": "11200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc802fafd4220ff0093003effab"
+        },
+        {
+          "utc_ns": "1790000010302000000",
+          "monotonic_ns": "11300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf5020afe0b2013016e0024ff88"
+        },
+        {
+          "utc_ns": "1790000010402000000",
+          "monotonic_ns": "11400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c15032dfed41f220146000cff63"
+        },
+        {
+          "utc_ns": "1790000010502000000",
+          "monotonic_ns": "11500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c260363fea01f2a011d00f5fe3d"
+        },
+        {
+          "utc_ns": "1790000010602000000",
+          "monotonic_ns": "11600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2903a7fe761f2b01f4ffdffe1b"
+        },
+        {
+          "utc_ns": "1790000010702000000",
+          "monotonic_ns": "11700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1d03f9fe591f2601caffcbfe01"
+        },
+        {
+          "utc_ns": "1790000010802000000",
+          "monotonic_ns": "11800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c030355ff4d1f1a01a2ffb9fef2"
+        },
+        {
+          "utc_ns": "1790000010902000000",
+          "monotonic_ns": "11900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdb02b8ff521f07017bffa9fee7"
+        },
+        {
+          "utc_ns": "1790000011002000000",
+          "monotonic_ns": "12000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca7021c00691fef0058ff9bfee5"
+        },
+        {
+          "utc_ns": "1790000011002001000",
+          "monotonic_ns": "12000001000",
+          "message_id": 1,
+          "raw_hex": "555501069d052efd4c1de7"
+        },
+        {
+          "utc_ns": "1790000011102000000",
+          "monotonic_ns": "12100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c660280008f1fd10038ff8efee3"
+        },
+        {
+          "utc_ns": "1790000011202000000",
+          "monotonic_ns": "12200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1c02df00bf1faf001dff84fee1"
+        },
+        {
+          "utc_ns": "1790000011302000000",
+          "monotonic_ns": "12300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc9013601f71f890007ff7cfed9"
+        },
+        {
+          "utc_ns": "1790000011402000000",
+          "monotonic_ns": "12400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6f0181012e205f00f7fe76fec1"
+        },
+        {
+          "utc_ns": "1790000011502000000",
+          "monotonic_ns": "12500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1101bd0161203400edfe72fe99"
+        },
+        {
+          "utc_ns": "1790000011602000000",
+          "monotonic_ns": "12600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb000e9018b200700e9fe71fe5b"
+        },
+        {
+          "utc_ns": "1790000011702000000",
+          "monotonic_ns": "12700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4e000202a820dbffebfe71fe05"
+        },
+        {
+          "utc_ns": "1790000011802000000",
+          "monotonic_ns": "12800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf0ff0702b320affff3fe74fe95"
+        },
+        {
+          "utc_ns": "1790000011902000000",
+          "monotonic_ns": "12900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c94fff901ad2085ff01ff7afe0f"
+        },
+        {
+          "utc_ns": "1790000012002000000",
+          "monotonic_ns": "13000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3fffd70196205dff16ff81fe75"
+        },
+        {
+          "utc_ns": "1790000012002001000",
+          "monotonic_ns": "13000001000",
+          "message_id": 1,
+          "raw_hex": "555501062dfc12fc282333"
+        },
+        {
+          "utc_ns": "1790000012102000000",
+          "monotonic_ns": "13100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf1fea40170203aff2fff8bfecd"
+        },
+        {
+          "utc_ns": "1790000012202000000",
+          "monotonic_ns": "13200000000",
+          "message_id": 3,
+          "raw_hex": "5555030caefe61013f201aff4dff96fe1f"
+        },
+        {
+          "utc_ns": "1790000012302000000",
+          "monotonic_ns": "13300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c75fe1001082000ff6fffa4fe74"
+        },
+        {
+          "utc_ns": "1790000012402000000",
+          "monotonic_ns": "13400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c49feb500d11fecfe95ffb4fed5"
+        },
+        {
+          "utc_ns": "1790000012502000000",
+          "monotonic_ns": "13500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2afe53009d1fdefebcffc5fe4a"
+        },
+        {
+          "utc_ns": "1790000012602000000",
+          "monotonic_ns": "13600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c19feefff741fd6fee6ffd8fee0"
+        },
+        {
+          "utc_ns": "1790000012702000000",
+          "monotonic_ns": "13700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c17fe8bff581fd5fe0f00edfe9c"
+        },
+        {
+          "utc_ns": "1790000012802000000",
+          "monotonic_ns": "13800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c24fe2bff4d1fdbfe380004ff85"
+        },
+        {
+          "utc_ns": "1790000012902000000",
+          "monotonic_ns": "13900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3ffed3fe531fe7fe61001cff9a"
+        },
+        {
+          "utc_ns": "1790000013002000000",
+          "monotonic_ns": "14000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c67fe87fe6b1ffafe870035ffe0"
+        },
+        {
+          "utc_ns": "1790000013002001000",
+          "monotonic_ns": "14000001000",
+          "message_id": 1,
+          "raw_hex": "55550106d9f943020429f5"
+        },
+        {
+          "utc_ns": "1790000013102000000",
+          "monotonic_ns": "14100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9dfe49fe911f12ffaa0050ff55"
+        },
+        {
+          "utc_ns": "1790000013202000000",
+          "monotonic_ns": "14200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdefe1bfec21f30ffc9006bfff1"
+        },
+        {
+          "utc_ns": "1790000013302000000",
+          "monotonic_ns": "14300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c29ff00fefa1f53ffe40087ffb4"
+        },
+        {
+          "utc_ns": "1790000013402000000",
+          "monotonic_ns": "14400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7cfff9fd31207afffa00a4ff91"
+        },
+        {
+          "utc_ns": "1790000013502000000",
+          "monotonic_ns": "14500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd6ff05fe6420a3ff0a01c1ff82"
+        },
+        {
+          "utc_ns": "1790000013602000000",
+          "monotonic_ns": "14600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c340024fe8d20cfff1401dfff7d"
+        },
+        {
+          "utc_ns": "1790000013702000000",
+          "monotonic_ns": "14700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c950055fea920fcff1701fdff79"
+        },
+        {
+          "utc_ns": "1790000013802000000",
+          "monotonic_ns": "14800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf60097feb320270015011a006e"
+        },
+        {
+          "utc_ns": "1790000013902000000",
+          "monotonic_ns": "14900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5501e6feac2053000c01380057"
+        }
+      ]
+    },
+    {
+      "segment_id": "2a39e73f5acdf510b4302fafd5709129bbb7a04559290a3a163832e0c215dfd1",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if04",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 45,
+        "valid_bytes": 737,
+        "start_utc_ns": 1790000020002000000,
+        "end_utc_ns": 1790000023902002000,
+        "start_monotonic_ns": 21000000000,
+        "end_monotonic_ns": 24900002000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000020002000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb10140ff94207e00fe00560030"
+        },
+        {
+          "utc_ns": "1790000020002001000",
+          "monotonic_ns": "21000001000",
+          "message_id": 1,
+          "raw_hex": "55550106f4024004e02ef9"
+        },
+        {
+          "utc_ns": "1790000020102000000",
+          "monotonic_ns": "21100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c0602a1ff6e20a500e9007300f0"
+        },
+        {
+          "utc_ns": "1790000020202000000",
+          "monotonic_ns": "21200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c530205003c20c800cf008f0095"
+        },
+        {
+          "utc_ns": "1790000020302000000",
+          "monotonic_ns": "21300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c96026a000520e700b100ab0023"
+        },
+        {
+          "utc_ns": "1790000020402000000",
+          "monotonic_ns": "21400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cce02cb00ce1f01018f00c50097"
+        },
+        {
+          "utc_ns": "1790000020502000000",
+          "monotonic_ns": "21500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf90223019b1f15016900df00f0"
+        },
+        {
+          "utc_ns": "1790000020602000000",
+          "monotonic_ns": "21600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c17037101721f23014100f70032"
+        },
+        {
+          "utc_ns": "1790000020702000000",
+          "monotonic_ns": "21700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2703b101571f2a0118000e015d"
+        },
+        {
+          "utc_ns": "1790000020802000000",
+          "monotonic_ns": "21800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2803e1014d1f2b01efff230170"
+        },
+        {
+          "utc_ns": "1790000020902000000",
+          "monotonic_ns": "21900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1b03fe01541f2501c5ff37016b"
+        },
+        {
+          "utc_ns": "1790000021002000000",
+          "monotonic_ns": "22000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cff0207026c1f18019dff49014d"
+        },
+        {
+          "utc_ns": "1790000021002001000",
+          "monotonic_ns": "22000001000",
+          "message_id": 1,
+          "raw_hex": "55550106920657febc348e"
+        },
+        {
+          "utc_ns": "1790000021102000000",
+          "monotonic_ns": "22100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd602fe01931f050177ff590118"
+        },
+        {
+          "utc_ns": "1790000021202000000",
+          "monotonic_ns": "22200000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca002e001c51fec0054ff6701c7"
+        },
+        {
+          "utc_ns": "1790000021302000000",
+          "monotonic_ns": "22300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5e02b101fd1fce0035ff73015d"
+        },
+        {
+          "utc_ns": "1790000021402000000",
+          "monotonic_ns": "22400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c130271013420ab001bff7d01d7"
+        },
+        {
+          "utc_ns": "1790000021502000000",
+          "monotonic_ns": "22500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbf0123016620840005ff850131"
+        },
+        {
+          "utc_ns": "1790000021602000000",
+          "monotonic_ns": "22600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6501ca008f205a00f6fe8b0172"
+        },
+        {
+          "utc_ns": "1790000021702000000",
+          "monotonic_ns": "22700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c06016a00aa202f00ecfe8e019c"
+        },
+        {
+          "utc_ns": "1790000021802000000",
+          "monotonic_ns": "22800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca5000500b3200200e9fe8f01af"
+        },
+        {
+          "utc_ns": "1790000021902000000",
+          "monotonic_ns": "22900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4300a1ffac20d6ffebfe8e01b5"
+        },
+        {
+          "utc_ns": "1790000022002000000",
+          "monotonic_ns": "23000000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce5ff40ff9320aafff4fe8b01b6"
+        },
+        {
+          "utc_ns": "1790000022002001000",
+          "monotonic_ns": "23000001000",
+          "message_id": 1,
+          "raw_hex": "55550106fafd83fb983af8"
+        },
+        {
+          "utc_ns": "1790000022102000000",
+          "monotonic_ns": "23100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8affe6fe6b2080ff03ff8601b9"
+        },
+        {
+          "utc_ns": "1790000022202000000",
+          "monotonic_ns": "23200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c36ff97fe392059ff18ff7e01ca"
+        },
+        {
+          "utc_ns": "1790000022302000000",
+          "monotonic_ns": "23300000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce9fe55fe022036ff32ff7401f0"
+        },
+        {
+          "utc_ns": "1790000022402000000",
+          "monotonic_ns": "23400000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca7fe24fecb1f17ff51ff680139"
+        },
+        {
+          "utc_ns": "1790000022502000000",
+          "monotonic_ns": "23500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6ffe05fe981ffdfe73ff5a01a8"
+        },
+        {
+          "utc_ns": "1790000022602000000",
+          "monotonic_ns": "23600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c45fef9fd701feafe99ff4b014d"
+        },
+        {
+          "utc_ns": "1790000022702000000",
+          "monotonic_ns": "23700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c27fe00fe561fdcfec1ff390125"
+        },
+        {
+          "utc_ns": "1790000022802000000",
+          "monotonic_ns": "23800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c19fe1bfe4d1fd5feeaff250137"
+        },
+        {
+          "utc_ns": "1790000022902000000",
+          "monotonic_ns": "23900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c18fe49fe551fd5fe1300100181"
+        },
+        {
+          "utc_ns": "1790000023002000000",
+          "monotonic_ns": "24000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c26fe87fe6e1fdcfe3d00f900ff"
+        },
+        {
+          "utc_ns": "1790000023002001000",
+          "monotonic_ns": "24000001000",
+          "message_id": 1,
+          "raw_hex": "5555010624f9070174408a"
+        },
+        {
+          "utc_ns": "1790000023102000000",
+          "monotonic_ns": "24100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c43fed4fe961fe9fe6500e100ae"
+        },
+        {
+          "utc_ns": "1790000023202000000",
+          "monotonic_ns": "24200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6dfe2cffc81ffcfe8b00c80083"
+        },
+        {
+          "utc_ns": "1790000023302000000",
+          "monotonic_ns": "24300000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca4fe8bff002016ffae00ad0075"
+        },
+        {
+          "utc_ns": "1790000023402000000",
+          "monotonic_ns": "24400000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce6fef0ff372034ffcc00920074"
+        },
+        {
+          "utc_ns": "1790000023502000000",
+          "monotonic_ns": "24500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c32ff5400692057ffe70076007a"
+        },
+        {
+          "utc_ns": "1790000023602000000",
+          "monotonic_ns": "24600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c86ffb60091207efffc00590077"
+        },
+        {
+          "utc_ns": "1790000023702000000",
+          "monotonic_ns": "24700000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce1ff1101ab20a8ff0b013b0064"
+        },
+        {
+          "utc_ns": "1790000023802000000",
+          "monotonic_ns": "24800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3f006101b320d4ff14011d0032"
+        },
+        {
+          "utc_ns": "1790000023902000000",
+          "monotonic_ns": "24900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca000a401ab20000017010000e1"
+        },
+        {
+          "utc_ns": "1790000023902002000",
+          "monotonic_ns": "24900002000",
+          "message_id": 6,
+          "raw_hex": "555506080100000001000000ba"
+        }
+      ]
+    },
+    {
+      "segment_id": "e8c7bdf27b67936c52a835055a339ffb1902e3576d9cd5c732f07e88f0adebea",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if06",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000000003000000,
+        "end_utc_ns": 1790000003903000000,
+        "start_monotonic_ns": 1000000000,
+        "end_monotonic_ns": 4900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000000003000000",
+          "monotonic_ns": "1000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c780340ffff1f2b0113001001e1"
+        },
+        {
+          "utc_ns": "1790000000003001000",
+          "monotonic_ns": "1000001000",
+          "message_id": 1,
+          "raw_hex": "555501060307540000000f"
+        },
+        {
+          "utc_ns": "1790000000103000000",
+          "monotonic_ns": "1100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7703e6fec71f2b01eaff250138"
+        },
+        {
+          "utc_ns": "1790000000203000000",
+          "monotonic_ns": "1200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c690397fe951f2401c1ff39018d"
+        },
+        {
+          "utc_ns": "1790000000303000000",
+          "monotonic_ns": "1300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4b0355fe6e1f160199ff4b01e2"
+        },
+        {
+          "utc_ns": "1790000000403000000",
+          "monotonic_ns": "1400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c210324fe551f020173ff5a0143"
+        },
+        {
+          "utc_ns": "1790000000503000000",
+          "monotonic_ns": "1500000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce90205fe4d1fe90051ff6801b5"
+        },
+        {
+          "utc_ns": "1790000000603000000",
+          "monotonic_ns": "1600000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca702f9fd561fca0032ff74013d"
+        },
+        {
+          "utc_ns": "1790000000703000000",
+          "monotonic_ns": "1700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5a0200fe701fa70018ff7e01df"
+        },
+        {
+          "utc_ns": "1790000000803000000",
+          "monotonic_ns": "1800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c05021bfe991f800003ff86019a"
+        },
+        {
+          "utc_ns": "1790000000903000000",
+          "monotonic_ns": "1900000000",
+          "message_id": 3,
+          "raw_hex": "5555030caa0149fecc1f5600f4fe8b016a"
+        },
+        {
+          "utc_ns": "1790000001003000000",
+          "monotonic_ns": "2000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4b0187fe03202a00ebfe8e014f"
+        },
+        {
+          "utc_ns": "1790000001003001000",
+          "monotonic_ns": "2000001000",
+          "message_id": 1,
+          "raw_hex": "55550106fe005dfbdc05e8"
+        },
+        {
+          "utc_ns": "1790000001103000000",
+          "monotonic_ns": "2100000000",
+          "message_id": 3,
+          "raw_hex": "5555030cea00d3fe3a20feffe9fe8f0142"
+        },
+        {
+          "utc_ns": "1790000001203000000",
+          "monotonic_ns": "2200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c89002bff6c20d1ffecfe8e0141"
+        },
+        {
+          "utc_ns": "1790000001303000000",
+          "monotonic_ns": "2300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2a008bff9320a5fff6fe8b0144"
+        },
+        {
+          "utc_ns": "1790000001403000000",
+          "monotonic_ns": "2400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd1fff0ffac207cff05ff850149"
+        },
+        {
+          "utc_ns": "1790000001503000000",
+          "monotonic_ns": "2500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7dff5400b32055ff1bff7d0148"
+        },
+        {
+          "utc_ns": "1790000001603000000",
+          "monotonic_ns": "2600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c31ffb600a92032ff35ff730141"
+        },
+        {
+          "utc_ns": "1790000001703000000",
+          "monotonic_ns": "2700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf0fe10018f2014ff54ff670135"
+        },
+        {
+          "utc_ns": "1790000001803000000",
+          "monotonic_ns": "2800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbafe61016620fbfe77ff590122"
+        },
+        {
+          "utc_ns": "1790000001903000000",
+          "monotonic_ns": "2900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c91fea4013320e8fe9dff49010c"
+        },
+        {
+          "utc_ns": "1790000002003000000",
+          "monotonic_ns": "3000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c75fed701fc1fdbfec5ff3701f4"
+        },
+        {
+          "utc_ns": "1790000002003001000",
+          "monotonic_ns": "3000001000",
+          "message_id": 1,
+          "raw_hex": "5555010621f904ffb80b91"
+        },
+        {
+          "utc_ns": "1790000002103000000",
+          "monotonic_ns": "3100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c68fef901c41fd5feefff2301e1"
+        },
+        {
+          "utc_ns": "1790000002203000000",
+          "monotonic_ns": "3200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c69fe0702931fd6fe18000e01d6"
+        },
+        {
+          "utc_ns": "1790000002303000000",
+          "monotonic_ns": "3300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c79fe02026c1fddfe4100f700d2"
+        },
+        {
+          "utc_ns": "1790000002403000000",
+          "monotonic_ns": "3400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c97fee901541febfe6900df00dc"
+        },
+        {
+          "utc_ns": "1790000002503000000",
+          "monotonic_ns": "3500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc2febd014d1ffffe8f00c500f4"
+        },
+        {
+          "utc_ns": "1790000002603000000",
+          "monotonic_ns": "3600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfafe8101571f19ffb100aa001c"
+        },
+        {
+          "utc_ns": "1790000002703000000",
+          "monotonic_ns": "3700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3dff3601721f38ffd0008f0053"
+        },
+        {
+          "utc_ns": "1790000002803000000",
+          "monotonic_ns": "3800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8bffdf009b1f5bffe900720091"
+        },
+        {
+          "utc_ns": "1790000002903000000",
+          "monotonic_ns": "3900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce0ff8000cf1f83fffe005500db"
+        },
+        {
+          "utc_ns": "1790000003003000000",
+          "monotonic_ns": "4000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c3a001c000620adff0c01380026"
+        },
+        {
+          "utc_ns": "1790000003003001000",
+          "monotonic_ns": "4000001000",
+          "message_id": 1,
+          "raw_hex": "555501060afe80049411e2"
+        },
+        {
+          "utc_ns": "1790000003103000000",
+          "monotonic_ns": "4100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9900b7ff3d20d9ff15011a006d"
+        },
+        {
+          "utc_ns": "1790000003203000000",
+          "monotonic_ns": "4200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfa0055ff6e2005001701fdffae"
+        },
+        {
+          "utc_ns": "1790000003303000000",
+          "monotonic_ns": "4300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5b01f9fe952031001401dfffe5"
+        },
+        {
+          "utc_ns": "1790000003403000000",
+          "monotonic_ns": "4400000000",
+          "message_id": 3,
+          "raw_hex": "5555030cba01a7fead205d000a01c1ff0e"
+        },
+        {
+          "utc_ns": "1790000003503000000",
+          "monotonic_ns": "4500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c140262feb3208700fa00a4ff26"
+        },
+        {
+          "utc_ns": "1790000003603000000",
+          "monotonic_ns": "4600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c67022dfea820ad00e40087ff2c"
+        },
+        {
+          "utc_ns": "1790000003703000000",
+          "monotonic_ns": "4700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb2020afe8d20d000c9006bff25"
+        },
+        {
+          "utc_ns": "1790000003803000000",
+          "monotonic_ns": "4800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf302fafd6320ee00aa004fff0e"
+        },
+        {
+          "utc_ns": "1790000003903000000",
+          "monotonic_ns": "4900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2903fdfd30200601870035fff1"
+        }
+      ]
+    },
+    {
+      "segment_id": "b331ac2a803cbbea4375952e1511970196682884189de9d76d0bc63891dd6a4f",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if06",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 44,
+        "valid_bytes": 724,
+        "start_utc_ns": 1790000010003000000,
+        "end_utc_ns": 1790000013903000000,
+        "start_monotonic_ns": 11000000000,
+        "end_monotonic_ns": 14900000000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000010003000000",
+          "monotonic_ns": "11000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c510314fef91f190161001cffcd"
+        },
+        {
+          "utc_ns": "1790000010003001000",
+          "monotonic_ns": "11000001000",
+          "message_id": 1,
+          "raw_hex": "5555010698069f01701776"
+        },
+        {
+          "utc_ns": "1790000010103000000",
+          "monotonic_ns": "11100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6c033dfec21f2501380004ffa5"
+        },
+        {
+          "utc_ns": "1790000010203000000",
+          "monotonic_ns": "11200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c790378fe901f2b010f00edfe80"
+        },
+        {
+          "utc_ns": "1790000010303000000",
+          "monotonic_ns": "11300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7703c1fe6a1f2a01e6ffd8fe61"
+        },
+        {
+          "utc_ns": "1790000010403000000",
+          "monotonic_ns": "11400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c660317ff531f2201bcffc5fe4b"
+        },
+        {
+          "utc_ns": "1790000010503000000",
+          "monotonic_ns": "11500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c470376ff4d1f140194ffb4fe3e"
+        },
+        {
+          "utc_ns": "1790000010603000000",
+          "monotonic_ns": "11600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1b03d9ff581f00016fffa4fe37"
+        },
+        {
+          "utc_ns": "1790000010703000000",
+          "monotonic_ns": "11700000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce2023d00741fe6004dff96fe33"
+        },
+        {
+          "utc_ns": "1790000010803000000",
+          "monotonic_ns": "11800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9e02a0009e1fc6002fff8afe32"
+        },
+        {
+          "utc_ns": "1790000010903000000",
+          "monotonic_ns": "11900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c5102fd00d11fa30015ff81fe2f"
+        },
+        {
+          "utc_ns": "1790000011003000000",
+          "monotonic_ns": "12000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfb01500109207b0001ff79fe21"
+        },
+        {
+          "utc_ns": "1790000011003001000",
+          "monotonic_ns": "12000001000",
+          "message_id": 1,
+          "raw_hex": "55550106e502bbfb4c1db7"
+        },
+        {
+          "utc_ns": "1790000011103000000",
+          "monotonic_ns": "12100000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca001970140205100f3fe74fe06"
+        },
+        {
+          "utc_ns": "1790000011203000000",
+          "monotonic_ns": "12200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4001ce0171202500ebfe71fed7"
+        },
+        {
+          "utc_ns": "1790000011303000000",
+          "monotonic_ns": "12300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdf00f3019720f9ffe9fe71fe91"
+        },
+        {
+          "utc_ns": "1790000011403000000",
+          "monotonic_ns": "12400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7e000602ad20ccffedfe72fe32"
+        },
+        {
+          "utc_ns": "1790000011503000000",
+          "monotonic_ns": "12500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c20000402b320a1fff7fe76febb"
+        },
+        {
+          "utc_ns": "1790000011603000000",
+          "monotonic_ns": "12600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc7fff001a72077ff08ff7cfe2e"
+        },
+        {
+          "utc_ns": "1790000011703000000",
+          "monotonic_ns": "12700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c74ffc8018b2051ff1dff84fe8e"
+        },
+        {
+          "utc_ns": "1790000011803000000",
+          "monotonic_ns": "12800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2aff8f0161202fff39ff8efee5"
+        },
+        {
+          "utc_ns": "1790000011903000000",
+          "monotonic_ns": "12900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce9fe47012d2011ff58ff9bfe35"
+        },
+        {
+          "utc_ns": "1790000012003000000",
+          "monotonic_ns": "13000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb5fef300f61ff9fe7bffa9fe8c"
+        },
+        {
+          "utc_ns": "1790000012003001000",
+          "monotonic_ns": "13000001000",
+          "message_id": 1,
+          "raw_hex": "55550106d1f9c6fd282389"
+        },
+        {
+          "utc_ns": "1790000012103000000",
+          "monotonic_ns": "13100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c8dfe9500bf1fe6fea2ffb9fef3"
+        },
+        {
+          "utc_ns": "1790000012203000000",
+          "monotonic_ns": "13200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c73fe32008e1fdafecaffcbfe73"
+        },
+        {
+          "utc_ns": "1790000012303000000",
+          "monotonic_ns": "13300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c67feceff691fd5fef4ffdffe16"
+        },
+        {
+          "utc_ns": "1790000012403000000",
+          "monotonic_ns": "13400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6afe6aff521fd6fe1d00f5fedf"
+        },
+        {
+          "utc_ns": "1790000012503000000",
+          "monotonic_ns": "13500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7bfe0dff4d1fdefe46000cffd7"
+        },
+        {
+          "utc_ns": "1790000012603000000",
+          "monotonic_ns": "13600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9bfeb8fe591fedfe6e0024fffc"
+        },
+        {
+          "utc_ns": "1790000012703000000",
+          "monotonic_ns": "13700000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc8fe70fe761f01ff93003eff52"
+        },
+        {
+          "utc_ns": "1790000012803000000",
+          "monotonic_ns": "13800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c01ff38fea01f1cffb50059ffd6"
+        },
+        {
+          "utc_ns": "1790000012903000000",
+          "monotonic_ns": "13900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c46ff10fed41f3cffd30074ff80"
+        },
+        {
+          "utc_ns": "1790000013003000000",
+          "monotonic_ns": "14000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c94fffcfd0c2060ffec0091ff4c"
+        },
+        {
+          "utc_ns": "1790000013003001000",
+          "monotonic_ns": "14000001000",
+          "message_id": 1,
+          "raw_hex": "555501063bfcf40304290c"
+        },
+        {
+          "utc_ns": "1790000013103000000",
+          "monotonic_ns": "14100000000",
+          "message_id": 3,
+          "raw_hex": "5555030ceafffafd432087ff0001aeff30"
+        },
+        {
+          "utc_ns": "1790000013203000000",
+          "monotonic_ns": "14200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c44000dfe7320b2ff0e01cbff25"
+        },
+        {
+          "utc_ns": "1790000013303000000",
+          "monotonic_ns": "14300000000",
+          "message_id": 3,
+          "raw_hex": "5555030ca40033fe9820deff1601e9ff22"
+        },
+        {
+          "utc_ns": "1790000013403000000",
+          "monotonic_ns": "14400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c05016afeae200a00170106001d"
+        },
+        {
+          "utc_ns": "1790000013503000000",
+          "monotonic_ns": "14500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6601b0feb3203600130124000f"
+        },
+        {
+          "utc_ns": "1790000013603000000",
+          "monotonic_ns": "14600000000",
+          "message_id": 3,
+          "raw_hex": "5555030cc40103ffa620620008014200f3"
+        },
+        {
+          "utc_ns": "1790000013703000000",
+          "monotonic_ns": "14700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1e0260ff89208b00f7005f00c2"
+        },
+        {
+          "utc_ns": "1790000013803000000",
+          "monotonic_ns": "14800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7002c3ff5e20b100e1007c0079"
+        },
+        {
+          "utc_ns": "1790000013903000000",
+          "monotonic_ns": "14900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cba0227002a20d300c600980017"
+        }
+      ]
+    },
+    {
+      "segment_id": "b46701047a6cdcb984a1704c7ac8db05cf3a7974595f5496e255a26af17a398c",
+      "header": {
+        "gateway_id": "rpi5",
+        "channel_id": "usb-if06",
+        "session_id": "field-v2-demo",
+        "time_basis": "read_return",
+        "frame_count": 45,
+        "valid_bytes": 737,
+        "start_utc_ns": 1790000020003000000,
+        "end_utc_ns": 1790000023903002000,
+        "start_monotonic_ns": 21000000000,
+        "end_monotonic_ns": 24900002000,
+        "quality": {
+          "checksum_errors": 0,
+          "length_errors": 0,
+          "discarded_bytes": 0,
+          "incomplete_bytes": 0
+        }
+      },
+      "frames": [
+        {
+          "utc_ns": "1790000020003000000",
+          "monotonic_ns": "21000000000",
+          "message_id": 3,
+          "raw_hex": "5555030cfa028b00f31ff100a600b4009d"
+        },
+        {
+          "utc_ns": "1790000020003001000",
+          "monotonic_ns": "21000001000",
+          "message_id": 1,
+          "raw_hex": "55550106a605c902e02e35"
+        },
+        {
+          "utc_ns": "1790000020103000000",
+          "monotonic_ns": "21100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2e03e900bc1f09018300ce0009"
+        },
+        {
+          "utc_ns": "1790000020203000000",
+          "monotonic_ns": "21200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c55033f018c1f1b015c00e7005b"
+        },
+        {
+          "utc_ns": "1790000020303000000",
+          "monotonic_ns": "21300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6e038801671f26013400ff0093"
+        },
+        {
+          "utc_ns": "1790000020403000000",
+          "monotonic_ns": "21400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7903c301511f2b010a001501b5"
+        },
+        {
+          "utc_ns": "1790000020503000000",
+          "monotonic_ns": "21500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7503ec014d1f2a01e1ff2a01c0"
+        },
+        {
+          "utc_ns": "1790000020603000000",
+          "monotonic_ns": "21600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c630303025a1f2101b8ff3d01b4"
+        },
+        {
+          "utc_ns": "1790000020703000000",
+          "monotonic_ns": "21700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c43030602781f120190ff4e018f"
+        },
+        {
+          "utc_ns": "1790000020803000000",
+          "monotonic_ns": "21800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1503f601a31ffd006bff5e0150"
+        },
+        {
+          "utc_ns": "1790000020903000000",
+          "monotonic_ns": "21900000000",
+          "message_id": 3,
+          "raw_hex": "5555030cdb02d201d71fe20049ff6b01f5"
+        },
+        {
+          "utc_ns": "1790000021003000000",
+          "monotonic_ns": "22000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c96029d010f20c3002cff770184"
+        },
+        {
+          "utc_ns": "1790000021003001000",
+          "monotonic_ns": "22000001000",
+          "message_id": 1,
+          "raw_hex": "55550106920471fcbc34a4"
+        },
+        {
+          "utc_ns": "1790000021103000000",
+          "monotonic_ns": "22100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4802580145209e0013ff8001f2"
+        },
+        {
+          "utc_ns": "1790000021203000000",
+          "monotonic_ns": "22200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf101070175207700fffe870144"
+        },
+        {
+          "utc_ns": "1790000021303000000",
+          "monotonic_ns": "22300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9501ab009a204c00f2fe8c017d"
+        },
+        {
+          "utc_ns": "1790000021403000000",
+          "monotonic_ns": "22400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c36014800af202000eafe8f019f"
+        },
+        {
+          "utc_ns": "1790000021503000000",
+          "monotonic_ns": "22500000000",
+          "message_id": 3,
+          "raw_hex": "5555030cd400e4ffb320f4ffe9fe8f01ad"
+        },
+        {
+          "utc_ns": "1790000021603000000",
+          "monotonic_ns": "22600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c730080ffa520c7ffeefe8e01b1"
+        },
+        {
+          "utc_ns": "1790000021703000000",
+          "monotonic_ns": "22700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c150021ff87209cfff9fe8a01b2"
+        },
+        {
+          "utc_ns": "1790000021803000000",
+          "monotonic_ns": "22800000000",
+          "message_id": 3,
+          "raw_hex": "5555030cbdffcafe5c2073ff0aff8301b8"
+        },
+        {
+          "utc_ns": "1790000021903000000",
+          "monotonic_ns": "22900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6bff7ffe27204dff20ff7b01ce"
+        },
+        {
+          "utc_ns": "1790000022003000000",
+          "monotonic_ns": "23000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c22ff43fef01f2bff3cff710101"
+        },
+        {
+          "utc_ns": "1790000022003001000",
+          "monotonic_ns": "23000001000",
+          "message_id": 1,
+          "raw_hex": "55550106fffab6fc983a2e"
+        },
+        {
+          "utc_ns": "1790000022103000000",
+          "monotonic_ns": "23100000000",
+          "message_id": 3,
+          "raw_hex": "5555030ce3fe17feb91f0eff5cff640154"
+        },
+        {
+          "utc_ns": "1790000022203000000",
+          "monotonic_ns": "23200000000",
+          "message_id": 3,
+          "raw_hex": "5555030cb0fefefd891ff6fe80ff5501d3"
+        },
+        {
+          "utc_ns": "1790000022303000000",
+          "monotonic_ns": "23300000000",
+          "message_id": 3,
+          "raw_hex": "5555030c89fef9fd651fe5fea6ff450188"
+        },
+        {
+          "utc_ns": "1790000022403000000",
+          "monotonic_ns": "23400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c71fe07fe511fd9fecfff320175"
+        },
+        {
+          "utc_ns": "1790000022503000000",
+          "monotonic_ns": "23500000000",
+          "message_id": 3,
+          "raw_hex": "5555030c67fe29fe4d1fd5fef8ff1e019a"
+        },
+        {
+          "utc_ns": "1790000022603000000",
+          "monotonic_ns": "23600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c6bfe5cfe5c1fd7fe21000901f7"
+        },
+        {
+          "utc_ns": "1790000022703000000",
+          "monotonic_ns": "23700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7efe9ffe7a1fdffe4b00f20085"
+        },
+        {
+          "utc_ns": "1790000022803000000",
+          "monotonic_ns": "23800000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9ffef0fea61feffe7200d90041"
+        },
+        {
+          "utc_ns": "1790000022903000000",
+          "monotonic_ns": "23900000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccefe4bffda1f04ff9700bf0021"
+        },
+        {
+          "utc_ns": "1790000023003000000",
+          "monotonic_ns": "24000000000",
+          "message_id": 3,
+          "raw_hex": "5555030c08ffadff12201fffb800a40018"
+        },
+        {
+          "utc_ns": "1790000023003001000",
+          "monotonic_ns": "24000001000",
+          "message_id": 1,
+          "raw_hex": "55550106b9fa1803744033"
+        },
+        {
+          "utc_ns": "1790000023103000000",
+          "monotonic_ns": "24100000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4eff110048203fffd60089001c"
+        },
+        {
+          "utc_ns": "1790000023203000000",
+          "monotonic_ns": "24200000000",
+          "message_id": 3,
+          "raw_hex": "5555030c9dff7500782064ffee006c001f"
+        },
+        {
+          "utc_ns": "1790000023303000000",
+          "monotonic_ns": "24300000000",
+          "message_id": 3,
+          "raw_hex": "5555030cf4ffd5009b208cff01014f0018"
+        },
+        {
+          "utc_ns": "1790000023403000000",
+          "monotonic_ns": "24400000000",
+          "message_id": 3,
+          "raw_hex": "5555030c4f002d01b020b6ff0f013100fc"
+        },
+        {
+          "utc_ns": "1790000023503000000",
+          "monotonic_ns": "24500000000",
+          "message_id": 3,
+          "raw_hex": "5555030caf007901b320e3ff16011300c1"
+        },
+        {
+          "utc_ns": "1790000023603000000",
+          "monotonic_ns": "24600000000",
+          "message_id": 3,
+          "raw_hex": "5555030c1001b701a4200f001701f6ff62"
+        },
+        {
+          "utc_ns": "1790000023703000000",
+          "monotonic_ns": "24700000000",
+          "message_id": 3,
+          "raw_hex": "5555030c7101e50185203b001201d8ffdb"
+        },
+        {
+          "utc_ns": "1790000023803000000",
+          "monotonic_ns": "24800000000",
+          "message_id": 3,
+          "raw_hex": "5555030ccf010002592066000601bbff2b"
+        },
+        {
+          "utc_ns": "1790000023903000000",
+          "monotonic_ns": "24900000000",
+          "message_id": 3,
+          "raw_hex": "5555030c2702070224208f00f5009dff4f"
+        },
+        {
+          "utc_ns": "1790000023903002000",
+          "monotonic_ns": "24900002000",
+          "message_id": 6,
+          "raw_hex": "555506080100000001000000ba"
+        }
+      ]
+    }
+  ]
+}
